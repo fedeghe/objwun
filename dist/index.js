@@ -1,0 +1,1 @@
+!function(){var r={};alert(r.print("core"))}();

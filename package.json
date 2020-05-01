@@ -1,0 +1,14 @@
+{
+    "name": "objwun",
+    "version": "0.0.0",
+    "main": "index.js",
+    "author": "fedeghe <fedeghe@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "malta": "^4.1.19",
+        "malta-js-uglify": "^1.0.11"
+    },
+    "scripts": {
+        "build": "malta source/build.json"
+    }
+}
