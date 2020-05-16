@@ -1,0 +1,5 @@
+maltaV('PACKAGE.name') v. maltaV('PACKAGE.version')
+maltaV('PACKAGE.author')
+
+maltaV('PACKAGE.description')
+__SIZE__ on __DATE__
