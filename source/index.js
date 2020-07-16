@@ -1,4 +1,7 @@
-(function () {
-    maltaF('core/index.js')
-    alert(_.print('core'))
-})()
+function _(){
+    maltaF('core/index.js');
+    maltaF('methods/assign.js');
+    return {
+        assign: assign
+    }
+}
