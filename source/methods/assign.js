@@ -1,9 +1,13 @@
 function assign() {
-    console.log('arguments', arguments)
-    var args = core.arguments2array(arguments);
-    console.log('args', args)
+    var args = core.arguments2array(arguments).filter(function (o){
+            return core.isObject(o)
+        }),
+        res = {};
     if (args.length) {
-        return args;
+        args.forEach(function (obj) {
+            res = Object.assign(res, obj)
+        })
+        return res;
     }
-    return {};
+    return res;
 }

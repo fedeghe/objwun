@@ -6,6 +6,9 @@ describe('assign', function () {
         assert.equal(JSON.stringify(objwun.assign()), '{}');
     });
     it('should return the passed arguments', function () {
-        assert.equal(JSON.stringify(objwun.assign(1,2,3,4)), '[1,2,3,4]');
+        assert.equal(
+            JSON.stringify(objwun.assign({a:1}, {b:2})),
+            JSON.stringify({a:1, b:2})
+        );
     });
 });
