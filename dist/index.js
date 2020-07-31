@@ -3,7 +3,7 @@ objwun v. 0.0.0
 fedeghe <fedeghe@gmail.com>
 
 A library to deal efficiently with Object literals
-~1KB on 19/7/2020
+~1KB on 31/7/2020
 */
 (function(fn) {
 	if (typeof exports === "object" && typeof module !== "undefined") {
@@ -54,7 +54,7 @@ A library to deal efficiently with Object literals
             res = {};
         if (args.length) {
             args.forEach(function (obj) {
-                res = Object.assign(res, obj)
+                res = Object.assign({}, res, obj)
             })
             return res;
         }

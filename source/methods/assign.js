@@ -5,7 +5,7 @@ function assign() {
         res = {};
     if (args.length) {
         args.forEach(function (obj) {
-            res = Object.assign(res, obj)
+            res = Object.assign({}, res, obj)
         })
         return res;
     }
