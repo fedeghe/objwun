@@ -13,5 +13,5 @@ var core = (function () {
     return {
         arguments2array: arguments2array,
         isObject: isObject
-    }
+    };
 })();

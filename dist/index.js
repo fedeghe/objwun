@@ -3,64 +3,6 @@ objwun v. 0.0.0
 fedeghe <fedeghe@gmail.com>
 
 A library to deal efficiently with Object literals
-~1KB on 31/7/2020
+~1KB on 6/8/2020
 */
-(function(fn) {
-	if (typeof exports === "object" && typeof module !== "undefined") {
-		module.exports = fn();
-	} else if (typeof define === "function" && define.amd) {
-		define([], fn);
-	} else {
-		if (typeof window !== "undefined") {
-			root = window;
-		} else if (typeof global !== "undefined") {
-			root = global;
-		} else if (typeof self !== "undefined") {
-			root = self;
-		} else {
-			root = this;
-		}
-		root.objwun = fn.call(root);
-	}
-})(function _(){
-    /*
-    [Malta] core/index.js
-    */
-    var core = (function () {
-        function arguments2array(a) {
-            return [].slice.call(a, 0);
-        }
-        function isObject(o) {
-            var t0 = String(o) !== o,
-                t1 = o === Object(o),
-                t2 = typeof o !== 'function',
-                t3 = {}.toString.call(o).match(/\[object\sObject\]/);
-            return t0 && t1 && t2 && !!(t3 && t3.length);
-        }
-    
-        return {
-            arguments2array: arguments2array,
-            isObject: isObject
-        }
-    })();
-    ;
-    /*
-    [Malta] methods/assign.js
-    */
-    function assign() {
-        var args = core.arguments2array(arguments).filter(function (o){
-                return core.isObject(o)
-            }),
-            res = {};
-        if (args.length) {
-            args.forEach(function (obj) {
-                res = Object.assign({}, res, obj)
-            })
-            return res;
-        }
-        return res;
-    };
-    return {
-        assign: assign
-    }
-});
+!function(n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define([],n):("undefined"!=typeof window?root=window:"undefined"!=typeof global?root=global:"undefined"!=typeof self?root=self:root=this,root.objwun=n.call(root))}(function(){function n(){var n=r.arguments2array(arguments).filter(function(n){return r.isObject(n)}),t={};return n.length?(n.forEach(function(n){t=Object.assign({},t,n)}),t):t}function t(n,t){n=n||0;var e=[],o=0;for(null;o<n;o++)e[o]=t.call(null,o);return e}function e(n,t){var e={};t=t||[];for(var o in n)n.hasOwnProperty(o)&&t.indexOf(o)<0&&(e[o]=n[o]);return e}function o(n,t){var e={};t=t||[];for(var o in n)n.hasOwnProperty(o)&&t.indexOf(o)>=0&&(e[o]=n[o]);return e}var r=function(){function n(n){return[].slice.call(n,0)}function t(n){var t=String(n)!==n,e=n===Object(n),o="function"!=typeof n,r={}.toString.call(n).match(/\[object\sObject\]/);return t&&e&&o&&!(!r||!r.length)}return{arguments2array:n,isObject:t}}();return{assign:n,times:t,omit:e,pick:o}});
