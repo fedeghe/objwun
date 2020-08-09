@@ -9,7 +9,7 @@ describe('pick', function () {
     });
     it('should return it without some', function () {
         var o = { a: 1, b: 2, c: 3 },
-            res = objwun.pick(o, ['a', 'c']);
+            res = objwun.pick(o, ['a', 'c', 'd']);
         assert.equal(JSON.stringify(res), JSON.stringify({ a: 1, c: 3 }));
     });
 });
