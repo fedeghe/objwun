@@ -43,10 +43,21 @@ var core = (function () {
         return res;
     }
 
+    function arrayLoop(o, fn) {
+        var res = [],
+            i = 0,
+            l = o.length;
+        for (null; i < l; i++) {
+            res[i] = fn(o[i], i)
+        }
+        return res;
+    }
+
     return {
         arguments2array: arguments2array,
         isArray: isArray,
         isObject: isObject,
+        arrayLoop: arrayLoop,
         objLoop: objLoop,
         pick_omit: pick_omit,
     };
