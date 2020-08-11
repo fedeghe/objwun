@@ -6,10 +6,12 @@ function _(){
     maltaF('methods/pick.js');
     maltaF('methods/map.js');
     maltaF('methods/isEmpty.js');
+    maltaF('methods/get.js');
     return {
         assign: assign,
-        map: map,
+        get: get,
         isEmpty: isEmpty,
+        map: map,
         omit: omit,
         pick: pick,
         times: times
