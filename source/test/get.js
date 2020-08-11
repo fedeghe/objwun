@@ -32,4 +32,14 @@ describe('get', function () {
             res = objwun.get(o, 'c.d')
         assert.equal(JSON.stringify(res), JSON.stringify({a:111,b:222}));
     });
+    it('should return default value', function () {
+        var o = {
+            a: 1, b: 2, c: {
+                a:11, b:22, c:33, d: {
+                    a:111,b:222
+                }
+            }},
+            res = objwun.get(o, 'c.e', {s:1})
+        assert.equal(JSON.stringify(res), JSON.stringify({s:1}));
+    });
 });

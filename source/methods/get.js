@@ -7,10 +7,11 @@ function get(obj, path, defaultValue) {
         res = obj,
         i = 0,
         l = els.length,
+        there,
         keepGoing = true;
-    for (var there ; keepGoing && i < l; i++) {
+    for (null ; keepGoing && i < l; i++) {
         there = els[i] in res
-        if (!there) return null
+        if (!there) return defaultValue || null
         res = res[els[i]]
     }
     return res
