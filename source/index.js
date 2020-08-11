@@ -5,11 +5,13 @@ function _(){
     maltaF('methods/omit.js');
     maltaF('methods/pick.js');
     maltaF('methods/map.js');
+    maltaF('methods/isEmpty.js');
     return {
         assign: assign,
-        times: times,
+        map: map,
+        isEmpty: isEmpty,
         omit: omit,
         pick: pick,
-        map: map,
+        times: times
     }
 }

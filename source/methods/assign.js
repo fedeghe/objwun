@@ -1,6 +1,6 @@
 function assign() {
-    var args = core.arguments2array(arguments).filter(function (o){
-            return core.isObject(o)
+    var args = core.utils.arguments2array(arguments).filter(function (o){
+            return core.introspection.isObject(o)
         }),
         res = {};
     if (args.length) {

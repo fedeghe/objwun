@@ -1,1 +1,1 @@
-const omit = core.pick_omit(function (i) {return i < 0})
+const omit = core.utils.pick_omit(function (i) {return i < 0})
