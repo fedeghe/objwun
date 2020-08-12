@@ -12,4 +12,9 @@ describe('pick', function () {
             res = objwun.pick(o, ['a', 'c', 'd']);
         assert.equal(JSON.stringify(res), JSON.stringify({ a: 1, c: 3 }));
     });
+    it('should return the whole', function () {
+        var o = { a: 1, b: 2, c: 3 },
+            res = objwun.pick(o, ['a', 'b', 'c', null]);
+        assert.equal(JSON.stringify(res), JSON.stringify({ a: 1, b: 2, c: 3 }));
+    });
 });

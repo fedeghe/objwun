@@ -11,4 +11,11 @@ describe('times', function () {
         }
         assert.equal(objwun.times(3, rand).length, 3);
     });
+    it('should return the right array', function () {
+        var res = objwun.times(3, function(i) {
+                return i*i
+            }),
+            stringed = JSON.stringify(res)
+        assert.equal(stringed, JSON.stringify([0,1,4]));
+    });
 });
