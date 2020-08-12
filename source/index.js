@@ -5,6 +5,7 @@ function _(){
     maltaF('methods/omit.js');
     maltaF('methods/pick.js');
     maltaF('methods/map.js');
+    maltaF('methods/reduce.js');
     maltaF('methods/isEmpty.js');
     maltaF('methods/get.js');
     return {
@@ -14,6 +15,7 @@ function _(){
         map: map,
         omit: omit,
         pick: pick,
+        reduce: reduce,
         times: times
     }
 }
