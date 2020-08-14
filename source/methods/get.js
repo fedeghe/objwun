@@ -14,6 +14,7 @@ function get(obj, path, defaultValue) {
         i = 0,
         l = els.length,
         there;
+        
     for (null ; i < l; i++) {
         there = els[i] in res
         if (!there) return defaultValue || null
