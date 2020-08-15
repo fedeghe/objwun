@@ -18,4 +18,16 @@ describe('times', function () {
             stringed = JSON.stringify(res)
         assert.equal(stringed, JSON.stringify([0,1,4]));
     });
+    it('should use the context ', function () {
+        var o = {
+            mult: a => a*2,
+            n: 4
+        }
+
+        var res = ow.times(3, function(i) {
+                return this.n * this.mult(i)
+            }, o),
+            stringed = JSON.stringify(res)
+        assert.equal(stringed, JSON.stringify([0, 8, 16]));
+    });
 });
