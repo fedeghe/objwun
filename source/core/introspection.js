@@ -19,7 +19,7 @@ function isUndefined(o) {
     return typeof o === 'undefined'
 }
 
-core.introspection = {
+core.in = {
     isArray: isArray,
     isUndefined: isUndefined,
     isObject: isObject,

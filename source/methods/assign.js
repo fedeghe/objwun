@@ -1,7 +1,7 @@
 function assign() {
     // @filter
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-    var args = core.utils.arguments2array(arguments).filter(core.introspection.isObject),
+    var args = core.utils.arguments2array(arguments).filter(core.in.isObject),
         res = {};
 
     if (args.length) {

@@ -1,9 +1,9 @@
 function isEmpty(o) {
     return o === ''
         || o === null
-        || core.introspection.isUndefined(o)
-        || (core.introspection.isArray(o) && o.length === 0)
-        || (core.introspection.isObject(o) && (
+        || core.in.isUndefined(o)
+        || (core.in.isArray(o) && o.length === 0)
+        || (core.in.isObject(o) && (
             (typeof Object.keys === 'function'
                 && Object.keys(o).length === 0
                 && o.constructor === Object

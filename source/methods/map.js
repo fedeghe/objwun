@@ -1,10 +1,10 @@
 function map(o, func) {
     var res = [];
     func = func || function (obj){return obj;};
-    if (core.introspection.isObject(o)) {
+    if (core.in.isObject(o)) {
         return core.utils.objLoop(o, func)
     }
-    if (core.introspection.isArray(o)){
+    if (core.in.isArray(o)){
         return core.utils.arrayLoop(o, func)
     }
     return res;
