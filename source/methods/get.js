@@ -2,6 +2,7 @@ function get(obj, path, defaultValue) {
     if (
         isEmpty(obj) || isEmpty(path)
     ) return defaultValue || null
+    
     path = path.replace(
         /\[(\d+)\]/g,
         function (a, dec) {

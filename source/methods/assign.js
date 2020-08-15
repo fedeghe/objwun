@@ -10,7 +10,6 @@ function assign() {
             for(var j in args[i])
                 if (args[i].hasOwnProperty(j))
                     res[j] = args[i][j]
-            
         return res;
     }
     return res;
