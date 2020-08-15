@@ -1,6 +1,6 @@
 function map(o, func) {
     var res = [];
-    func = func || function (obj){res.push(obj)};
+    func = func || function (obj){return obj;};
     if (core.introspection.isObject(o)) {
         return core.utils.objLoop(o, func)
     }

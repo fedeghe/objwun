@@ -9,6 +9,9 @@ describe('map', function () {
     it('should still return an empty array', function () {
         assert.equal(JSON.stringify(ow.map([])), '[]');
     });
+    it('should still return the input array', function () {
+        assert.equal(JSON.stringify(ow.map([1,2,3])), '[1,2,3]');
+    });
 
     it('should return the content array', function () {
         assert.equal(JSON.stringify(ow.map({

@@ -11,7 +11,7 @@
         "malta-header-comment": "^1.0.5",
         "malta-js-uglify": "^1.0.11",
         "malta-mocha": "^1.0.17",
-        "malta-umd": "^1.0.9",
+        "malta-umd": "^1.0.10",
         "mocha": "^8.1.1",
         "mocha-lcov-reporter": "~1.3.0",
         "nyc": "^15.1.0"

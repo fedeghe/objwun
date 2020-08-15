@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.11% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>52/53</span>
+                <span class='fraction'>82/82</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.19% </span>
+                <span class="strong">96.83% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>44/57</span>
+                <span class='fraction'>61/63</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>19/20</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -64,28 +64,82 @@
 <a name='L5'></a><a href='#L5'>5</a>
 <a name='L6'></a><a href='#L6'>6</a>
 <a name='L7'></a><a href='#L7'>7</a>
-<a name='L8'></a><a href='#L8'>8</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span></td><td class="text"><pre class="prettyprint lang-js">/*
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span></td><td class="text"><pre class="prettyprint lang-js">/*
 objwun v. 0.0.0
 fedeghe &lt;fedeghe@gmail.com&gt;
 &nbsp;
 A library to deal efficiently with Object literals
-~2KB on 11/8/2020
+~2KB on 15/8/2020
 */
-!function(n){"object"==typeof exports&amp;&amp;"undefined"!=typeof module?module.exports=n():<span class="branch-1 cbranch-no" title="branch not covered" >"function"==typeof define&amp;&amp;define.amd?define([],n):("undefined"!=typeof window?root=window:"undefined"!=typeof global?root=global:"undefined"!=typeof self?root=self:root=this,root.objwun=n.call(root))}</span>(function(){function n(n){return[].slice.call(n,0)}function t(n){return function(t,r){var o={};r=r||[];for(var i in t)t.hasOwnProperty(i)&amp;&amp;n(r.indexOf(i))&amp;&amp;(o[i]=t[i]);return o}}function r(n,t){var r=[],o=0;for(var i in n)n.hasOwnProperty(i)&amp;&amp;(r[o++]=t(n[i],i));return r}function o(n,t){var r=[],o=0,i=n.length;for(null;o&lt;i;o++)r[o]=t(n[o],o);return r}function i(n){var t=String(n)!==n,r=n===Object(n),o="function"!=typeof n,i={}.toString.call(n).match(/\[object\sObject\]/);return t&amp;&amp;r&amp;&amp;o&amp;&amp;!(!i||!i.length)}function e(n){if(Array.isArray&amp;&amp;Array.isArray(n))return!0;var t=String(n)!==n,r={}.toString.call(n).match(/\[object\sArray\]/);return t&amp;&amp;!(!r||<span class="branch-1 cbranch-no" title="branch not covered" >!r.length)</span>}function u(n){return void 0===n}function c(){var n=l.utils.arguments2array(arguments).filter(function(n){return l.introspection.isObject(n)}),t={};return n.length?(n.forEach(function(n){t=Object.assign({},t,n)}),t):t}function f(n,t){n=n||0;var r=[],o=0;for(null;o&lt;n;o++)r[o]=t.call(null,o);return r}function a(n,t){var r=[];return t=t||<span class="fstat-no" title="function not covered" >fu</span>nction(n){<span class="cstat-no" title="statement not covered" >r.push(n)}</span>,l.introspection.isObject(n)?l.utils.objLoop(n,t):l.introspection.isArray(n)?l.utils.arrayLoop(n,t):r}function s(n){return""===n||null===n||l.introspection.isUndefined(n)||l.introspection.isArray(n)&amp;&amp;0===n.length||l.introspection.isObject(n)&amp;&amp;("function"==typeof Object.keys&amp;&amp;0===Object.keys(n).length&amp;&amp;n.constructor===Object||function(){for(var t in n)<span class="missing-if-branch" title="else path not taken" >E</span>if(n.hasOwnProperty(t))return!1}())}var l={};return l.utils={arguments2array:n,arrayLoop:o,objLoop:r,pick_omit:t},l.introspection={isArray:e,isUndefined:u,isObject:i},{assign:c,map:a,isEmpty:s,omit:l.utils.pick_omit(function(n){return n&lt;0}),pick:l.utils.pick_omit(function(n){return n&gt;=0}),times:f}});</pre></td></tr></table></pre>
+(function(fn) {
+    /* istanbul ignore next */
+	if (typeof exports === "object" &amp;&amp; typeof module !== "undefined") {
+		module.exports = fn();
+	} else if (typeof define === "function" &amp;&amp; define.amd) {
+		define([], fn);
+	} else {
+		if (typeof window !== "undefined") {
+			root = window;
+		} else if (typeof global !== "undefined") {
+			root = global;
+		} else if (typeof self !== "undefined") {
+			root = self;
+		} else {
+			root = this;
+		}
+		root.objwun = fn.call(root);
+	}
+})(function _(){function r(r){return[].slice.call(r,0)}function n(r){return function(n,t){var i={};t=t||[];for(var e in n)n.hasOwnProperty(e)&amp;&amp;r(t.indexOf(e))&amp;&amp;(i[e]=n[e]);return i}}function t(r,n){var t=[],i=0;for(var e in r)r.hasOwnProperty(e)&amp;&amp;(t[i++]=n(r[e],e));return t}function i(r,n){var t=[],i=0,e=r.length;for(null;i&lt;e;i++)t[i]=n(r[i],i);return t}function e(r){var n=String(r)!==r,t=r===Object(r),i="function"!=typeof r,e={}.toString.call(r).match(/\[object\sObject\]/);return n&amp;&amp;t&amp;&amp;i&amp;&amp;!(!e||!e.length)}function o(r){if(Array.isArray&amp;&amp;Array.isArray(r))return!0;var n=String(r)!==r,t={}.toString.call(r).match(/\[object\sArray\]/);return n&amp;&amp;!(!t||<span class="branch-1 cbranch-no" title="branch not covered" >!t.length)</span>}function u(r){return void 0===r}function c(){var r=y.utils.arguments2array(arguments).filter(y.introspection.isObject),n={};if(r.length){for(var t=0,i=r.length;t&lt;i;t++)for(var e in r[t])r[t].hasOwnProperty(e)&amp;&amp;(n[e]=r[t][e]);return n}return n}function a(r,n){r=r||0;var t=[],i=0;for(null;i&lt;r;i++)t[i]=n.call(null,i);return t}function f(r,n){var t=[];return n=n||function(r){return r},y.introspection.isObject(r)?y.utils.objLoop(r,n):y.introspection.isArray(r)?y.utils.arrayLoop(r,n):t}function s(r,n,t){var i=y.introspection.isObject(r),e=y.introspection.isArray(r),o=t||(i?{}:[]);if(i)for(var u in r)o=n(o,r[u],u,r);if(e)for(var c=0,a=r.length;c&lt;a;c++)o=n(o,r[c],c,r);return o}function l(r){return""===r||null===r||y.introspection.isUndefined(r)||y.introspection.isArray(r)&amp;&amp;0===r.length||y.introspection.isObject(r)&amp;&amp;("function"==typeof Object.keys&amp;&amp;0===Object.keys(r).length&amp;&amp;r.constructor===Object||function(){for(var n in r)<span class="missing-if-branch" title="else path not taken" >E</span>if(r.hasOwnProperty(n))return!1}())}function p(r,n,t){if(l(r)||l(n))return t||null;n=n.replace(/\[(\d+)\]/g,function(r,n){return"."+n});var i=n.split("."),e=r,o=0,u=i.length;for(null;o&lt;u;o++){if(!(i[o]in e))return t||null;e=e[i[o]]}return e}var y={};return y.utils={arguments2array:r,arrayLoop:i,objLoop:t,pick_omit:n},y.introspection={isArray:o,isUndefined:u,isObject:e},{assign:c,get:p,isEmpty:l,map:f,omit:y.utils.pick_omit(function(r){return r&lt;0}),pick:y.utils.pick_omit(function(r){return r&gt;=0}),reduce:s,times:a}});</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 11 2020 22:23:52 GMT+0200 (Central European Summer Time)
+                at Sat Aug 15 2020 21:56:33 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="prettify.js"></script>
