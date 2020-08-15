@@ -1,6 +1,6 @@
 ### OBJWUN
 
-<a href='https://coveralls.io/github/fedeghe/objwun?branch=master'><img src='https://coveralls.io/repos/github/fedeghe/objwun/badge.svg?branch=master' alt='Coverage Status' /></a>
+[![Coverage Status](https://coveralls.io/repos/github/fedeghe/objwun/badge.svg?branch=master)](https://coveralls.io/github/fedeghe/objwun?branch=master)
 
 
 Docs might come one day 
