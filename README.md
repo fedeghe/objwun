@@ -4,4 +4,6 @@
 
 Docs might come one day 
 
+assign - get - isEmpty - map - omit - pick - reduce - times
+
 ༺ ᚗᚌ ༻
