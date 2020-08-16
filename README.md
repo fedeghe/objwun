@@ -9,7 +9,7 @@
 
 Docs might come one day  
 
-**assign** ~ **get** ~**forEach** ~ **isEmpty** ~ **map**  ~ **omit**  ~ **pick**  ~ **reduce**  ~ **times**
+**assign** ~ **get** ~ **forEach** ~ **includes** ~ **isEmpty** ~ **map**  ~ **omit**  ~ **pick**  ~ **reduce**  ~ **times**
 <!--
 <details>
     <summary>assign</summary>
