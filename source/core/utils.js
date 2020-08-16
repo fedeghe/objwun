@@ -36,7 +36,7 @@ function arrayLoop(o, fn) {
     return res;
 }
 
-core.utils = {
+core.ut = {
     arguments2array: arguments2array,
     arrayLoop: arrayLoop,
     objLoop: objLoop,

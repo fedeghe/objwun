@@ -2,7 +2,7 @@ function get(obj, path, defaultValue) {
     if (
         isEmpty(obj) || isEmpty(path)
     ) return defaultValue || null
-    
+
     path = path.replace(
         /\[(\d+)\]/g,
         function (a, dec) {
@@ -21,5 +21,6 @@ function get(obj, path, defaultValue) {
         if (!there) return defaultValue || null
         res = res[els[i]]
     }
+
     return res
 }
