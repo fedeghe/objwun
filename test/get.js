@@ -92,7 +92,8 @@ describe('get', function () {
             assert.strictEqual(e instanceof Error, true);
             assert.strictEqual(e.message, "Invalid argument, object or array expected");
         }
-    });    
+    });
+    
     it('should throw an error for the missing argument', function () {
         try {
             ow.get({})
