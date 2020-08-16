@@ -1,6 +1,6 @@
 function reduce(o, func, initial) {
-    var isObj = core.in.isObject(o),
-        isArr = core.in.isArray(o),
+    var isObj = core.in.isObj(o),
+        isArr = core.in.isArr(o),
         res = initial || (isObj ? {} : []);
 
     if (isObj)

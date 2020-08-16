@@ -1,4 +1,6 @@
 function get(obj, path, defaultValue) {
+    if (!core.in.isObj(obj) && !core.in.isArr(obj)) throw new Error(core.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED)
+    if (typeof path === 'undefined') throw new Error(core.errors.MISSING_EXPECTED_ARGUMENT)
     if (
         isEmpty(obj) || isEmpty(path)
     ) return defaultValue || null

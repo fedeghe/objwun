@@ -2,8 +2,8 @@ function isEmpty(o) {
     return o === ''
         || o === null
         || core.in.isUndefined(o)
-        || (core.in.isArray(o) && o.length === 0)
-        || (core.in.isObject(o) && (
+        || (core.in.isArr(o) && o.length === 0)
+        || (core.in.isObj(o) && (
             (typeof Object.keys === 'function'
                 && Object.keys(o).length === 0
                 && o.constructor === Object

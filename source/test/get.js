@@ -84,4 +84,21 @@ describe('get', function () {
             res = ow.get(o, '12.a')
         assert.equal(JSON.stringify(res), 1234567);
     });
+
+    it('should throw an error for the bad argument', function () {
+        try {
+            ow.get(false, 1)
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Invalid argument, object or array expected");
+        }
+    });    
+    it('should throw an error for the missing argument', function () {
+        try {
+            ow.get({})
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Missing expected argument");
+        }
+    });   
 });

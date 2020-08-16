@@ -7,14 +7,17 @@ describe('reduce', function () {
             c: 3, d: 4
         },
         a = [1, 2, 3, 4];
+
     it('should return an empty array', function () {
         assert.equal(JSON.stringify(ow.reduce()), '[]');
         assert.equal(JSON.stringify(ow.reduce(null)), '[]');
         assert.equal(JSON.stringify(ow.reduce([])), '[]');
     });
+
     it('should return an empty object', function () {
         assert.equal(JSON.stringify(ow.reduce({})), '{}');
     });
+
     it('should behave like a filter on object', function () {
         var even = ow.reduce(o,
                 (acc, el, k) => {
@@ -31,6 +34,7 @@ describe('reduce', function () {
         assert.equal(JSON.stringify(even), JSON.stringify({b:2, d: 4}));
         assert.equal(JSON.stringify(odd), JSON.stringify({a:1, c: 3}));
     });
+
     it('should behave like a filter on array', function () {
         var even = ow.reduce(a,
                 (acc, el, k) => {
@@ -47,6 +51,7 @@ describe('reduce', function () {
         // assert.equal(JSON.stringify(even), JSON.stringify([2, 4]));
         assert.equal(JSON.stringify(odd), JSON.stringify([1, 3]));
     });
+    
     it('should allow to build a composing function', function () {
         var mult3 = a => a * 3,
             pow2 = a => Math.pow(a, 2),
