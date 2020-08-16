@@ -1,5 +1,5 @@
 /*
-objwun v. 0.0.1
+objwun v. 0.0.2
 fedeghe <fedeghe@gmail.com>
 
 A library to deal efficiently with Object literals
