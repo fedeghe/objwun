@@ -15,6 +15,10 @@ function isArr(o) {
     return t1 && !!(t2 && t2.length);
 }
 
+function isObjOrArr(o) {
+    return isArr(o) || isObj(o)
+}
+
 function isUndefined(o) {
     return typeof o === 'undefined'
 }
@@ -23,4 +27,5 @@ core.in = {
     isArr: isArr,
     isUndefined: isUndefined,
     isObj: isObj,
+    isObjOrArr: isObjOrArr
 };

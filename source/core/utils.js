@@ -16,11 +16,10 @@ function pick_omit(func) {
 }
 
 function objLoop(o, fn) {
-    var res = [],
-        j = 0;
+    var res = {};
     for (var i in o) {
         if (o.hasOwnProperty(i)) {
-            res[j++] = fn(o[i], i)
+            res[i] = fn(o[i], i)
         }
     }
     return res;

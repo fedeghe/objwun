@@ -2,6 +2,7 @@ function _(){
     maltaF('core/index.js');
 
     maltaF('methods/assign.js');
+    maltaF('methods/forEach.js');
     maltaF('methods/get.js');
     maltaF('methods/isEmpty.js');
     maltaF('methods/includes.js');
@@ -13,6 +14,7 @@ function _(){
     
     return {
         assign: assign,
+        forEach: forEach,
         get: get,
         isEmpty: isEmpty,
         includes: includes,
