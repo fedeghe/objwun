@@ -4,7 +4,38 @@
 
 
 Docs might come one day 
-
-**assign** - **get** - **isEmpty** - **map** - **omit** - **pick** - **reduce** - **times**
-
+<!--
+<details>
+    <summary>assign</summary>
+    assign details
+</details>
+<details>
+    <summary>get</summary>
+    get details
+</details>
+<details>
+    <summary>isEmpty</summary>
+    isEmpty details
+</details>
+<details>
+    <summary>map</summary>
+    map details
+</details>
+<details>
+    <summary>omit</summary>
+    omit details
+</details>
+<details>
+    <summary>pick</summary>
+    pick details
+</details>
+<details>
+    <summary>reduce</summary>
+    reduce details
+</details>
+<details>
+    <summary>times</summary>
+    times details
+</details>
+-->
 ༺ ᚗᚌ ༻
