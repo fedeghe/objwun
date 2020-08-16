@@ -1,5 +1,6 @@
 node_modules
 .printVersion
+.coveralls.yml
 .nyc_output
 .nyc_output/processinfo
 .nyc_output/processinfo/*
