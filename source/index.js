@@ -11,6 +11,7 @@ function _(){
     maltaF('methods/pick.js');
     maltaF('methods/reduce.js');
     maltaF('methods/times.js');
+    maltaF('methods/uniq.js');
     
     return {
         assign: assign,
@@ -22,6 +23,7 @@ function _(){
         omit: omit,
         pick: pick,
         reduce: reduce,
-        times: times
+        times: times,
+        uniq: uniq,
     }
 }
