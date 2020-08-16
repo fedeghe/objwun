@@ -5,7 +5,7 @@ function map(o, func) {
         return core.ut.objLoop(o, func)
     }
     if (core.in.isArray(o)){
-        return core.ut.arrayLoop(o, func)
+        return core.ut.arrLoop(o, func)
     }
     return res;
 }

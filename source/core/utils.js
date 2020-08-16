@@ -1,6 +1,6 @@
 
 
-function arguments2array(a) {
+function args2arr(a) {
     return [].slice.call(a, 0);
 }
 
@@ -26,7 +26,7 @@ function objLoop(o, fn) {
     return res;
 }
 
-function arrayLoop(o, fn) {
+function arrLoop(o, fn) {
     var res = [],
         i = 0,
         l = o.length;
@@ -37,8 +37,8 @@ function arrayLoop(o, fn) {
 }
 
 core.ut = {
-    arguments2array: arguments2array,
-    arrayLoop: arrayLoop,
+    args2arr: args2arr,
+    arrLoop: arrLoop,
     objLoop: objLoop,
     pick_omit: pick_omit,
 };
