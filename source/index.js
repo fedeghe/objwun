@@ -4,8 +4,9 @@ function _(){
     maltaF('methods/assign.js');
     maltaF('methods/forEach.js');
     maltaF('methods/get.js');
-    maltaF('methods/isEmpty.js');
+    maltaF('methods/id.js');
     maltaF('methods/includes.js');
+    maltaF('methods/isEmpty.js');
     maltaF('methods/map.js');
     maltaF('methods/omit.js');
     maltaF('methods/pick.js');
@@ -17,8 +18,9 @@ function _(){
         assign: assign,
         forEach: forEach,
         get: get,
-        isEmpty: isEmpty,
+        id: id,
         includes: includes,
+        isEmpty: isEmpty,
         map: map,
         omit: omit,
         pick: pick,

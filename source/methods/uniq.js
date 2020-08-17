@@ -1,9 +1,13 @@
-const uniq = new function () {
-    var count = 0,
-        self = this;
-    this.prefix = 'uniq_';
-    this.toString = function () {
-        count += 1;
-        return self.prefix + count;
-    };
+function uniq(a) {
+    var tmp = {},
+        i = 0,
+        l = a.length,
+        res = [];
+    for (null; i < l; i++) {
+        tmp[a[i]] = a[i]
+    }
+    for (var j in tmp) {
+        res.push(tmp[j])
+    }
+    return res;
 }
