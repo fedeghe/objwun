@@ -1,7 +1,7 @@
 {
     "name": "objwun",
-    "version": "0.0.4",
-    "main": "index.js",
+    "version": "0.0.5",
+    "main": "dist/index.js",
     "author": "fedeghe <fedeghe@gmail.com>",
     "license": "MIT",
     "description": "A library to deal efficiently with Object literals",
