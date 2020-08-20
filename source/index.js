@@ -8,6 +8,7 @@ function _(){
     maltaF('methods/id.js');
     maltaF('methods/includes.js');
     maltaF('methods/isEmpty.js');
+    maltaF('methods/keyBy.js');
     maltaF('methods/map.js');
     maltaF('methods/omit.js');
     maltaF('methods/pick.js');
@@ -25,6 +26,7 @@ function _(){
         id: id,
         includes: includes,
         isEmpty: isEmpty,
+        keyBy: keyBy,
         map: map,
         omit: omit,
         pick: pick,

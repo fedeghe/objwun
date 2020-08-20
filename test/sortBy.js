@@ -107,4 +107,95 @@ describe('sortBy', function () {
             }])
         );
     });
+
+    it('should return expected by `name` key asc using string', function () {
+        assert.equal(
+            JSON.stringify(
+                ow.sortBy(
+                    unsorted,
+                    'name'
+                )
+            ),
+            JSON.stringify([{
+                name: 'a',
+                num: 10
+            },{
+                name: 'c',
+                num: 6
+            },{
+                name: 'd',
+                num: 1
+            },{
+                name: 's',
+                num: 4
+            }])
+        );
+    });
+
+    it('should return expected by `name` key desc using string', function () {
+        assert.equal(
+            JSON.stringify(ow.sortBy(
+                unsorted,
+                'name',
+                -1
+            )),
+            JSON.stringify([{
+                name: 's',
+                num: 4
+            },{
+                name: 'd',
+                num: 1
+            },{
+                name: 'c',
+                num: 6
+            },{
+                name: 'a',
+                num: 10
+            }])
+        );
+    });
+
+    it('should return expected by `num` key asc using string', function () {
+        assert.equal(
+            JSON.stringify(ow.sortBy(
+                unsorted,
+                'num'
+            )),
+            JSON.stringify([{
+                name: 'd',
+                num: 1
+            },{
+                name: 's',
+                num: 4
+            },{
+                name: 'c',
+                num: 6
+            },{
+                name: 'a',
+                num: 10
+            }])
+        );
+    });
+
+    it('should return expected by `num` key, desc using string', function () {
+        assert.equal(
+            JSON.stringify(ow.sortBy(unsorted,
+                'num',
+                -1
+            )),
+            JSON.stringify([{
+                name: 'a',
+                num: 10
+            },{
+                name: 'c',
+                num: 6
+            },{
+                name: 's',
+                num: 4
+            },{
+                name: 'd',
+                num: 1
+            }])
+        );
+    });
 });

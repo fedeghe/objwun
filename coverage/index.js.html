@@ -25,21 +25,21 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>127/127</span>
+                <span class='fraction'>139/139</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.85% </span>
+                <span class="strong">98.06% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>91/93</span>
+                <span class='fraction'>101/103</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>34/34</span>
             </div>
         
             
@@ -108,11 +108,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">64x</span></td><td class="text"><pre class="prettyprint lang-js">/*
-objwun v. 0.0.3
+objwun v. 0.0.5
 fedeghe &lt;fedeghe@gmail.com&gt;
 &nbsp;
 A library to deal efficiently with Object literals
-~3KB on 17/8/2020
+~4KB on 20/8/2020
 */
 (function(fn) {
     /* istanbul ignore next */
@@ -132,14 +132,14 @@ A library to deal efficiently with Object literals
 		}
 		root.objwun = fn.call(root);
 	}
-})(function _(){function r(r){return[].slice.call(r,0)}function n(r){return function(n,t){var i={};t=t||[];for(var e in n)n.hasOwnProperty(e)&amp;&amp;r(t.indexOf(e))&amp;&amp;(i[e]=n[e]);return i}}function t(r,n){var t={};for(var i in r)r.hasOwnProperty(i)&amp;&amp;(t[i]=n(r[i],i));return t}function i(r,n){var t=[],i=0,e=r.length;for(null;i&lt;e;i++)t[i]=n(r[i],i);return t}function e(r){var n=String(r)!==r,t=r===Object(r),i="function"!=typeof r,e={}.toString.call(r).match(/\[object\sObject\]/);return n&amp;&amp;t&amp;&amp;i&amp;&amp;!(!e||!e.length)}function o(r){if(Array.isArray&amp;&amp;Array.isArray(r))return!0;var n=String(r)!==r,t={}.toString.call(r).match(/\[object\sArray\]/);return n&amp;&amp;!(!t||<span class="branch-1 cbranch-no" title="branch not covered" >!t.length)</span>}function u(r){return o(r)||e(r)}function f(r){return void 0===r}function c(){var r=p.ut.args2arr(arguments).filter(p.in.isObj),n={};if(r.length){for(var t,i=0,e=r.length;i&lt;e;i++)for(t in r[i])r[i].hasOwnProperty(t)&amp;&amp;(n[t]=r[i][t]);return n}return n}function a(r,n){for(var t=[],i=0,e=r.length;i&lt;e;i++)n(r[i],i)&amp;&amp;t.push(r[i]);return t}function s(r,n){if(!p.in.isObjOrArr(r))throw new Error(p.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);n=n||function(r,n){return r};var t;return p.in.isObj(r)&amp;&amp;(t=p.ut.objLoop(r,n)),p.in.isArr(r)&amp;&amp;(t=p.ut.arrLoop(r,n)),t}function E(r,n,t){if(!p.in.isObj(r)&amp;&amp;!p.in.isArr(r))throw new Error(p.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);if(void 0===n)throw new Error(p.errors.MISSING_EXPECTED_ARGUMENT);if(A(r)||A(n))return t||null;n=n.replace(/\[(\d+)\]/g,function(r,n){return"."+n});var i=n.split("."),e=r,o=0,u=i.length;for(null;o&lt;u;o++){if(!(i[o]in e))return t||null;e=e[i[o]]}return e}function l(r,n){if(!p.in.isArr(r))throw new Error(p.errors.INVALID_ARGUMENT_ARRAY_EXPECTED);if(void 0===n)throw new Error(p.errors.MISSING_EXPECTED_ARGUMENT);for(var t=0,i=r.length;t&lt;i;t++)if(r[t]===n)return!0;return!1}function A(r){return""===r||null===r||p.in.isUndefined(r)||p.in.isArr(r)&amp;&amp;0===r.length||p.in.isObj(r)&amp;&amp;("function"==typeof Object.keys&amp;&amp;0===Object.keys(r).length&amp;&amp;r.constructor===Object||function(){for(var n in r)<span class="missing-if-branch" title="else path not taken" >E</span>if(r.hasOwnProperty(n))return!1}())}function _(r,n){if(!p.in.isObjOrArr(r))throw new Error(p.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);return n=n||function(r){return r},p.in.isObj(r)?p.ut.objLoop(r,n):p.ut.arrLoop(r,n)}function O(r,n,t){var i=p.in.isObj(r),e=p.in.isArr(r),o=t||(i?{}:[]);if(i)for(var u in r)o=n(o,r[u],u,r);if(e)for(var f=0,c=r.length;f&lt;c;f++)o=n(o,r[f],f,r);return o}function h(r,n){for(var t=!1,i=0,e=r.length;i&lt;e&amp;&amp;!t;i++)n(r[i],i)&amp;&amp;(t=!0);return t}function v(r,n,t){r=r||0,t=t||null;var i=[],e=0;for(null;e&lt;r;e++)i[e]=n.call(t,e);return i}function g(r){var n={},t=0,i=r.length,e=[];for(null;t&lt;i;t++)n[r[t]]=r[t];for(var o in n)e.push(n[o]);return e}var p={};return p.errors={INVALID_ARGUMENT_ARRAY_EXPECTED:"Invalid argument, array expected",INVALID_ARGUMENT_OBJECT_EXPECTED:"Invalid argument, object expected",INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED:"Invalid argument, object or array expected",MISSING_EXPECTED_ARGUMENT:"Missing expected argument"},p.ut={args2arr:r,arrLoop:i,objLoop:t,pick_omit:n},p.in={isArr:o,isUndefined:f,isObj:e,isObjOrArr:u},{assign:c,filter:a,forEach:s,get:E,id:new function(){var r=0,n=this;this.prefix="id_",this.toString=function(){return r+=1,n.prefix+r}},includes:l,isEmpty:A,map:_,omit:p.ut.pick_omit(function(r){return r&lt;0}),pick:p.ut.pick_omit(function(r){return r&gt;=0}),reduce:O,some:h,times:v,uniq:g}});</pre></td></tr></table></pre>
+})(function _(){function r(r){return[].slice.call(r,0)}function n(r){return function(n,t){var i={};t=t||[];for(var e in n)n.hasOwnProperty(e)&amp;&amp;r(t.indexOf(e))&amp;&amp;(i[e]=n[e]);return i}}function t(r,n){var t={};for(var i in r)r.hasOwnProperty(i)&amp;&amp;(t[i]=n(r[i],i));return t}function i(r,n){var t=[],i=0,e=r.length;for(null;i&lt;e;i++)t[i]=n(r[i],i);return t}function e(r){var n=String(r)!==r,t=r===Object(r),i="function"!=typeof r,e={}.toString.call(r).match(/\[object\sObject\]/);return n&amp;&amp;t&amp;&amp;i&amp;&amp;!(!e||!e.length)}function o(r){if(Array.isArray&amp;&amp;Array.isArray(r))return!0;var n=String(r)!==r,t={}.toString.call(r).match(/\[object\sArray\]/);return n&amp;&amp;!(!t||<span class="branch-1 cbranch-no" title="branch not covered" >!t.length)</span>}function u(r){return o(r)||e(r)}function f(r){return void 0===r}function c(){var r=T.ut.args2arr(arguments).filter(T.in.isObj),n={};if(r.length){for(var t,i=0,e=r.length;i&lt;e;i++)for(t in r[i])r[i].hasOwnProperty(t)&amp;&amp;(n[t]=r[i][t]);return n}return n}function a(r,n){for(var t=[],i=0,e=r.length;i&lt;e;i++)n(r[i],i)&amp;&amp;t.push(r[i]);return t}function s(r,n){if(!T.in.isObjOrArr(r))throw new Error(T.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);n=n||function(r,n){return r};var t;return T.in.isObj(r)&amp;&amp;(t=T.ut.objLoop(r,n)),T.in.isArr(r)&amp;&amp;(t=T.ut.arrLoop(r,n)),t}function E(r,n,t){if(!T.in.isObj(r)&amp;&amp;!T.in.isArr(r))throw new Error(T.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);if(void 0===n)throw new Error(T.errors.MISSING_EXPECTED_ARGUMENT);if(A(r)||A(n))return t||null;n=n.replace(/\[(\d+)\]/g,function(r,n){return"."+n});var i=n.split("."),e=r,o=0,u=i.length;for(null;o&lt;u;o++){if(!(i[o]in e))return t||null;e=e[i[o]]}return e}function l(r,n){if(!T.in.isArr(r))throw new Error(T.errors.INVALID_ARGUMENT_ARRAY_EXPECTED);if(void 0===n)throw new Error(T.errors.MISSING_EXPECTED_ARGUMENT);for(var t=0,i=r.length;t&lt;i;t++)if(r[t]===n)return!0;return!1}function A(r){return""===r||null===r||T.in.isUndefined(r)||T.in.isArr(r)&amp;&amp;0===r.length||T.in.isObj(r)&amp;&amp;("function"==typeof Object.keys&amp;&amp;0===Object.keys(r).length&amp;&amp;r.constructor===Object||function(){for(var n in r)<span class="missing-if-branch" title="else path not taken" >E</span>if(r.hasOwnProperty(n))return!1}())}function _(r,n){var t={},i=0,e=r.length;if("function"==typeof n)for(;i&lt;e;i++)t[n(r[i])]=r[i];else for(;i&lt;e;i++)t[r[i][n]]=r[i];return t}function h(r,n){if(!T.in.isObjOrArr(r))throw new Error(T.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);return n=n||function(r){return r},T.in.isObj(r)?T.ut.objLoop(r,n):T.ut.arrLoop(r,n)}function O(r,n,t){var i=T.in.isObj(r),e=T.in.isArr(r),o=t||(i?{}:[]);if(i)for(var u in r)o=n(o,r[u],u,r);if(e)for(var f=0,c=r.length;f&lt;c;f++)o=n(o,r[f],f,r);return o}function p(r,n){for(var t=!1,i=0,e=r.length;i&lt;e&amp;&amp;!t;i++)n(r[i],i)&amp;&amp;(t=!0);return t}function v(r,n,t){return t=t||1,"function"==typeof n?r.sort(function(r,i){return n(r)&lt;n(i)?-t:t}):r.sort(function(r,i){return r[n]&lt;i[n]?-t:t})}function g(r,n,t){r=r||0,t=t||null;var i=[],e=0;for(null;e&lt;r;e++)i[e]=n.call(t,e);return i}function R(r){var n={},t=0,i=r.length,e=[];for(null;t&lt;i;t++)n[r[t]]=r[t];for(var o in n)e.push(n[o]);return e}var T={};return T.errors={INVALID_ARGUMENT_ARRAY_EXPECTED:"Invalid argument, array expected",INVALID_ARGUMENT_OBJECT_EXPECTED:"Invalid argument, object expected",INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED:"Invalid argument, object or array expected",MISSING_EXPECTED_ARGUMENT:"Missing expected argument"},T.ut={args2arr:r,arrLoop:i,objLoop:t,pick_omit:n},T.in={isArr:o,isUndefined:f,isObj:e,isObjOrArr:u},{assign:c,filter:a,forEach:s,get:E,id:new function(){var r=0,n=this;this.prefix="id_",this.toString=function(){return r+=1,n.prefix+r}},includes:l,isEmpty:A,keyBy:_,map:h,omit:T.ut.pick_omit(function(r){return r&lt;0}),pick:T.ut.pick_omit(function(r){return r&gt;=0}),reduce:O,some:p,sortBy:v,times:g,uniq:R}});</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Aug 17 2020 08:29:17 GMT+0200 (Central European Summer Time)
+                at Thu Aug 20 2020 23:23:45 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="prettify.js"></script>
