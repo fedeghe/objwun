@@ -13,6 +13,7 @@ function _(){
     maltaF('methods/pick.js');
     maltaF('methods/reduce.js');
     maltaF('methods/some.js');
+    maltaF('methods/sortBy.js');
     maltaF('methods/times.js');
     maltaF('methods/uniq.js');
     
@@ -29,6 +30,7 @@ function _(){
         pick: pick,
         reduce: reduce,
         some: some,
+        sortBy: sortBy,
         times: times,
         uniq: uniq,
     }
