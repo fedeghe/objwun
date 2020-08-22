@@ -1,5 +1,6 @@
 function isEmpty(o) {
     core.mustBe.defined(o)
+    
     return o === ''
         || o === null
         || (core.in.isArr(o) && o.length === 0)
@@ -8,10 +9,16 @@ function isEmpty(o) {
                 && Object.keys(o).length === 0
                 && o.constructor === Object
             )
-            || ((function(){
+            ||
+            ((function(){
+                var ret = true
                 for (var i in o) {
-                    if (o.hasOwnProperty(i)) return false
+                    if (o.hasOwnProperty(i)) {
+                        ret = false
+                        break
+                    }
                 }
+                return ret
             })())
         ))
 
