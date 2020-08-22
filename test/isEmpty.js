@@ -23,6 +23,19 @@ describe('isEmpty', function () {
     it('should return false on function', function () {
         assert.equal(ow.isEmpty(function() {}), false);
     });
+    it('should avoid upper prototype properties', function () {
+        function Person(n) {}
+        var me = new Person('Federico')
+
+        Person.prototype.type = 'human';
+        assert.equal(ow.isEmpty(me), true);
+    });
+    it('should avoid upper prototype (counterproof) properties', function () {
+        function Person(n) {this.name = n}
+        var me = new Person('Federico')
+
+        assert.equal(ow.isEmpty(me), false);
+    });
     it('should throw an error for the missing argument', function () {
         try {
             ow.isEmpty()

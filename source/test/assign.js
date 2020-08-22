@@ -43,4 +43,18 @@ describe('assign', function () {
             JSON.stringify({a: 0, b: 3, s:5})
         );
     });
+    it('should avoid upper properties', function () {
+        function Person() {}
+        var me = new Person()
+        Person.prototype.type = 'human';
+
+        assert.equal(JSON.stringify(ow.assign(me, {})), JSON.stringify({}));
+    });
+    it('should avoid upper prototype (counterproof) properties', function () {
+        function Person(n) {this.name = n}
+        var me = new Person('Federico')
+        Person.prototype.type = 'human';
+
+        assert.equal(JSON.stringify(ow.assign(me, {})), JSON.stringify({name: 'Federico'}));
+    });
 });

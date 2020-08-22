@@ -8,8 +8,11 @@ function assign() {
         for (var i = 0, l = args.length, j; i < l; i++){
             core.mustBe.obj(args[i])
             for(j in args[i])
-                if (args[i].hasOwnProperty(j))
+                if (args[i].hasOwnProperty(j)) {
                     res[j] = args[i][j]
+                } else {
+                    continue
+                }
         }
         return res;
     }
