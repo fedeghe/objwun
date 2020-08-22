@@ -2,9 +2,7 @@ var assert = require('assert'),
     ow = require('../dist');
 
 describe('times', function () {
-    it('should return an empty array', function () {
-        assert.equal(JSON.stringify(ow.times()), '[]');
-    });
+
     
     it('should return a non empty array', function () {
         function rand() {
@@ -31,5 +29,23 @@ describe('times', function () {
             }, o),
             stringed = JSON.stringify(res);
         assert.equal(stringed, JSON.stringify([0, 8, 16]));
+    });
+
+    it('should throw an error for the non number argument', function () {
+        try {
+            ow.times([])
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Invalid argument, integer expected");
+        }
+    });
+
+    it('should throw an error for the non function argument', function () {
+        try {
+            ow.times(3, 4)
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Invalid argument, function expected");
+        }
     });
 });

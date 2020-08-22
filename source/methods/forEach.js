@@ -1,5 +1,5 @@
-function forEach(o, func) {
-    if (!core.in.isObjOrArr(o)) throw new Error(core.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED)
+function forEach(o, func) {    
+    core.mustBe.objOrArr(o)
     func = func || function (e, i) {
         return e
     }

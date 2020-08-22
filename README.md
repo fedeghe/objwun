@@ -9,6 +9,6 @@
 
 Docs might come one day  
 
-**assign** ~ **get** ~ **filter** ~ **forEach** ~ **id** ~ **includes** ~ **isEmpty** ~ **keyBy** ~ **map**  ~ **omit**  ~ **pick**  ~ **reduce** ~ **some** ~ **sortBy** ~ **times** ~ **uniq**
+**assign** ~ **filter** ~ **forEach** ~ **get** ~ **id** ~ **includes** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **omit**  ~ **pick**  ~ **reduce** ~ **some** ~ **sortBy** ~ **times** ~ **uniq**
 
 ༺ ᚗᚌ ༻

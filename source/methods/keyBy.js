@@ -1,14 +1,17 @@
-function keyBy(ar, kf) {
+function keyBy(o, kf) {
+    core.mustBe.arr(o);
+    core.mustBe.funcOrStr(kf);
+
     var res = {},
         i = 0,
-        l = ar.length;
+        l = o.length;
     if (typeof kf === 'function') {
         for (; i < l; i++) {
-            res[kf(ar[i])] = ar[i]
+            res[kf(o[i])] = o[i]
         }
     } else {
         for (; i < l; i++) {
-            res[ar[i][kf]] = ar[i]
+            res[o[i][kf]] = o[i]
         }
     }
     return res;

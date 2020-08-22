@@ -8,16 +8,6 @@ describe('reduce', function () {
         },
         a = [1, 2, 3, 4];
 
-    it('should return an empty array', function () {
-        assert.equal(JSON.stringify(ow.reduce()), '[]');
-        assert.equal(JSON.stringify(ow.reduce(null)), '[]');
-        assert.equal(JSON.stringify(ow.reduce([])), '[]');
-    });
-
-    it('should return an empty object', function () {
-        assert.equal(JSON.stringify(ow.reduce({})), '{}');
-    });
-
     it('should behave like a filter on object', function () {
         var even = ow.reduce(o,
                 (acc, el, k) => {
@@ -48,7 +38,7 @@ describe('reduce', function () {
                     return acc
                 }
             );
-        // assert.equal(JSON.stringify(even), JSON.stringify([2, 4]));
+        assert.equal(JSON.stringify(even), JSON.stringify([2, 4]));
         assert.equal(JSON.stringify(odd), JSON.stringify([1, 3]));
     });
     
@@ -62,5 +52,21 @@ describe('reduce', function () {
                 a => a
             );
         assert.equal(composed(2), 18);
+    });
+    it('should throw an error for the non object or array argument', function () {
+        try {
+            ow.reduce(3, 1)
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Invalid argument, object or array expected");
+        }
+    });
+    it('should throw an error for the non function argument', function () {
+        try {
+            ow.reduce({}, 1)
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Invalid argument, function expected");
+        }
     });
 });

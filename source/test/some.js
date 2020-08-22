@@ -18,4 +18,22 @@ describe('some', function () {
             return e.name.match(/^F*/)
         }), true);
     });
+
+    it('should throw an error for the non array argument', function () {
+        try {
+            ow.some({}, 1)
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Invalid argument, array expected");
+        }
+    });
+
+    it('should throw an error for the non function argument', function () {
+        try {
+            ow.some([], 1)
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Invalid argument, function expected");
+        }
+    });
 });

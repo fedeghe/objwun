@@ -1,10 +1,12 @@
-function sortBy(ar, kf, vrs) {
+function sortBy(o, kf, vrs) {
+    core.mustBe.arr(o)
+    core.mustBe.funcOrStr(kf)
     vrs = vrs || 1
     return (typeof kf === 'function') 
-        ? ar.sort(function (a, b) {
+        ? o.sort(function (a, b) {
             return kf(a) < kf(b) ? -vrs : vrs
         })
-        : ar.sort(function (a, b) {
+        : o.sort(function (a, b) {
             return a[kf] < b[kf] ? -vrs : vrs
         })
 }

@@ -99,4 +99,20 @@ describe('keyBy', function () {
             })
         );
     });
+    it('should throw an error for the non array argument', function () {
+        try {
+            ow.keyBy({}, 1)
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Invalid argument, array expected");
+        }
+    });
+    it('should throw an error for the non key or function argument', function () {
+        try {
+            ow.keyBy([], true)
+        } catch (e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, "Invalid argument, string or function expected");
+        }
+    });
 });

@@ -4,7 +4,7 @@ var assert = require('assert'),
 describe('pick', function () {
     it('should return an empty obj', function () {
         var o = { a: 1, b: 2, c: 3 },
-            res = ow.pick(o)
+            res = ow.pick(o, [])
         assert.equal(JSON.stringify(res), JSON.stringify({}));
     });
     it('should return it without some', function () {
