@@ -1242,15 +1242,15 @@ make-dir@^3.0.0, make-dir@^3.0.2:
   dependencies:
     semver "^6.0.0"
 
-malta-header-comment@^1.0.5:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/malta-header-comment/-/malta-header-comment-1.0.9.tgz#62776dc3619a70fa724bc1d4e41b7b394191199a"
-  integrity sha512-pszjjzlIc28X6FfgyGrj6J5gLhDQwilnE4wyy5D6MSgdeq7/ymkpE+zmEJVbxXBGMln3C8YJkR/D8iU8OueKlA==
+malta-header-comment@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/malta-header-comment/-/malta-header-comment-1.0.10.tgz#05de5cc9a4461cd246f398c71d7802621c3c7c4c"
+  integrity sha512-emrfCi0fbVgAuvqSzWsulcNUH6S2QD4tRPE+XyjNaTXwu583+usfbnncT3B2sPGw+Op78hnhTh/FzMOMAk3naQ==
 
-malta-js-uglify@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/malta-js-uglify/-/malta-js-uglify-1.0.11.tgz#fe940c1de1d30753be7a9f8d66e00aa269b6817e"
-  integrity sha512-XnQyrO6e8wYAYH4Qpejcs7XmEULaVTJ02wMlPNPQlfrsI0j59OIeN+lhJZKnguvJYINYvs/iM0V/r5ROjSP1jg==
+malta-js-uglify@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/malta-js-uglify/-/malta-js-uglify-1.0.13.tgz#757a6201646437946dc50f2ef17b4c84cd82a071"
+  integrity sha512-bu6D0YgO8O2uUEBCehwdwOcAVY+yXfFk24fDBeFam+Ee8nx5RUw6iXQfSArybkZaj7jEhGLhP2FN6IksClvAZA==
   dependencies:
     uglify-js "2.8.29"
 

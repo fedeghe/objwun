@@ -1,9 +1,10 @@
+'use strict';
 /*
-objwun v. 0.0.8
+objwun v. 0.0.9
 fedeghe <fedeghe@gmail.com>
 
 A library to deal efficiently with Object literals
-~5KB on 22/8/2020
+~5KB on 23/8/2020
 */
 (function(fn) {
     /* istanbul ignore next */

@@ -5,7 +5,7 @@
 [![Build](https://travis-ci.org/fedeghe/objwun.svg?branch=master)](https://travis-ci.org/github/fedeghe/objwun?branch=master)
 
 
-
+**OBJWUN - Isomorphic ES3 tool**
 
 Docs might come one day  
 
