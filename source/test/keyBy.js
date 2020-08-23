@@ -115,4 +115,19 @@ describe('keyBy', function () {
             assert.strictEqual(e.message, "Invalid argument, string or function expected");
         }
     });
+    it('∂ should be a pure function', function () {
+        assert.equal(JSON.stringify(original), JSON.stringify([{
+            name: 'a',
+            num: 10
+        },{
+            name: 's',
+            num: 4
+        },{
+            name: 'd',
+            num: 1
+        },{
+            name: 'c',
+            num: 6
+        }]));
+    });    
 });

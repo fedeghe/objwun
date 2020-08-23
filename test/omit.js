@@ -33,4 +33,9 @@ describe('omit', function () {
             assert.strictEqual(e.message, "Invalid argument, array expected");
         }
     });
+    it('∂ should be a pure function', function () {
+        var o = {a:1, b:2, c:3};
+        ow.omit(o, ['a', 'c']);
+        assert.equal(JSON.stringify(o), JSON.stringify({a:1, b:2, c:3}));
+    });   
 });

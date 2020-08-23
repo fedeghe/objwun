@@ -48,4 +48,18 @@ describe('times', function () {
             assert.strictEqual(e.message, "Invalid argument, function expected");
         }
     });
+
+    it('∂ should be a pure function', function () {
+        var o = {
+            mult: a => a*2,
+            n: 4
+        };
+        ow.times(3, function(i) {
+            return this.n * this.mult(i)
+        }, o),
+        assert.equal(JSON.stringify(o), JSON.stringify({
+            mult: a => a*2,
+            n: 4
+        }));
+    });  
 });

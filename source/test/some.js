@@ -36,4 +36,10 @@ describe('some', function () {
             assert.strictEqual(e.message, "Invalid argument, function expected");
         }
     });
+    it('∂ should be a pure function', function () {
+        var o = [1, 2, 3],
+            res = ow.some(o, el => el % 2 === 0);
+        assert.equal(res, true);
+        assert.equal(JSON.stringify(o), JSON.stringify([1,2,3]));
+    });  
 });

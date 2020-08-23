@@ -9,6 +9,9 @@ describe('includes', function () {
     it('should return true on array integer', function () {
         assert.equal(ow.includes([1,2,3, null], null), true);
     });
+    it('should return true again on array integer', function () {
+        assert.equal(ow.includes([1,2,3, null], 2), true);
+    });
 
     it('should return false on array integer', function () {
         assert.equal(ow.includes([1,2,3, null], 5), false);
@@ -29,5 +32,11 @@ describe('includes', function () {
             assert.strictEqual(e instanceof Error, true);
             assert.strictEqual(e.message, "Missing expected argument");
         }
+    });   
+    it('∂ should be a pure function', function () {
+        const inp = [1,2,3],
+            res = ow.includes(inp, 2);
+        assert.equal(res, true);
+        assert.equal(JSON.stringify(inp), JSON.stringify([1,2,3]));
     });    
 });

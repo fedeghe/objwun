@@ -31,4 +31,16 @@ describe('map', function () {
             assert.strictEqual(e.message, "Invalid argument, object or array expected");
         }
     });
+    it('∂ should be a pure function', function () {
+        const inp = {
+            a:1, b:2, d:3
+        },
+        res = ow.map(inp, function (o, i) {
+            return o
+        });
+        assert.equal(JSON.stringify(res), JSON.stringify({a:1,b:2,d:3}));
+        assert.equal(JSON.stringify(res), JSON.stringify({
+            a:1, b:2, d:3
+        }));
+    });   
 });

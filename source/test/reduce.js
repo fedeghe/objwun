@@ -69,4 +69,14 @@ describe('reduce', function () {
             assert.strictEqual(e.message, "Invalid argument, function expected");
         }
     });
+
+    it('∂ should be a pure function', function () {
+        var o = {a:1, b:2, c:3},
+            res = ow.reduce(o, ((acc, el) => {
+                acc*=el;
+                return acc
+            }), 1 );
+        assert.equal(res, 6);
+        assert.equal(JSON.stringify(o), JSON.stringify({a:1, b:2, c:3}));
+    });   
 });

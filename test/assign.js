@@ -50,11 +50,26 @@ describe('assign', function () {
 
         assert.equal(JSON.stringify(ow.assign(me, {})), JSON.stringify({}));
     });
+    
     it('should avoid upper prototype (counterproof) properties', function () {
         function Person(n) {this.name = n}
         var me = new Person('Federico')
         Person.prototype.type = 'human';
 
         assert.equal(JSON.stringify(ow.assign(me, {})), JSON.stringify({name: 'Federico'}));
+    });
+    
+    it('∂ should be a pure function', function () {
+        const inp = [{a: 1}, {b: 2}, {}, {b:5}, {a:6}, {a:7}, {b:3, s:5}],
+            out = ow.assign.apply(null, inp);
+
+        assert.equal(
+            JSON.stringify(out),
+            JSON.stringify({a: 7, b: 3, s:5})
+        );
+        assert.equal(
+            JSON.stringify(inp),
+            JSON.stringify([{a: 1}, {b: 2}, {}, {b:5}, {a:6}, {a:7}, {b:3, s:5}])
+        )
     });
 });

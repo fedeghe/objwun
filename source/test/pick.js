@@ -17,4 +17,9 @@ describe('pick', function () {
             res = ow.pick(o, ['a', 'b', 'c', null]);
         assert.equal(JSON.stringify(res), JSON.stringify({ a: 1, b: 2, c: 3 }));
     });
+    it('∂ should be a pure function', function () {
+        var o = {a:1, b:2, c:3};
+        ow.pick(o, ['a', 'c']);
+        assert.equal(JSON.stringify(o), JSON.stringify({a:1, b:2, c:3}));
+    });   
 });

@@ -25,4 +25,12 @@ describe('filter', function () {
             ])
         );
     });
+    it('∂ should be a pure function', function () {
+        const inp = [1,2,3,5,6]
+        assert.equal(JSON.stringify(ow.filter(inp, function (e) {
+            return e % 2 === 0
+        })), JSON.stringify([2,6]));
+        assert.equal(JSON.stringify(inp), JSON.stringify([1,2,3,5,6]));
+        
+    });
 });

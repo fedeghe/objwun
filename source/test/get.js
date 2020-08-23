@@ -101,5 +101,20 @@ describe('get', function () {
             assert.strictEqual(e instanceof Error, true);
             assert.strictEqual(e.message, "Missing expected argument");
         }
-    });   
+    });
+    
+    it('∂ should be a pure function', function () {
+        const o = [{a: 1},    
+                {s: 10}, 3,    
+                null, {a: 1},    
+                {a: 1234567}, {d: {e:[1,2,3,4]}}
+            ],
+            res = ow.get(o, '5.a');
+        assert.equal(JSON.stringify(res), 1234567);
+        assert.equal(JSON.stringify(o), JSON.stringify([{a: 1},    
+            {s: 10}, 3,    
+            null, {a: 1},    
+            {a: 1234567}, {d: {e:[1,2,3,4]}}
+        ]));
+    });
 });

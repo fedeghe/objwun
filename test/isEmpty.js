@@ -43,5 +43,12 @@ describe('isEmpty', function () {
             assert.strictEqual(e instanceof Error, true);
             assert.strictEqual(e.message, "Missing expected argument");
         }
+    });
+    it('∂ should be a pure function', function () {
+        const inp = [1,2,3],
+            res = ow.isEmpty(inp);
+        assert.equal(res, false);
+        assert.equal(JSON.stringify(inp), JSON.stringify([1,2,3]));
     });    
+
 });

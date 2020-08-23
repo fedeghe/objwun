@@ -6,11 +6,9 @@
     function pick_omit(func) {
         return function (o, x) {
             core.mustBe.obj(o)
-            var res = {};
             core.mustBe.arr(x);
-
-            for (var i in o){ 
-
+            var res = {};
+            for (var i in o) { 
                 if (o.hasOwnProperty(i) && func(x.indexOf(i)))
                     res[i] = o[i];
             }
@@ -23,6 +21,8 @@
         for (var i in o) {
             if (o.hasOwnProperty(i)) {
                 res[i] = fn(o[i], i)
+            } else {
+                continue
             }
         }
         return res;

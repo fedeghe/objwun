@@ -216,4 +216,14 @@ describe('sortBy', function () {
             assert.strictEqual(e.message, "Invalid argument, string or function expected");
         }
     });
+
+    it('∂ should be a pure function', function () {
+        var o = [{a: 1, n:'x'}, {a:2, n: 'a'}, {a:3, n: 'e'}];
+        ow.sortBy(o,  'a');
+        ow.sortBy(o,  (a, b) => a.n);
+        
+        assert.equal(JSON.stringify(o), JSON.stringify(
+            [{a: 1, n:'x'}, {a:2, n: 'a'}, {a:3, n: 'e'}]
+        ));
+    });  
 });
