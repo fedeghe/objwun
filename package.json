@@ -28,7 +28,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://fedeghe@github.com/fedeghe/malta-jsdoc.git"
+        "url": "https://fedeghe@github.com/fedeghe/objwun.git"
     },
     "devDependencies": {
         "coveralls": "~3.0.1",
