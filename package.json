@@ -23,9 +23,6 @@
         "times",
         "uniq"
     ],
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/"
-    },
     "repository": {
         "type": "git",
         "url": "https://fedeghe@github.com/fedeghe/objwun.git"
