@@ -1,0 +1,9 @@
+source
+test
+node_modules
+coverage
+.printVersion
+.coveralls.yml
+.nyc_output
+.nyc_output/processinfo
+.nyc_output/processinfo/*
