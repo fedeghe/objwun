@@ -1,4 +1,5 @@
 node_modules
+coverage
 .printVersion
 .coveralls.yml
 .nyc_output
