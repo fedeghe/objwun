@@ -19,10 +19,8 @@
     function objLoop(o, fn) {
         var res = {};
         for (var i in o) {
-            if (o.hasOwnProperty(i)) {
+            if (o.hasOwnProperty(i)){
                 res[i] = fn(o[i], i)
-            } else {
-                continue
             }
         }
         return res;
