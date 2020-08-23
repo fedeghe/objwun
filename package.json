@@ -1,10 +1,35 @@
 {
     "name": "objwun",
-    "version": "0.0.12",
+    "version": "1.0.0",
     "main": "dist/index.js",
     "author": "fedeghe <fedeghe@gmail.com>",
     "license": "MIT",
     "description": "Isomorphic ES3 library to common stuff on object literals and arrays",
+    "keywords": [
+        "assign",
+        "filter",
+        "forEach",
+        "get",
+        "id",
+        "includes",
+        "isEmpty",
+        "keyBy",
+        "map",
+        "omit",
+        "pick",
+        "reduce",
+        "some",
+        "sortBy",
+        "times",
+        "uniq"
+    ],
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://fedeghe@github.com/fedeghe/malta-jsdoc.git"
+    },
     "devDependencies": {
         "coveralls": "~3.0.1",
         "malta": "^4.1.19",
