@@ -3,6 +3,7 @@ function _(){
 
     maltaF('methods/assign.js');
     maltaF('methods/filter.js');
+    maltaF('methods/find.js');
     maltaF('methods/forEach.js');
     maltaF('methods/get.js');
     maltaF('methods/id.js');
@@ -21,6 +22,7 @@ function _(){
     return {
         assign: assign,
         filter: filter,
+        find: find,
         forEach: forEach,
         get: get,
         id: id,

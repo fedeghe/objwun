@@ -8,11 +8,6 @@
     }
 
     function isArr(o) {
-        // nope
-        //
-        // if (Array.isArray && Array.isArray(o)) {
-        //     return true;
-        // }
         var t2 = ({}).toString.call(o).match(/\[object\sArray\]/);
         return String(o) !== o && !!(t2 && t2.length);
     }
@@ -41,7 +36,6 @@
         isFunc: isFunc,
         isNum: isNum,
         isObj: isObj,
-        // isObjOrArr: isObjOrArr,
         isStr: isStr,
         isUndef: isUndef
     };
