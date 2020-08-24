@@ -40,7 +40,7 @@
     //     return true;
     // }
 
-    // composed
+    // mixed
     function funcOrStr(a) {
         if (!core.in.isStr(a) && !core.in.isFunc(a))
             throw new Error(core.errors.INVALID_ARGUMENT_STRING_OR_FUNCTION_EXPECTED);
