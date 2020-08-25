@@ -1261,10 +1261,10 @@ malta-mocha@^1.0.17:
   dependencies:
     mocha "^8.1.1"
 
-malta-umd@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/malta-umd/-/malta-umd-1.0.10.tgz#2324336ea8efd1a496a8a094c8c299c23fc10fdc"
-  integrity sha512-ciCswP/LNtr6UPW4PBANQ6raCz37a8tvtn8GwuCoZTj8cuCG253PrcNFie1jvhqZnNCLAYLBe0aLZgkCWS5OOA==
+malta-umd@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/malta-umd/-/malta-umd-1.0.11.tgz#3858e9ae6573aa84bf3c01372998e3e10bec5a04"
+  integrity sha512-dmyHClrRpvqG0/+aM33wboLtcYfFDmzu4yQma5Zzey+F2YU1xyu+MfkZ1+QB9gUW9xNdNcvDQgZWL4rF7wJpJg==
 
 malta@^4.1.19:
   version "4.1.19"

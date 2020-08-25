@@ -14,6 +14,7 @@ function _(){
     maltaF('methods/omit.js');
     maltaF('methods/pick.js');
     maltaF('methods/reduce.js');
+    maltaF('methods/remove.js');
     maltaF('methods/some.js');
     maltaF('methods/sortBy.js');
     maltaF('methods/times.js');
@@ -33,9 +34,10 @@ function _(){
         omit: omit,
         pick: pick,
         reduce: reduce,
+        remove: remove,
         some: some,
         sortBy: sortBy,
         times: times,
-        uniq: uniq,
+        uniq: uniq
     }
 }

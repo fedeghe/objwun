@@ -46,6 +46,16 @@
             throw new Error(core.errors.INVALID_ARGUMENT_STRING_OR_FUNCTION_EXPECTED);
         return true;
     }
+    function funcOrArr(a) {
+        const isArr = core.in.isArr(a),
+            isFunc = core.in.isFunc(a);
+        if (!isArr && !isFunc)
+            throw new Error(core.errors.INVALID_ARGUMENT_ARRAY_OR_FUNCTION_EXPECTED);
+        return {
+            isFunc: isFunc,
+            isArr: isArr
+        };
+    }
     function objOrArr(a) {
         if (!core.in.isObj(a) && !core.in.isArr(a))
             throw new Error(core.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);
@@ -58,6 +68,7 @@
         defined: defined,
         func: func,
         funcOrStr: funcOrStr,
+        funcOrArr: funcOrArr,
         // bool: bool,
         num: num,
         obj: obj,
