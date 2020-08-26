@@ -38,6 +38,15 @@ function _(){
         some: some,
         sortBy: sortBy,
         times: times,
-        uniq: uniq
+        uniq: uniq,
+
+        isArray: core.in.isArr,
+        isFunction: core.in.isFunc,
+        isObject: core.in.isObj,
+        isString: core.in.isStr,
+        isBoolean: core.in.isBool,
+        isNumber: core.in.isNum,
+        isUndefined: core.in.isUndef,
+        isDefined: core.in.isDef,
     }
 }

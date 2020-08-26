@@ -1,23 +1,23 @@
 var assert = require('assert'),
     ow = require('../dist');
 
-describe('get', function () {
-    it('should return null', function () {
+describe('get', () => {
+    it('should return null', () => {
         var o = {},
             res = ow.get(o, 't')
         assert.equal(res, null);
     });
-    it('should again return null', function () {
+    it('should again return null', () => {
         var o = { a: 1, b: 2, c: 3 },
             res = ow.get(o, 't')
         assert.equal(res, null);
     });
-    it('should return a number', function () {
+    it('should return a number', () => {
         var o = { a: 1, b: 2, c: 3 },
             res = ow.get(o, 'b')
         assert.equal(res, 2);
     });
-    it('should return a deeper number', function () {
+    it('should return a deeper number', () => {
         var o = {
             a: 1, b: 2, c: {
                 a:11, b:22, c:33, d: {
@@ -27,7 +27,7 @@ describe('get', function () {
             res = ow.get(o, 'c.d.a')
         assert.equal(res, 111);
     });
-    it('should return an object', function () {
+    it('should return an object', () => {
         var o = {
             a: 1, b: 2, c: {
                 a:11, b:22, c:33, d: {
@@ -37,7 +37,7 @@ describe('get', function () {
             res = ow.get(o, 'c.d')
         assert.equal(JSON.stringify(res), JSON.stringify({a:111,b:222}));
     });
-    it('should return default value', function () {
+    it('should return default value', () => {
         var o = {
             a: 1, b: 2, c: {
                 a:11, b:22, c:33, d: {
@@ -47,7 +47,7 @@ describe('get', function () {
             res = ow.get(o, 'c.e', {s:1})
         assert.equal(JSON.stringify(res), JSON.stringify({s:1}));
     });
-    it('should return elements from array of objects', function () {
+    it('should return elements from array of objects', () => {
         var o = [{
                 a: 1, b: 2, c: 3,
                 d: [1,2,3,4,{
@@ -59,7 +59,7 @@ describe('get', function () {
             res = ow.get(o, '0.d.2')
         assert.equal(JSON.stringify(res), 3);
     });
-    it('should return elements from object of arrays (mixed index notation)', function () {
+    it('should return elements from object of arrays (mixed index notation)', () => {
         var o = {
                 a: 1, b: 2, c: 3,
                 d: [1,2,3,4,{
@@ -71,7 +71,7 @@ describe('get', function () {
             res = ow.get(o, 'd.4.d.bb[3]')
         assert.equal(JSON.stringify(res), 44);
     });
-    it('should return elements from bigger array of objects', function () {
+    it('should return elements from bigger array of objects', () => {
         var o = [
                 {a: 1}, {a: 1},    
                 {a: 1}, {a: 1},    
@@ -85,7 +85,7 @@ describe('get', function () {
         assert.equal(JSON.stringify(res), 1234567);
     });
 
-    it('should throw an error for the bad argument', function () {
+    it('should throw an error for the bad argument', () => {
         try {
             ow.get(false, 1)
         } catch (e) {
@@ -94,7 +94,7 @@ describe('get', function () {
         }
     });
     
-    it('should throw an error for the missing argument', function () {
+    it('should throw an error for the missing argument', () => {
         try {
             ow.get({})
         } catch (e) {
@@ -103,7 +103,7 @@ describe('get', function () {
         }
     });
     
-    it('∂ should be a pure function', function () {
+    it('∂ should be a pure function', () => {
         const o = [{a: 1},    
                 {s: 10}, 3,    
                 null, {a: 1},    

@@ -1,25 +1,21 @@
 var assert = require('assert'),
     ow = require('../dist');
 
-describe('times', function () {
+describe('times', () => {
 
     
-    it('should return a non empty array', function () {
-        function rand() {
-            return Math.random()
-        }
+    it('should return a non empty array', () => {
+        const rand = () => Math.random()
         assert.equal(ow.times(3, rand).length, 3);
     });
 
-    it('should return the right array', function () {
-        var res = ow.times(3, function(i) {
-                return i*i
-            }),
+    it('should return the right array', () => {
+        var res = ow.times(3, i => i*i),
             stringed = JSON.stringify(res);
         assert.equal(stringed, JSON.stringify([0,1,4]));
     });
 
-    it('should use the context ', function () {
+    it('should use the context ', () => {
         var o = {
                 mult: a => a*2,
                 n: 4
@@ -31,7 +27,7 @@ describe('times', function () {
         assert.equal(stringed, JSON.stringify([0, 8, 16]));
     });
 
-    it('should throw an error for the non number argument', function () {
+    it('should throw an error for the non number argument', () => {
         try {
             ow.times([])
         } catch (e) {
@@ -40,7 +36,7 @@ describe('times', function () {
         }
     });
 
-    it('should throw an error for the non function argument', function () {
+    it('should throw an error for the non function argument', () => {
         try {
             ow.times(3, 4)
         } catch (e) {
@@ -49,7 +45,7 @@ describe('times', function () {
         }
     });
 
-    it('∂ should be a pure function', function () {
+    it('∂ should be a pure function', () => {
         var o = {
             mult: a => a*2,
             n: 4

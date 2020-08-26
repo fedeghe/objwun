@@ -1,29 +1,27 @@
 var assert = require('assert'),
     ow = require('../dist');
 
-describe('map', function () {
+describe('map', () => {
 
-    it('should still return an empty array', function () {
-        assert.equal(JSON.stringify(ow.map([])), '[]');
-    });
-    it('should still return the input array', function () {
-        assert.equal(JSON.stringify(ow.map([1,2,3])), '[1,2,3]');
-    });
+    it('should still return an empty array', () => assert.equal(JSON.stringify(ow.map([])), '[]'));
+    it('should still return the input array', () => assert.equal(JSON.stringify(ow.map([1,2,3])), '[1,2,3]'));
 
-    it('should return the content array', function () {
-        assert.equal(JSON.stringify(ow.map({
-            a:1, b:2, d:3
-        }, function (o, i) {
-            return o
-        })), JSON.stringify({a:1,b:2,d:3}));
-    });
+    it('should return the content array',
+        () => assert.equal(
+            JSON.stringify(ow.map({
+                a:1, b:2, d:3
+            }, (o, i) => o)),
+            JSON.stringify({a:1,b:2,d:3})
+        )
+    );
 
-    it('should return the content array from array', function () {
-        assert.equal(JSON.stringify(ow.map([1,2,4], function (o, i) {
-            return o
-        })), '[1,2,4]');
-    });
-    it('should throw an error for the bad argument', function () {
+    it('should return the content array from array',
+        () => assert.equal(
+            JSON.stringify(ow.map([1,2,4], (o, i) => o)),
+            '[1,2,4]'
+        )
+    );
+    it('should throw an error for the bad argument', () => {
         try {
             ow.map(false, 1)
         } catch (e) {
@@ -31,13 +29,11 @@ describe('map', function () {
             assert.strictEqual(e.message, "Invalid argument, object or array expected");
         }
     });
-    it('∂ should be a pure function', function () {
+    it('∂ should be a pure function', () => {
         const inp = {
             a:1, b:2, d:3
         },
-        res = ow.map(inp, function (o, i) {
-            return o
-        });
+        res = ow.map(inp, (o, i) => o);
         assert.equal(JSON.stringify(res), JSON.stringify({a:1,b:2,d:3}));
         assert.equal(JSON.stringify(res), JSON.stringify({
             a:1, b:2, d:3

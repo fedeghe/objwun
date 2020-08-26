@@ -1,7 +1,7 @@
 var assert = require('assert'),
     ow = require('../dist');
 
-describe('sortBy', function () {
+describe('sortBy', () => {
 
     const unsorted = [{
         name: 'a',
@@ -17,12 +17,12 @@ describe('sortBy', function () {
         num: 6
     }];
 
-    it('should return expected by `name` key asc', function () {
+    it('should return expected by `name` key asc', () => {
         assert.equal(
             JSON.stringify(
                 ow.sortBy(
                     unsorted,
-                    function(el){ return el.name }
+                    el => el.name
                 )
             ),
             JSON.stringify([{
@@ -41,11 +41,11 @@ describe('sortBy', function () {
         );
     });
 
-    it('should return expected by `name` key desc', function () {
+    it('should return expected by `name` key desc', () => {
         assert.equal(
             JSON.stringify(ow.sortBy(
                 unsorted,
-                function(el){ return el.name},
+                el => el.name,
                 -1
             )),
             JSON.stringify([{
@@ -64,11 +64,11 @@ describe('sortBy', function () {
         );
     });
 
-    it('should return expected by `num` key asc', function () {
+    it('should return expected by `num` key asc', () => {
         assert.equal(
             JSON.stringify(ow.sortBy(
                 unsorted,
-                function(el){ return el.num }
+                el => el.num
             )),
             JSON.stringify([{
                 name: 'd',
@@ -86,10 +86,10 @@ describe('sortBy', function () {
         );
     });
 
-    it('should return expected by `num` key, desc', function () {
+    it('should return expected by `num` key, desc', () => {
         assert.equal(
             JSON.stringify(ow.sortBy(unsorted,
-                function(el){ return el.num },
+                el => el.num,
                 -1
             )),
             JSON.stringify([{
@@ -108,7 +108,7 @@ describe('sortBy', function () {
         );
     });
 
-    it('should return expected by `name` key asc using string', function () {
+    it('should return expected by `name` key asc using string', () => {
         assert.equal(
             JSON.stringify(
                 ow.sortBy(
@@ -132,7 +132,7 @@ describe('sortBy', function () {
         );
     });
 
-    it('should return expected by `name` key desc using string', function () {
+    it('should return expected by `name` key desc using string', () => {
         assert.equal(
             JSON.stringify(ow.sortBy(
                 unsorted,
@@ -155,7 +155,7 @@ describe('sortBy', function () {
         );
     });
 
-    it('should return expected by `num` key asc using string', function () {
+    it('should return expected by `num` key asc using string', () => {
         assert.equal(
             JSON.stringify(ow.sortBy(
                 unsorted,
@@ -177,7 +177,7 @@ describe('sortBy', function () {
         );
     });
 
-    it('should return expected by `num` key, desc using string', function () {
+    it('should return expected by `num` key, desc using string', () => {
         assert.equal(
             JSON.stringify(ow.sortBy(unsorted,
                 'num',
@@ -199,7 +199,7 @@ describe('sortBy', function () {
         );
     });
 
-    it('should throw an error for the non array argument', function () {
+    it('should throw an error for the non array argument', () => {
         try {
             ow.sortBy({}, 1)
         } catch (e) {
@@ -208,7 +208,7 @@ describe('sortBy', function () {
         }
     });
 
-    it('should throw an error for the non string or function argument', function () {
+    it('should throw an error for the non string or function argument', () => {
         try {
             ow.sortBy([], 1)
         } catch (e) {
@@ -217,7 +217,7 @@ describe('sortBy', function () {
         }
     });
 
-    it('∂ should be a pure function', function () {
+    it('∂ should be a pure function', () => {
         var o = [{a: 1, n:'x'}, {a:2, n: 'a'}, {a:3, n: 'e'}];
         ow.sortBy(o,  'a');
         ow.sortBy(o,  (a, b) => a.n);

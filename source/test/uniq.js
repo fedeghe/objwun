@@ -1,10 +1,8 @@
 var assert = require('assert'),
     ow = require('../dist');
 
-describe('uniq', function () {
+describe('uniq', () => {
 
-    it('should return the expected', function () {
-        assert.equal(JSON.stringify(ow.uniq([1,1,2,3,2,3,1])), '[1,2,3]');
-    });
+    it('should return the expected', () => assert.equal(JSON.stringify(ow.uniq([1,1,2,3,2,3,1])), '[1,2,3]'));
 
 });

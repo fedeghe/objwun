@@ -1,7 +1,7 @@
 var assert = require('assert'),
     ow = require('../dist');
 
-describe('keyBy', function () {
+describe('keyBy', () => {
 
     const original = [{
         name: 'a',
@@ -17,7 +17,7 @@ describe('keyBy', function () {
         num: 6
     }];
 
-    it('should return expected by `name` key', function () {
+    it('should return expected by `name` key', () => {
         assert.equal(
             JSON.stringify(
                 ow.keyBy(
@@ -46,7 +46,7 @@ describe('keyBy', function () {
         );
     });
 
-    it('should return expected by `num` key', function () {
+    it('should return expected by `num` key', () => {
         assert.equal(
             JSON.stringify(ow.keyBy(
                 original,
@@ -73,7 +73,7 @@ describe('keyBy', function () {
         );
     });
 
-    it('should return expected by `num` key from key string', function () {
+    it('should return expected by `num` key from key string', () => {
         assert.equal(
             JSON.stringify(ow.keyBy(
                 original,
@@ -99,7 +99,7 @@ describe('keyBy', function () {
             })
         );
     });
-    it('should throw an error for the non array argument', function () {
+    it('should throw an error for the non array argument', () => {
         try {
             ow.keyBy({}, 1)
         } catch (e) {
@@ -107,7 +107,7 @@ describe('keyBy', function () {
             assert.strictEqual(e.message, "Invalid argument, array expected");
         }
     });
-    it('should throw an error for the non key or function argument', function () {
+    it('should throw an error for the non key or function argument', () => {
         try {
             ow.keyBy([], true)
         } catch (e) {
@@ -115,8 +115,8 @@ describe('keyBy', function () {
             assert.strictEqual(e.message, "Invalid argument, string or function expected");
         }
     });
-    it('∂ should be a pure function', function () {
-        assert.equal(JSON.stringify(original), JSON.stringify([{
+    it('∂ should be a pure function',
+        () => assert.equal(JSON.stringify(original), JSON.stringify([{
             name: 'a',
             num: 10
         },{
@@ -128,6 +128,5 @@ describe('keyBy', function () {
         },{
             name: 'c',
             num: 6
-        }]));
-    });    
+        }])));    
 });

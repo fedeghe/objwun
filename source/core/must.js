@@ -42,9 +42,14 @@
 
     // mixed
     function funcOrStr(a) {
-        if (!core.in.isStr(a) && !core.in.isFunc(a))
+        const isStr = core.in.isStr(a),
+            isFunc = core.in.isFunc(a);
+        if (!isStr && !isFunc)
             throw new Error(core.errors.INVALID_ARGUMENT_STRING_OR_FUNCTION_EXPECTED);
-        return true;
+        return {
+            isFunc: isFunc,
+            isStr: isStr,
+        };
     }
     function funcOrArr(a) {
         const isArr = core.in.isArr(a),
@@ -57,9 +62,14 @@
         };
     }
     function objOrArr(a) {
-        if (!core.in.isObj(a) && !core.in.isArr(a))
+        const isArr = core.in.isArr(a),
+            isObj = core.in.isObj(a);
+        if (!isObj && !isArr)
             throw new Error(core.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);
-        return true;
+        return {
+            isObj: isObj,
+            isArr: isArr,
+        };
     }
 
 

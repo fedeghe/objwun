@@ -11,4 +11,8 @@ Docs might come one day
 
 **assign** ~ **filter** ~ **find** ~ **forEach** ~ **get** ~ **id** ~ **includes** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **some** ~ **sortBy** ~ **times** ~ **uniq**
 
+ and  
+
+**isArray** ~ **isFunction** ~ **isObject** ~ **isString** ~ **isBoolean** ~ **isNumber** ~ **isUndefined** ~ **isDefined**
+
 ༺ ᚗᚌ ༻

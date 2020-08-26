@@ -1,13 +1,11 @@
 var assert = require('assert'),
     ow = require('../dist');
 
-describe('find', function () {
-    it('should find the index, based on 1st level value', function () {
-        assert.equal(ow.find([1,2,3,5,6], function (e, i) {
-            return (e % 2 === 0) 
-        }), 1);
+describe('find', () => {
+    it('should find the index, based on 1st level value', () => {
+        assert.equal(ow.find([1,2,3,5,6], (e, i) => e % 2 === 0), 1);
     });
-    it('should find the index, based on 2nd level value', function () {
+    it('should find the index, based on 2nd level value', () => {
         assert.equal(ow.find([{
             name: 'Federico'
         }, {
@@ -16,11 +14,9 @@ describe('find', function () {
             name: 'Jeff'
         },{
             name: 'Coff'
-        }], function (e, i) {
-            return e.name.match(/ff$/i) 
-        }), 2);
+        }],  (e, i) => e.name.match(/ff$/i) ), 2);
     });
-    it('should find the index, based on 3rd level value', function () {
+    it('should find the index, based on 3rd level value', () => {
         assert.equal(ow.find([{
             name: 'Federico'
         }, {
@@ -35,11 +31,9 @@ describe('find', function () {
             data: {
                 age: 33
             }
-        }], function (e, i) {
-            return e.data && e.data.age > 30 
-        }), 3);
+        }], (e, i) => e.data && e.data.age > 30 ), 3);
     });
-    it('should throw an error for the bad first argument', function () {
+    it('should throw an error for the bad first argument', () => {
         try {
             ow.find(false)
         } catch (e) {
@@ -47,7 +41,7 @@ describe('find', function () {
             assert.strictEqual(e.message, "Invalid argument, array expected");
         }
     });
-    it('should throw an error for the bad second argument', function () {
+    it('should throw an error for the bad second argument', () => {
         try {
             ow.find([], false)
         } catch (e) {
@@ -55,7 +49,7 @@ describe('find', function () {
             assert.strictEqual(e.message, "Invalid argument, function expected");
         }
     });
-    it('∂ should be a pure function', function () {
+    it('∂ should be a pure function', () => {
         const mult = a => a * a > 4,
             inp = [2, 4, 6],
             res = ow.find(inp, mult);

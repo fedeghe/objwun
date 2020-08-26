@@ -18,9 +18,9 @@
     function isStr(o) {
         return typeof o === 'string'
     }
-    // function isBool(o) {
-    //     return typeof o === 'boolean'
-    // }
+    function isBool(o) {
+        return typeof o === 'boolean'
+    }
 
     function isNum(o) {
         return typeof o === 'number'
@@ -29,14 +29,18 @@
     function isUndef(o) {
         return typeof o === 'undefined'
     }
+    function isDef(o) {
+        return typeof o !== 'undefined'
+    }
 
     core.in = {
         isArr: isArr,
-        // isBool: isBool,
+        isBool: isBool,
+        isDef: isDef,
         isFunc: isFunc,
         isNum: isNum,
         isObj: isObj,
         isStr: isStr,
-        isUndef: isUndef
+        isUndef: isUndef,
     };
 }()
