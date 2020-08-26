@@ -1,4 +1,4 @@
-function _(){
+var objwun = (function (){
     maltaF('core/index.js');
 
     maltaF('methods/assign.js');
@@ -49,4 +49,5 @@ function _(){
         isUndefined: core.in.isUndef,
         isDefined: core.in.isDef,
     }
-}
+})();
+(typeof exports === 'object') && (module.exports = objwun);

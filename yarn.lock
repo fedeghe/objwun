@@ -1261,11 +1261,6 @@ malta-mocha@^1.0.17:
   dependencies:
     mocha "^8.1.1"
 
-malta-umd@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/malta-umd/-/malta-umd-1.0.11.tgz#3858e9ae6573aa84bf3c01372998e3e10bec5a04"
-  integrity sha512-dmyHClrRpvqG0/+aM33wboLtcYfFDmzu4yQma5Zzey+F2YU1xyu+MfkZ1+QB9gUW9xNdNcvDQgZWL4rF7wJpJg==
-
 malta@^4.1.19:
   version "4.1.19"
   resolved "https://registry.yarnpkg.com/malta/-/malta-4.1.19.tgz#0213af7afc66245f75688dd8a931e9f550e7dd8f"
