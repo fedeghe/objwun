@@ -13,5 +13,6 @@ Docs might come one day
 
  and  
 
-**isArray** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive** ~ **isString** ~ **isUndefined**
+**isArray** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive** ~ **isString** ~ **isUndefined**  
+
 ༺ ᚗᚌ ༻
