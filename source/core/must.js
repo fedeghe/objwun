@@ -34,11 +34,11 @@
         return true;
     }
 
-    // function str(a) {
-    //     if (!core.in.isStr(a))
-    //         throw new Error(core.errors.INVALID_ARGUMENT_STRING_EXPECTED);
-    //     return true;
-    // }
+    function str(a) {
+        if (!core.in.isStr(a))
+            throw new Error(core.errors.INVALID_ARGUMENT_STRING_EXPECTED);
+        return true;
+    }
 
     // mixed
     function funcOrStr(a) {
@@ -83,6 +83,6 @@
         num: num,
         obj: obj,
         objOrArr: objOrArr,
-        // str: str,
+        str: str,
     };
 }()

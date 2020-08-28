@@ -9,7 +9,7 @@ function assign() {
             core.mustBe.obj(args[i])
             for(j in args[i])
                 if (args[i].hasOwnProperty(j)) {
-                    res[j] = args[i][j]
+                    res[j] = JSON.parse(JSON.stringify(args[i][j]))
                 } else {
                     continue
                 }

@@ -16,6 +16,7 @@ var objwun = (function (){
     maltaF('methods/reduce.js');
     maltaF('methods/remove.js');
     maltaF('methods/some.js');
+    maltaF('methods/set.js');
     maltaF('methods/sortBy.js');
     maltaF('methods/times.js');
     maltaF('methods/uniq.js');
@@ -35,6 +36,7 @@ var objwun = (function (){
         pick: pick,
         reduce: reduce,
         remove: remove,
+        set: set,
         some: some,
         sortBy: sortBy,
         times: times,
@@ -48,6 +50,7 @@ var objwun = (function (){
         isNumber: core.in.isNum,
         isUndefined: core.in.isUndef,
         isDefined: core.in.isDef,
+        isPrimitive: core.in.isPrim
     }
 })();
 (typeof exports === 'object') && (module.exports = objwun);

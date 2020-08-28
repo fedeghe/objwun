@@ -9,10 +9,10 @@
 
 Docs might come one day  
 
-**assign** ~ **filter** ~ **find** ~ **forEach** ~ **get** ~ **id** ~ **includes** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **some** ~ **sortBy** ~ **times** ~ **uniq**
+**assign** ~ **filter** ~ **find** ~ **forEach** ~ **get** ~ **id** ~ **includes** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq**
 
  and  
 
-**isArray** ~ **isFunction** ~ **isObject** ~ **isString** ~ **isBoolean** ~ **isNumber** ~ **isUndefined** ~ **isDefined**
-
+**isArray** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive**
+**isString** ~ **isUndefined**
 ༺ ᚗᚌ ༻

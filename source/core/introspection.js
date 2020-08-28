@@ -32,6 +32,9 @@
     function isDef(o) {
         return typeof o !== 'undefined'
     }
+    function isPrim(o) {
+        return isNum(o) || isStr(o) || isBool(o)
+    }
 
     core.in = {
         isArr: isArr,
@@ -40,7 +43,8 @@
         isFunc: isFunc,
         isNum: isNum,
         isObj: isObj,
+        isPrim: isPrim,
         isStr: isStr,
-        isUndef: isUndef,
+        isUndef: isUndef
     };
 }()
