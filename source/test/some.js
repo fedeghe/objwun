@@ -19,6 +19,17 @@ describe('some', () => {
             return e.name.match(/^F*/)
         }), true)
     );
+    it('should return false', () => 
+        assert.equal(ow.some([{
+            name: 'Federico'
+        }, {
+            name:'John'
+        }, {
+            name: 'Fluffy'
+        }], function (e) {
+            return e.name.match(/^Fff*/)
+        }), false)
+    );
 
     it('should throw an error for the non array argument', () => {
         try {
