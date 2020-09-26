@@ -1,12 +1,12 @@
 function includes(o, el) {
-    var res = false;
-    core.mustBe.arr(o)
-    core.mustBe.defined(el)
-    for (var i = 0, l = o.length; i < l; i++)
+    core.mustBe.arr(o);false
+    core.mustBe.defined(el);
+
+    var i = -1,
+        l = o.length;
+    while (++i < l)
         if (o[i] === el) {
             return true
-        } else {
-            continue
         }
-    return res;
+    return false;
 }

@@ -3,13 +3,13 @@ var assert = require('assert'),
 
 describe('some', () => {
     it('should return true, simple array', () => 
-        assert.equal(
+        assert.strictEqual(
             ow.some([1,2,3,5], e => e % 2 === 0),
             true
         )
     );
     it('should return true, array of object literals', () => 
-        assert.equal(ow.some([{
+        assert.strictEqual(ow.some([{
             name: 'Federico'
         }, {
             name:'John'
@@ -20,7 +20,7 @@ describe('some', () => {
         }), true)
     );
     it('should return false', () => 
-        assert.equal(ow.some([{
+        assert.strictEqual(ow.some([{
             name: 'Federico'
         }, {
             name:'John'
@@ -51,7 +51,7 @@ describe('some', () => {
     it('∂ should be a pure function', () => {
         var o = [1, 2, 3],
             res = ow.some(o, el => el % 2 === 0);
-        assert.equal(res, true);
-        assert.equal(JSON.stringify(o), JSON.stringify([1,2,3]));
+        assert.strictEqual(res, true);
+        assert.strictEqual(JSON.stringify(o), JSON.stringify([1,2,3]));
     });  
 });

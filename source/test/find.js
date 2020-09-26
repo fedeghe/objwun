@@ -3,10 +3,10 @@ var assert = require('assert'),
 
 describe('find', () => {
     it('should find the index, based on 1st level value', () => {
-        assert.equal(ow.find([1,2,3,5,6], (e, i) => e % 2 === 0), 1);
+        assert.strictEqual(ow.find([1,2,3,5,6], (e, i) => e % 2 === 0), 1);
     });
     it('should find the index, based on 2nd level value', () => {
-        assert.equal(ow.find([{
+        assert.strictEqual(ow.find([{
             name: 'Federico'
         }, {
             name: 'John'
@@ -17,7 +17,7 @@ describe('find', () => {
         }],  (e, i) => e.name.match(/ff$/i) ), 2);
     });
     it('should find the index, based on 3rd level value', () => {
-        assert.equal(ow.find([{
+        assert.strictEqual(ow.find([{
             name: 'Federico'
         }, {
             name: 'John',
@@ -53,8 +53,8 @@ describe('find', () => {
         const mult = a => a * a > 4,
             inp = [2, 4, 6],
             res = ow.find(inp, mult);
-        assert.equal(res, 1);
-        assert.equal(
+        assert.strictEqual(res, 1);
+        assert.strictEqual(
             JSON.stringify(inp),
             JSON.stringify([2, 4, 6])
         );

@@ -4,11 +4,11 @@ var assert = require('assert'),
 describe('remove', () => {
     it('should remove all elements given array keys', () => {
         const t = ow.remove(['a', 'b', 'c', 'd', 'e'], [0,2])
-        assert.equal(JSON.stringify(t), JSON.stringify(['b', 'd', 'e']))
+        assert.strictEqual(JSON.stringify(t), JSON.stringify(['b', 'd', 'e']))
     });
     it('should remove all elements given array reversed keys', () => {
         const t = ow.remove(['a', 'b', 'c', 'd', 'e'], [2,0])
-        assert.equal(JSON.stringify(t), JSON.stringify(['b', 'd', 'e']))
+        assert.strictEqual(JSON.stringify(t), JSON.stringify(['b', 'd', 'e']))
     });
     it('should remove all elements given removing function', () => {
         const t = ow.remove([{
@@ -24,7 +24,7 @@ describe('remove', () => {
             name: 'Francesca',
             age: 7
         }], (el, i) => el.age > 40)
-        assert.equal(JSON.stringify(t), JSON.stringify([{
+        assert.strictEqual(JSON.stringify(t), JSON.stringify([{
             name: 'Gabriele',
             age: 10
         }, {
@@ -52,8 +52,8 @@ describe('remove', () => {
     it('∂ should be a pure function', () => {
         var o = [1, 2, 3],
             res = ow.remove(o, [1]);
-        assert.equal(JSON.stringify(res), JSON.stringify([1,3]));
-        assert.equal(JSON.stringify(o), JSON.stringify([1,2,3]));
+        assert.strictEqual(JSON.stringify(res), JSON.stringify([1,3]));
+        assert.strictEqual(JSON.stringify(o), JSON.stringify([1,2,3]));
     });  
 
 })

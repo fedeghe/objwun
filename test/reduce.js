@@ -21,8 +21,8 @@ describe('reduce', () => {
                     return acc
                 }
             );
-        assert.equal(JSON.stringify(even), JSON.stringify({b:2, d: 4}));
-        assert.equal(JSON.stringify(odd), JSON.stringify({a:1, c: 3}));
+        assert.strictEqual(JSON.stringify(even), JSON.stringify({b:2, d: 4}));
+        assert.strictEqual(JSON.stringify(odd), JSON.stringify({a:1, c: 3}));
     });
 
     it('should behave like a filter on array', () => {
@@ -38,8 +38,8 @@ describe('reduce', () => {
                     return acc
                 }
             );
-        assert.equal(JSON.stringify(even), JSON.stringify([2, 4]));
-        assert.equal(JSON.stringify(odd), JSON.stringify([1, 3]));
+        assert.strictEqual(JSON.stringify(even), JSON.stringify([2, 4]));
+        assert.strictEqual(JSON.stringify(odd), JSON.stringify([1, 3]));
     });
     
     it('should allow to build a composing function', () => {
@@ -51,7 +51,7 @@ describe('reduce', () => {
                 (acc, el) => (...args) => el(acc(...args)),
                 a => a
             );
-        assert.equal(composed(2), 18);
+        assert.strictEqual(composed(2), 18);
     });
     it('should throw an error for the non object or array argument', () => {
         try {
@@ -76,7 +76,7 @@ describe('reduce', () => {
                 acc*=el;
                 return acc
             }), 1 );
-        assert.equal(res, 6);
-        assert.equal(JSON.stringify(o), JSON.stringify({a:1, b:2, c:3}));
+        assert.strictEqual(res, 6);
+        assert.strictEqual(JSON.stringify(o), JSON.stringify({a:1, b:2, c:3}));
     });   
 });

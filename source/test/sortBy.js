@@ -18,7 +18,7 @@ describe('sortBy', () => {
     }];
 
     it('should return expected by `name` key asc', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(
                 ow.sortBy(
                     unsorted,
@@ -42,7 +42,7 @@ describe('sortBy', () => {
     });
 
     it('should return expected by `name` key desc', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.sortBy(
                 unsorted,
                 el => el.name,
@@ -65,7 +65,7 @@ describe('sortBy', () => {
     });
 
     it('should return expected by `num` key asc', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.sortBy(
                 unsorted,
                 el => el.num
@@ -87,7 +87,7 @@ describe('sortBy', () => {
     });
 
     it('should return expected by `num` key, desc', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.sortBy(unsorted,
                 el => el.num,
                 -1
@@ -109,7 +109,7 @@ describe('sortBy', () => {
     });
 
     it('should return expected by `name` key asc using string', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(
                 ow.sortBy(
                     unsorted,
@@ -133,7 +133,7 @@ describe('sortBy', () => {
     });
 
     it('should return expected by `name` key desc using string', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.sortBy(
                 unsorted,
                 'name',
@@ -156,7 +156,7 @@ describe('sortBy', () => {
     });
 
     it('should return expected by `num` key asc using string', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.sortBy(
                 unsorted,
                 'num'
@@ -178,7 +178,7 @@ describe('sortBy', () => {
     });
 
     it('should return expected by `num` key, desc using string', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.sortBy(unsorted,
                 'num',
                 -1
@@ -222,7 +222,7 @@ describe('sortBy', () => {
         ow.sortBy(o,  'a');
         ow.sortBy(o,  (a, b) => a.n);
         
-        assert.equal(JSON.stringify(o), JSON.stringify(
+        assert.strictEqual(JSON.stringify(o), JSON.stringify(
             [{a: 1, n:'x'}, {a:2, n: 'a'}, {a:3, n: 'e'}]
         ));
     });  

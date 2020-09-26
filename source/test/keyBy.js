@@ -18,7 +18,7 @@ describe('keyBy', () => {
     }];
 
     it('should return expected by `name` key', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(
                 ow.keyBy(
                     original,
@@ -47,7 +47,7 @@ describe('keyBy', () => {
     });
 
     it('should return expected by `num` key', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.keyBy(
                 original,
                 function(el){ return el.num }
@@ -74,7 +74,7 @@ describe('keyBy', () => {
     });
 
     it('should return expected by `num` key from key string', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.keyBy(
                 original,
                 'num'
@@ -116,7 +116,7 @@ describe('keyBy', () => {
         }
     });
     it('∂ should be a pure function',
-        () => assert.equal(JSON.stringify(original), JSON.stringify([{
+        () => assert.strictEqual(JSON.stringify(original), JSON.stringify([{
             name: 'a',
             num: 10
         },{

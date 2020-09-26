@@ -4,6 +4,594 @@ objwun v. 1.1.2
 fedeghe <fedeghe@gmail.com>
 
 Isomorphic ES3 library to common stuff on object literals and arrays
-~6KB on 23/9/2020
+~15KB on 26/9/2020
 */
-var objwun=function(){function r(){var r=N.ut.args2arr(arguments),n={};if(r.length){for(var t,i=0,e=r.length;i<e;i++){N.mustBe.obj(r[i]);for(t in r[i]){if(!r[i].hasOwnProperty(t))continue;n[t]=JSON.parse(JSON.stringify(r[i][t]))}}return n}return n}function n(r,n){N.mustBe.arr(r),N.mustBe.func(n);for(var t=[],i=0,e=r.length;i<e;i++)n(r[i],i)&&t.push(r[i]);return t}function t(r,n){N.mustBe.arr(r),N.mustBe.func(n);for(var t=-1,i=0,e=r.length;-1===t&&i<e;i++)n(r[i],i)&&(t=i);return t}function i(r,n){N.mustBe.objOrArr(r),n=n||function(r,n){return r};var t;return N.in.isObj(r)&&(t=N.ut.objLoop(r,n)),N.in.isArr(r)&&(t=N.ut.arrLoop(r,n)),t}function e(r,n,t){if(N.mustBe.objOrArr(r),N.mustBe.defined(n),o(r)||o(n))return t||null;n=n.replace(/\[(\d+)\]/g,function(r,n){return"."+n});var i=n.split("."),e=r,u=0,f=i.length;for(null;u<f;u++){if(!(i[u]in e))return t||null;e=e[i[u]]}return e}function u(r,n){N.mustBe.arr(r),N.mustBe.defined(n);for(var t=0,i=r.length;t<i;t++){if(r[t]===n)return!0;continue}return!1}function o(r){return N.mustBe.defined(r),""===r||null===r||N.in.isStr(r)&&0===r.length||N.in.isArr(r)&&0===r.length||N.in.isObj(r)&&function(){for(var n in r)if(r.hasOwnProperty(n))return!1;return!0}()}function f(r,n){N.mustBe.arr(r),N.mustBe.funcOrStr(n);var t={},i=0,e=r.length;if("function"==typeof n)for(;i<e;i++)t[n(r[i])]=r[i];else for(;i<e;i++)t[r[i][n]]=r[i];return t}function s(r,n){return N.mustBe.objOrArr(r),n=n||function(r){return r},N.in.isObj(r)?N.ut.objLoop(r,n):N.ut.arrLoop(r,n)}function c(r,n,t){N.mustBe.objOrArr(r),N.mustBe.func(n);var i=N.in.isObj(r),e=N.in.isArr(r),u=t||(i?{}:[]);if(i)for(var o in r)u=n(u,r[o],o,r);if(e)for(var f=0,s=r.length;f<s;f++)u=n(u,r[f],f,r);return u}function a(r,n){N.mustBe.arr(r);var t,i=N.mustBe.funcOrArr(n),e=[].concat(r);if(i.isFunc)for(var u=0;u<e.length;null)n(e[u],u)?e=e.slice(0,u).concat(e.slice(u+1)):u++;else{t=[].concat(n).sort(function(r,n){return r>n?-1:1});for(var u=0,o=t.length;u<o;u++)e=e.slice(0,t[u]).concat(e.slice(t[u]+1))}return e}function E(r,n){N.mustBe.arr(r),N.mustBe.func(n);for(var t=0,i=r.length;t<i;t++)if(n(r[t],t))return!0;return!1}function l(r,n,t){N.mustBe.objOrArr(r),N.mustBe.str(n),N.mustBe.defined(t),n=n.replace(/\[(\d+)\]/g,function(r,n){return"."+n});var i=n.split("."),e=N.ut.clone(r),u=0,o=i.length,f=e;for(null;u<o-1;u++)i[u]in f&&!N.in.isPrim(f[i[u]])||(f[i[u]]=i[u+1].match(/\d+/)?[]:{}),f=f[i[u]];return f[i[u]]=N.in.isPrim(t)?t:N.ut.clone(t),e}function _(r,n,t){N.mustBe.arr(r),N.mustBe.funcOrStr(n);var i=[].concat(r);return t=t||1,"function"==typeof n?i.sort(function(r,i){return n(r)<n(i)?-t:t}):i.sort(function(r,i){return r[n]<i[n]?-t:t})}function A(r,n,t){N.mustBe.num(r),N.mustBe.func(n),t=t||null;var i=[],e=0;for(null;e<r;e++)i[e]=n.call(t,e);return i}function m(r){var n={},t=0,i=r.length,e=[];for(null;t<i;t++)n[r[t]]=r[t];for(var u in n)e.push(n[u]);return e}var N={};return N.errors={INVALID_ARGUMENT_ARRAY_EXPECTED:"Invalid argument, array expected",INVALID_ARGUMENT_OBJECT_EXPECTED:"Invalid argument, object expected",INVALID_ARGUMENT_INTEGER_EXPECTED:"Invalid argument, integer expected",INVALID_ARGUMENT_FUNCTION_EXPECTED:"Invalid argument, function expected",INVALID_ARGUMENT_STRING_EXPECTED:"Invalid argument, string expected",INVALID_ARGUMENT_STRING_OR_FUNCTION_EXPECTED:"Invalid argument, string or function expected",INVALID_ARGUMENT_ARRAY_OR_FUNCTION_EXPECTED:"Invalid argument, array or function expected",INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED:"Invalid argument, object or array expected",MISSING_EXPECTED_ARGUMENT:"Missing expected argument"},function(){function r(r){return[].slice.call(r,0)}function n(r){return function(n,t){N.mustBe.obj(n),N.mustBe.arr(t);var i={};for(var e in n)n.hasOwnProperty(e)&&r(t.indexOf(e))&&(i[e]=n[e]);return i}}function t(r,n){var t={};for(var i in r)r.hasOwnProperty(i)&&(t[i]=n(r[i],i));return t}function i(r,n){var t=[],i=0,e=r.length;for(null;i<e;i++)t[i]=n(r[i],i);return t}function e(r){return JSON.parse(JSON.stringify(r))}N.ut={args2arr:r,arrLoop:i,clone:e,objLoop:t,pick_omit:n}}(),function(){function r(r){var n=String(r)!==r,t=r===Object(r),i="function"!=typeof r,e={}.toString.call(r).match(/\[object\sObject\]/);return n&&t&&i&&!(!e||!e.length)}function n(r){var n={}.toString.call(r).match(/\[object\sArray\]/);return String(r)!==r&&!(!n||!n.length)}function t(r){return"function"==typeof r}function i(r){return"string"==typeof r}function e(r){return"boolean"==typeof r}function u(r){return"number"==typeof r}function o(r){return void 0===r}function f(r){return void 0!==r}function s(r){return u(r)||i(r)||e(r)}N.in={isArr:n,isBool:e,isDef:f,isFunc:t,isNum:u,isObj:r,isPrim:s,isStr:i,isUndef:o}}(),function(){function r(r){if(!N.in.isArr(r))throw new Error(N.errors.INVALID_ARGUMENT_ARRAY_EXPECTED);return!0}function n(r){if(N.in.isUndef(r))throw new Error(N.errors.MISSING_EXPECTED_ARGUMENT);return!0}function t(r){if(!N.in.isFunc(r))throw new Error(N.errors.INVALID_ARGUMENT_FUNCTION_EXPECTED);return!0}function i(r){if(!N.in.isNum(r))throw new Error(N.errors.INVALID_ARGUMENT_INTEGER_EXPECTED);return!0}function e(r){if(!N.in.isObj(r))throw new Error(N.errors.INVALID_ARGUMENT_OBJECT_EXPECTED);return!0}function u(r){if(!N.in.isStr(r))throw new Error(N.errors.INVALID_ARGUMENT_STRING_EXPECTED);return!0}function o(r){var n=N.in.isStr(r),t=N.in.isFunc(r);if(!n&&!t)throw new Error(N.errors.INVALID_ARGUMENT_STRING_OR_FUNCTION_EXPECTED);return{isFunc:t,isStr:n}}function f(r){var n=N.in.isArr(r),t=N.in.isFunc(r);if(!n&&!t)throw new Error(N.errors.INVALID_ARGUMENT_ARRAY_OR_FUNCTION_EXPECTED);return{isFunc:t,isArr:n}}function s(r){var n=N.in.isArr(r),t=N.in.isObj(r);if(!t&&!n)throw new Error(N.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);return{isObj:t,isArr:n}}N.mustBe={arr:r,defined:n,func:t,funcOrStr:o,funcOrArr:f,num:i,obj:e,objOrArr:s,str:u}}(),{assign:r,filter:n,find:t,forEach:i,get:e,id:new function(){var r=0,n=this;this.prefix="id_",this.toString=function(){return r+=1,n.prefix+r}},includes:u,isEmpty:o,keyBy:f,map:s,omit:N.ut.pick_omit(function(r){return r<0}),pick:N.ut.pick_omit(function(r){return r>=0}),reduce:c,remove:a,set:l,some:E,sortBy:_,times:A,uniq:m,isArray:N.in.isArr,isFunction:N.in.isFunc,isObject:N.in.isObj,isString:N.in.isStr,isBoolean:N.in.isBool,isNumber:N.in.isNum,isUndefined:N.in.isUndef,isDefined:N.in.isDef,isPrimitive:N.in.isPrim}}();"object"==typeof exports&&(module.exports=objwun);
+var objwun = (function (){
+    /*
+    [Malta] core/index.js
+    */
+    var core = {}
+    
+    /*
+    [Malta] core/errors.js
+    */
+    
+    core.errors = {
+        INVALID_ARGUMENT_ARRAY_EXPECTED: 'Invalid argument, array expected',
+        INVALID_ARGUMENT_OBJECT_EXPECTED: 'Invalid argument, object expected',
+        INVALID_ARGUMENT_INTEGER_EXPECTED: 'Invalid argument, integer expected',
+        // INVALID_ARGUMENT_BOOLEAN_EXPECTED: 'Invalid argument, boolean expected',
+        INVALID_ARGUMENT_FUNCTION_EXPECTED: 'Invalid argument, function expected',
+        INVALID_ARGUMENT_STRING_EXPECTED: 'Invalid argument, string expected',
+    
+        INVALID_ARGUMENT_STRING_OR_FUNCTION_EXPECTED: 'Invalid argument, string or function expected',
+        INVALID_ARGUMENT_ARRAY_OR_FUNCTION_EXPECTED: 'Invalid argument, array or function expected',
+        INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED: 'Invalid argument, object or array expected',
+        MISSING_EXPECTED_ARGUMENT: 'Missing expected argument'
+    };
+    
+    ;
+    /*
+    [Malta] core/utils.js
+    */
+    +function (){
+        function args2arr(a) {
+            return [].slice.call(a, 0);
+        }
+    
+        function pick_omit(func) {
+            return function (o, x) {
+                core.mustBe.obj(o)
+                core.mustBe.arr(x);
+                var res = {};
+                for (var i in o) { 
+                    if (o.hasOwnProperty(i) && func(x.indexOf(i)))
+                        res[i] = o[i];
+                }
+                return res;
+            }
+        }
+    
+        function objLoop(o, fn) {
+            var res = {};
+            for (var i in o) {
+                if (o.hasOwnProperty(i)){
+                    res[i] = fn(o[i], i)
+                }
+            }
+            return res;
+        }
+    
+        function arrLoop(o, fn) {
+            var res = [],
+                i = 0,
+                l = o.length;
+            for (null; i < l; i++) {
+                res[i] = fn(o[i], i)
+            }
+            return res;
+        }
+    
+        function clone(o) {return JSON.parse(JSON.stringify(o));}
+    
+        core.ut = {
+            args2arr: args2arr,
+            arrLoop: arrLoop,
+            clone: clone,
+            objLoop: objLoop,
+            pick_omit: pick_omit
+        };
+    }()
+    ;
+    /*
+    [Malta] core/introspection.js
+    */
+    +function () {
+        function isObj(o) {
+            var t0 = String(o) !== o,
+                t1 = o === Object(o),
+                t2 = typeof o !== 'function',
+                t3 = {}.toString.call(o).match(/\[object\sObject\]/);
+            return t0 && t1 && t2 && !!(t3 && t3.length);
+        }
+    
+        function isArr(o) {
+            var t2 = ({}).toString.call(o).match(/\[object\sArray\]/);
+            return String(o) !== o && !!(t2 && t2.length);
+        }
+    
+        function isFunc(o) {
+            return typeof o === 'function'
+        }
+        function isStr(o) {
+            return typeof o === 'string'
+        }
+        function isBool(o) {
+            return typeof o === 'boolean'
+        }
+    
+        function isNum(o) {
+            return typeof o === 'number'
+        }
+    
+        function isUndef(o) {
+            return typeof o === 'undefined'
+        }
+        function isDef(o) {
+            return typeof o !== 'undefined'
+        }
+        function isPrim(o) {
+            return isNum(o) || isStr(o) || isBool(o)
+        }
+    
+        core.in = {
+            isArr: isArr,
+            isBool: isBool,
+            isDef: isDef,
+            isFunc: isFunc,
+            isNum: isNum,
+            isObj: isObj,
+            isPrim: isPrim,
+            isStr: isStr,
+            isUndef: isUndef
+        };
+    }();
+    /*
+    [Malta] core/must.js
+    */
+    +function () {
+        function arr(a) {
+            if (!core.in.isArr(a))
+                throw new Error(core.errors.INVALID_ARGUMENT_ARRAY_EXPECTED);
+            return true;
+        }
+    
+        function defined(a) {
+            if (core.in.isUndef(a))
+                throw new Error(core.errors.MISSING_EXPECTED_ARGUMENT);
+            return true;
+        }
+        function func(a) {
+            if (!core.in.isFunc(a))
+                throw new Error(core.errors.INVALID_ARGUMENT_FUNCTION_EXPECTED);
+            return true;
+        }
+    
+        // function bool(a) {
+        //     if (!core.in.isBool(a))
+        //         throw new Error(core.errors.INVALID_ARGUMENT_BOOLEAN_EXPECTED);
+        //     return true;
+        // }
+    
+        function num(a) {
+            if (!core.in.isNum(a))
+                throw new Error(core.errors.INVALID_ARGUMENT_INTEGER_EXPECTED);
+            return true;
+        }
+    
+        function obj(a) {
+            if (!core.in.isObj(a))
+                throw new Error(core.errors.INVALID_ARGUMENT_OBJECT_EXPECTED);
+            return true;
+        }
+    
+        function str(a) {
+            if (!core.in.isStr(a))
+                throw new Error(core.errors.INVALID_ARGUMENT_STRING_EXPECTED);
+            return true;
+        }
+    
+        // mixed
+        function funcOrStr(a) {
+            var isStr = core.in.isStr(a),
+                isFunc = core.in.isFunc(a);
+            if (!isStr && !isFunc)
+                throw new Error(core.errors.INVALID_ARGUMENT_STRING_OR_FUNCTION_EXPECTED);
+            return {
+                isFunc: isFunc,
+                isStr: isStr,
+            };
+        }
+        function funcOrArr(a) {
+            var isArr = core.in.isArr(a),
+                isFunc = core.in.isFunc(a);
+            if (!isArr && !isFunc)
+                throw new Error(core.errors.INVALID_ARGUMENT_ARRAY_OR_FUNCTION_EXPECTED);
+            return {
+                isFunc: isFunc,
+                isArr: isArr
+            };
+        }
+        function objOrArr(a) {
+            var isArr = core.in.isArr(a),
+                isObj = core.in.isObj(a);
+            if (!isObj && !isArr)
+                throw new Error(core.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);
+            return {
+                isObj: isObj,
+                isArr: isArr,
+            };
+        }
+    
+    
+        core.mustBe = {
+            arr: arr,
+            defined: defined,
+            func: func,
+            funcOrStr: funcOrStr,
+            funcOrArr: funcOrArr,
+            // bool: bool,
+            num: num,
+            obj: obj,
+            objOrArr: objOrArr,
+            str: str,
+        };
+    }();
+    
+    
+    ;
+
+    /*
+    [Malta] methods/assign.js
+    */
+    function assign() {
+        // @filter
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+        var args = core.ut.args2arr(arguments),
+            res = {},
+            i = 0, l = args.length, j;
+    
+        if (l) {
+            for (null; i < l; i++){
+                core.mustBe.obj(args[i])
+                for(j in args[i])
+                    if (args[i].hasOwnProperty(j)) {
+                        res[j] = JSON.parse(JSON.stringify(args[i][j]))
+                    }
+            }
+        }
+        return res;
+    };
+    /*
+    [Malta] methods/filter.js
+    */
+    function filter(a, fn) {
+        core.mustBe.arr(a)
+        core.mustBe.func(fn)
+        var res = [],
+            i = -1,
+            l = a.length;
+        while (++i < l) {
+            fn(a[i], i) && res.push(a[i])
+        }
+        return res;
+    };
+    /*
+    [Malta] methods/find.js
+    */
+    function find(a, fn) {
+        core.mustBe.arr(a)
+        core.mustBe.func(fn)
+        var i = -1,
+            l = a.length;
+        while (++i < l) {
+            if (fn(a[i], i)){
+                return i
+            }
+        }
+        return -1;
+    };
+    /*
+    [Malta] methods/forEach.js
+    */
+    function forEach(o, func) {    
+        var what = core.mustBe.objOrArr(o)
+        func = func || function (e) {
+            return e
+        }
+        if (what.isObj) {
+            return core.ut.objLoop(o, func)
+        }
+        if (what.isArr){
+            return core.ut.arrLoop(o, func)
+        }
+    }
+    ;
+    /*
+    [Malta] methods/get.js
+    */
+    function get(obj, path, defaultValue) {
+    
+        core.mustBe.objOrArr(obj)
+        core.mustBe.defined(path)
+        if (
+            isEmpty(obj) || isEmpty(path)
+        ) return defaultValue || null
+    
+        path = path.replace(
+            /\[(\d+)\]/g,
+            function (a, dec) {
+                return '.' + dec;
+            }
+        );
+    
+        var els = path.split('.'),
+            res = obj,
+            i = -1,
+            l = els.length,
+            there;
+            
+        while (++i < l) {
+            there = els[i] in res
+            if (!there) return defaultValue || null
+            res = res[els[i]] // still pure
+        }
+    
+        return res
+    };
+    /*
+    [Malta] methods/id.js
+    */
+    var id = new function () {
+        var count = 0,
+            self = this;
+        this.prefix = 'id_';
+        this.toString = function () {
+            count += 1;
+            return self.prefix + count;
+        };
+    };
+    /*
+    [Malta] methods/includes.js
+    */
+    function includes(o, el) {
+        core.mustBe.arr(o);false
+        core.mustBe.defined(el);
+    
+        var i = -1,
+            l = o.length;
+        while (++i < l)
+            if (o[i] === el) {
+                return true
+            }
+        return false;
+    };
+    /*
+    [Malta] methods/isEmpty.js
+    */
+    function isEmpty(o) {
+        core.mustBe.defined(o)
+        
+        return o === ''
+            || o === null
+            || (core.in.isStr(o) && o.length === 0)
+            || (core.in.isArr(o) && o.length === 0)
+            || (core.in.isObj(o) && (
+                // (typeof Object.keys === 'function'
+                //     && Object.keys(o).length === 0
+                //     && o.constructor === Object
+                // )
+                // ||
+                (function(){
+                    for (var i in o) {
+                        if (o.hasOwnProperty(i)) {
+                            return false
+                        } else {
+                            continue
+                        }
+                    }
+                    return true
+                })()
+            ))
+    
+    };
+    /*
+    [Malta] methods/keyBy.js
+    */
+    function keyBy(o, kf) {
+        core.mustBe.arr(o);
+        core.mustBe.funcOrStr(kf);
+    
+        var res = {},
+            i = 0,
+            l = o.length;
+        if (typeof kf === 'function') {
+            for (; i < l; i++) {
+                res[kf(o[i])] = o[i]
+            }
+        } else {
+            for (; i < l; i++) {
+                res[o[i][kf]] = o[i]
+            }
+        }
+        return res;
+    };
+    /*
+    [Malta] methods/map.js
+    */
+    function map(o, func) {
+        core.mustBe.objOrArr(o)
+        func = func || function (obj){return obj;};
+        if (core.in.isObj(o)) {
+            return core.ut.objLoop(o, func)
+        }
+        // thus array
+        return core.ut.arrLoop(o, func)
+    };
+    /*
+    [Malta] methods/omit.js
+    */
+    var omit = core.ut.pick_omit(function (i) {return i < 0});
+    /*
+    [Malta] methods/pick.js
+    */
+    var pick = core.ut.pick_omit(function (i) {return i >= 0});
+    /*
+    [Malta] methods/reduce.js
+    */
+    function reduce(o, fn, initial) {
+        core.mustBe.objOrArr(o)
+        core.mustBe.func(fn)
+        var isObj = core.in.isObj(o),
+            isArr = core.in.isArr(o),
+            res = initial || (isObj ? {} : []);
+    
+        if (isObj)
+            for (var k in o)
+                res = fn(res, o[k], k, o)
+    
+        if (isArr)
+            for (var i = 0, l = o.length; i < l; i++) 
+                res = fn(res, o[i], i, o)
+    
+        return res;
+    }
+    ;
+    /*
+    [Malta] methods/remove.js
+    */
+    function remove(a, x) {
+        core.mustBe.arr(a)
+        var what = core.mustBe.funcOrArr(x),
+            res = [].concat(a),
+            xsort;
+        if (what.isFunc) {
+            for (var i = 0; i < res.length; null) {
+                if (x(res[i], i)) {
+                    res = res.slice(0, i).concat(res.slice(i+1));
+                } else {
+                    i++;
+                }
+            }
+        } else {
+            // isArray
+            xsort = [].concat(x).sort(function(a, b){return  a > b ? -1: 1}); //reversed
+            for (var i = 0, l = xsort.length;i < l; i++) {
+                res = res.slice(0, xsort[i]).concat(res.slice(xsort[i]+1));
+            }
+        }
+        return res;
+    };
+    /*
+    [Malta] methods/some.js
+    */
+    function some(a, fn) {
+        core.mustBe.arr(a)
+        core.mustBe.func(fn)
+        for (var i = 0, l = a.length; i < l; i++) {
+            if (fn(a[i], i)) {
+                return true
+            }
+        }
+        return false;
+    };
+    /*
+    [Malta] methods/set.js
+    */
+    function set(obj, path, value) {
+        core.mustBe.objOrArr(obj)
+        core.mustBe.str(path)
+        core.mustBe.defined(value)
+        path = path.replace(
+            /\[(\d+)\]/g,
+            function (a, dec) {
+                return '.' + dec;
+            }
+        );
+        var els = path.split('.'),
+            res = core.ut.clone(obj),
+            i = 0,
+            l = els.length,
+            tmp = res;
+            
+        for (null; i < l-1; i++) { 
+            if (!(els[i] in tmp) || core.in.isPrim(tmp[els[i]])) {
+                //if next key is a number create an array, or use an obj
+                tmp[els[i]] = els[i+1].match(/\d+/) ? [] : {}    
+            }
+            tmp = tmp[els[i]]
+        }
+        // finally
+        tmp[els[i]] = core.in.isPrim(value) ? value : core.ut.clone(value)
+        return res
+    };
+    /*
+    [Malta] methods/sortBy.js
+    */
+    function sortBy(o, kf, vrs) {
+        core.mustBe.arr(o)
+        core.mustBe.funcOrStr(kf)
+        // for purity
+        var res = [].concat(o)
+        vrs = vrs || 1
+        return (typeof kf === 'function') 
+            ? res.sort(function (a, b) {
+                return kf(a) < kf(b) ? -vrs : vrs
+            })
+            : res.sort(function (a, b) {
+                return a[kf] < b[kf] ? -vrs : vrs
+            })
+    };
+    /*
+    [Malta] methods/times.js
+    */
+    function times(n, func, ctx) {
+        core.mustBe.num(n)
+        core.mustBe.func(func)
+        ctx = ctx || null;
+        var res = [],
+            i = 0;
+        for (null; i < n; i++)
+            res[i] = func.call(ctx, i);
+        return res;
+    };
+    /*
+    [Malta] methods/uniq.js
+    */
+    function uniq(a) {
+        var tmp = {},
+            i = 0,
+            l = a.length,
+            res = [];
+        for (null; i < l; i++) {
+            tmp[a[i]] = a[i]
+        }
+        for (var j in tmp) {
+            res.push(tmp[j])
+        }
+        return res;
+    };
+    
+    return {
+        assign: assign,
+        filter: filter,
+        find: find,
+        forEach: forEach,
+        get: get,
+        id: id,
+        includes: includes,
+        isEmpty: isEmpty,
+        keyBy: keyBy,
+        map: map,
+        omit: omit,
+        pick: pick,
+        reduce: reduce,
+        remove: remove,
+        set: set,
+        some: some,
+        sortBy: sortBy,
+        times: times,
+        uniq: uniq,
+
+        isArray: core.in.isArr,
+        isFunction: core.in.isFunc,
+        isObject: core.in.isObj,
+        isString: core.in.isStr,
+        isBoolean: core.in.isBool,
+        isNumber: core.in.isNum,
+        isUndefined: core.in.isUndef,
+        isDefined: core.in.isDef,
+        isPrimitive: core.in.isPrim
+    }
+})();
+(typeof exports === 'object') && (module.exports = objwun);

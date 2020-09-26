@@ -6,13 +6,13 @@ describe('times', () => {
     
     it('should return a non empty array', () => {
         const rand = () => Math.random()
-        assert.equal(ow.times(3, rand).length, 3);
+        assert.strictEqual(ow.times(3, rand).length, 3);
     });
 
     it('should return the right array', () => {
         var res = ow.times(3, i => i*i),
             stringed = JSON.stringify(res);
-        assert.equal(stringed, JSON.stringify([0,1,4]));
+        assert.strictEqual(stringed, JSON.stringify([0,1,4]));
     });
 
     it('should use the context ', () => {
@@ -24,7 +24,7 @@ describe('times', () => {
                 return this.n * this.mult(i)
             }, o),
             stringed = JSON.stringify(res);
-        assert.equal(stringed, JSON.stringify([0, 8, 16]));
+        assert.strictEqual(stringed, JSON.stringify([0, 8, 16]));
     });
 
     it('should throw an error for the non number argument', () => {
@@ -53,7 +53,7 @@ describe('times', () => {
         ow.times(3, function(i) {
             return this.n * this.mult(i)
         }, o),
-        assert.equal(JSON.stringify(o), JSON.stringify({
+        assert.strictEqual(JSON.stringify(o), JSON.stringify({
             mult: a => a*2,
             n: 4
         }));

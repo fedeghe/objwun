@@ -1,15 +1,12 @@
 function forEach(o, func) {    
-    core.mustBe.objOrArr(o)
-    func = func || function (e, i) {
+    var what = core.mustBe.objOrArr(o)
+    func = func || function (e) {
         return e
     }
-    var res;
-    if (core.in.isObj(o)) {
-        res = core.ut.objLoop(o, func)
+    if (what.isObj) {
+        return core.ut.objLoop(o, func)
     }
-    if (core.in.isArr(o)){
-        res = core.ut.arrLoop(o, func)
+    if (what.isArr){
+        return core.ut.arrLoop(o, func)
     }
-    return res;
-
 }

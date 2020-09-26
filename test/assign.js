@@ -3,34 +3,34 @@ var assert = require('assert'),
 
 describe('assign', () => {
     it('should return an empty object', () => {
-        assert.equal(JSON.stringify(ow.assign()), '{}');
+        assert.strictEqual(JSON.stringify(ow.assign()), '{}');
     });
     it('should return the passed arguments', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.assign({a: 1}, {b: 2})),
             JSON.stringify({a: 1, b: 2})
         );
     });
     it('should ignore empty objs', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.assign({a: 1}, {b: 2}, {}, {})),
             JSON.stringify({a: 1, b: 2})
         );
     });
     it('should override on the way', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.assign({a: 1}, {b: 2}, {}, {b:5}, {a:6})),
             JSON.stringify({a: 6, b: 5})
         );
     });
     it('should override on the way deeper', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.assign({a: 1}, {b: 2}, {}, {b:5}, {a:6}, {a:7}, {b:3, s:5})),
             JSON.stringify({a: 7, b: 3, s:5})
         );
     });
     it('should override in one', () => {
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(ow.assign(
                 {a: 1},
                 {b: 2},
@@ -48,7 +48,7 @@ describe('assign', () => {
         var me = new Person()
         Person.prototype.type = 'human';
 
-        assert.equal(JSON.stringify(ow.assign(me, {})), JSON.stringify({}));
+        assert.strictEqual(JSON.stringify(ow.assign(me, {})), JSON.stringify({}));
     });
     
     it('should avoid upper prototype (counterproof) properties', () => {
@@ -56,7 +56,7 @@ describe('assign', () => {
         var me = new Person('Federico')
         Person.prototype.type = 'human';
 
-        assert.equal(JSON.stringify(ow.assign(me, {})), JSON.stringify({name: 'Federico'}));
+        assert.strictEqual(JSON.stringify(ow.assign(me, {})), JSON.stringify({name: 'Federico'}));
     });
 
     
@@ -64,12 +64,12 @@ describe('assign', () => {
         const inp = [{a: {a: {a: {a: {a:1}}}}}, {b: 2}, {}, {b:5}, {a:6}, {a:7}, {b:3, s:{s: {s: 5}}}],
             out = ow.assign.apply(null, inp);
 
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(out),
             JSON.stringify({a: 7, b: 3, s:{s: {s: 5}}})
         );
         out.s.s.s = 'modified'
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(inp),
             JSON.stringify([{a: {a: {a: {a: {a:1}}}}}, {b: 2}, {}, {b:5}, {a:6}, {a:7}, {b:3, s:{s: {s: 5}}}])
         )

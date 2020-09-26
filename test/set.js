@@ -5,7 +5,7 @@ describe('set', () => {
     it('should set basic', () => {
         var o = [],
             res = ow.set(o, '0.t', 1)
-        assert.equal(JSON.stringify(res), JSON.stringify([{t: 1}]));
+        assert.strictEqual(JSON.stringify(res), JSON.stringify([{t: 1}]));
     });
     it('should set bit more advanced/deeper', () => {
         var o = {
@@ -18,7 +18,7 @@ describe('set', () => {
                 }
             },
             res = ow.set(o, 'a.s.t', 1)
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(res),
             JSON.stringify({
                 a:{
@@ -48,7 +48,7 @@ describe('set', () => {
                 }
             },
             res = ow.set(o, 'a.s.t', 1)
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(res),
             JSON.stringify({
                 a:{
@@ -79,7 +79,7 @@ describe('set', () => {
                 }
             },
             res = ow.set(o, 'a.s.t.4', {just:{one: 'obj'}})
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(res),
             JSON.stringify({
                 a:{
@@ -111,7 +111,7 @@ describe('set', () => {
                 }
             },
             res = ow.set(o, 'a.s[1]', 'hello')
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(res),
             JSON.stringify({
                 a: {
@@ -163,12 +163,12 @@ describe('set', () => {
                 {a: 1234567}, {d: {e:[1,2,3,4]}}
             ],
             res = ow.set(o, '1.s', 11);
-        assert.equal(JSON.stringify(res), JSON.stringify([{a: 1},    
+        assert.strictEqual(JSON.stringify(res), JSON.stringify([{a: 1},    
             {s: 11}, 3,    
             null, {a: 1},    
             {a: 1234567}, {d: {e:[1,2,3,4]}}
         ]));
-        assert.equal(JSON.stringify(o), JSON.stringify([{a: 1},    
+        assert.strictEqual(JSON.stringify(o), JSON.stringify([{a: 1},    
             {s: 10}, 3,    
             null, {a: 1},    
             {a: 1234567}, {d: {e:[1,2,3,4]}}

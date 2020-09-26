@@ -3,11 +3,11 @@ var assert = require('assert'),
 
 describe('map', () => {
 
-    it('should still return an empty array', () => assert.equal(JSON.stringify(ow.map([])), '[]'));
-    it('should still return the input array', () => assert.equal(JSON.stringify(ow.map([1,2,3])), '[1,2,3]'));
+    it('should still return an empty array', () => assert.strictEqual(JSON.stringify(ow.map([])), '[]'));
+    it('should still return the input array', () => assert.strictEqual(JSON.stringify(ow.map([1,2,3])), '[1,2,3]'));
 
     it('should return the content array',
-        () => assert.equal(
+        () => assert.strictEqual(
             JSON.stringify(ow.map({
                 a:1, b:2, d:3
             }, (o, i) => o)),
@@ -16,7 +16,7 @@ describe('map', () => {
     );
 
     it('should return the content array from array',
-        () => assert.equal(
+        () => assert.strictEqual(
             JSON.stringify(ow.map([1,2,4], (o, i) => o)),
             '[1,2,4]'
         )
@@ -34,8 +34,8 @@ describe('map', () => {
             a:1, b:2, d:3
         },
         res = ow.map(inp, (o, i) => o);
-        assert.equal(JSON.stringify(res), JSON.stringify({a:1,b:2,d:3}));
-        assert.equal(JSON.stringify(res), JSON.stringify({
+        assert.strictEqual(JSON.stringify(res), JSON.stringify({a:1,b:2,d:3}));
+        assert.strictEqual(JSON.stringify(res), JSON.stringify({
             a:1, b:2, d:3
         }));
     });   

@@ -15,14 +15,14 @@ function get(obj, path, defaultValue) {
 
     var els = path.split('.'),
         res = obj,
-        i = 0,
+        i = -1,
         l = els.length,
         there;
         
-    for (null; i < l; i++) {
+    while (++i < l) {
         there = els[i] in res
         if (!there) return defaultValue || null
-        res = res[els[i]]
+        res = res[els[i]] // still pure
     }
 
     return res

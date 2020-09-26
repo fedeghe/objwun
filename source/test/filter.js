@@ -3,7 +3,7 @@ var assert = require('assert'),
 
 describe('filter', () => {
     it('should return true, simple array', () => {
-        assert.equal(JSON.stringify(ow.filter([1,2,3,5,6], e => {
+        assert.strictEqual(JSON.stringify(ow.filter([1,2,3,5,6], e => {
             return e % 2 === 0
         })), JSON.stringify([2,6]));
     });
@@ -15,7 +15,7 @@ describe('filter', () => {
             }, {
                 name: 'Fluffy'
             }], e => e.name.match(/^F/));
-        assert.equal(
+        assert.strictEqual(
             JSON.stringify(res),
             JSON.stringify([
                 {name:'Federico'},
@@ -25,8 +25,8 @@ describe('filter', () => {
     });
     it('∂ should be a pure function', () => {
         const inp = [1,2,3,5,6]
-        assert.equal(JSON.stringify(ow.filter(inp, e => e % 2 === 0)), JSON.stringify([2,6]));
-        assert.equal(JSON.stringify(inp), JSON.stringify([1,2,3,5,6]));
+        assert.strictEqual(JSON.stringify(ow.filter(inp, e => e % 2 === 0)), JSON.stringify([2,6]));
+        assert.strictEqual(JSON.stringify(inp), JSON.stringify([1,2,3,5,6]));
         
     });
 });
