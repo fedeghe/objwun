@@ -33,6 +33,9 @@ describe('find', () => {
             }
         }], (e, i) => e.data && e.data.age > 30 ), 3);
     });
+    it('should not find the index', () => {
+        assert.strictEqual(ow.find([1,2,3,5,6], (e, i) => e >10), -1);
+    });
     it('should throw an error for the bad first argument', () => {
         try {
             ow.find(false)

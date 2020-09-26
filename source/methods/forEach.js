@@ -3,10 +3,7 @@ function forEach(o, func) {
     func = func || function (e) {
         return e
     }
-    if (what.isObj) {
-        return core.ut.objLoop(o, func)
-    }
-    if (what.isArr){
-        return core.ut.arrLoop(o, func)
-    }
+    return what.isObj 
+        ? core.ut.objLoop(o, func)
+        : core.ut.arrLoop(o, func)
 }
