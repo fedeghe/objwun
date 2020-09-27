@@ -13,8 +13,8 @@ describe('assign', () => {
     });
     it('should ignore empty objs', () => {
         assert.strictEqual(
-            JSON.stringify(ow.assign({a: 1}, {b: 2}, {}, {})),
-            JSON.stringify({a: 1, b: 2})
+            JSON.stringify(ow.assign({a: 1}, {b: 2}, {}, {}, {c: 3}, {}, {d: 4})),
+            JSON.stringify({a: 1, b: 2, c: 3, d: 4})
         );
     });
     it('should override on the way', () => {

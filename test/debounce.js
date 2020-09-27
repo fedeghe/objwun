@@ -51,4 +51,9 @@ describe('debounce', () => {
             assert.strictEqual(t, 0);
         }, 200);
     });
+    it('∂ should be a pure function', () => {
+        const t = p => p*2
+        ow.debounce(t, 100);
+        assert.strictEqual(t(3), 6);
+    });
 });
