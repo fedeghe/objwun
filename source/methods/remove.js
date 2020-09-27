@@ -1,5 +1,5 @@
 function remove(a, x) {
-    core.mustBe.arr(a)
+    core.mustBe.arr(a);
     var what = core.mustBe.funcOrArr(x),
         res = [].concat(a),
         xsort;
