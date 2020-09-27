@@ -1,10 +1,7 @@
 {
     "EXE": [
         "rm -rf dist",
-        "mkdir dist",
-        "rm -rf test",
-        "mkdir test"
+        "mkdir dist"
     ],
-    "#source/index.js": "dist -plugins=malta-js-uglify...malta-header-comment[name:\"source/header.txt\"]...malta-mocha -options=placeholderMode:\"func\"",
-    "#source/test/*.js": "test -plugins=malta-mocha"
+    "#source/index.js": "dist -plugins=malta-js-uglify...malta-header-comment[name:\"source/header.txt\"] -options=placeholderMode:\"func\""
 }
