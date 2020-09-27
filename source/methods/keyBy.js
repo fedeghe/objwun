@@ -3,15 +3,15 @@ function keyBy(o, kf) {
     core.mustBe.funcOrStr(kf);
 
     var res = {},
-        i = 0,
+        i = -1,
         l = o.length;
     if (typeof kf === 'function') {
-        for (; i < l; i++) {
-            res[kf(o[i])] = o[i]
+        while (++i < l) {
+            res[kf(o[i])] = o[i];
         }
     } else {
-        for (; i < l; i++) {
-            res[o[i][kf]] = o[i]
+        while (++i < l) {
+            res[o[i][kf]] = o[i];
         }
     }
     return res;

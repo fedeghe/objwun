@@ -1,10 +1,9 @@
 function get(obj, path, defaultValue) {
-
-    core.mustBe.objOrArr(obj)
-    core.mustBe.defined(path)
+    core.mustBe.objOrArr(obj);
+    core.mustBe.defined(path);
     if (
         isEmpty(obj) || isEmpty(path)
-    ) return defaultValue || null
+    ) return defaultValue || null;
 
     path = path.replace(
         /\[(\d+)\]/g,
@@ -20,10 +19,9 @@ function get(obj, path, defaultValue) {
         there;
         
     while (++i < l) {
-        there = els[i] in res
-        if (!there) return defaultValue || null
-        res = res[els[i]] // still pure
+        there = els[i] in res;
+        if (!there) return defaultValue || null;
+        res = res[els[i]]; // still pure
     }
-
-    return res
+    return res;
 }

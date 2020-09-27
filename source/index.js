@@ -2,6 +2,7 @@ var objwun = (function (){
     maltaF('core/index.js');
 
     maltaF('methods/assign.js');
+    maltaF('methods/debounce.js');
     maltaF('methods/filter.js');
     maltaF('methods/find.js');
     maltaF('methods/forEach.js');
@@ -23,6 +24,7 @@ var objwun = (function (){
     
     return {
         assign: assign,
+        debounce: debounce,
         filter: filter,
         find: find,
         forEach: forEach,

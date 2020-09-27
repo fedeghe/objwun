@@ -1,6 +1,6 @@
 function times(n, func, ctx) {
-    core.mustBe.num(n)
-    core.mustBe.func(func)
+    core.mustBe.num(n);
+    core.mustBe.func(func);
     ctx = ctx || null;
     var res = [],
         i = 0;
