@@ -1,12 +1,12 @@
-function find(a, fn) {
+function findIndex(a, fn) {
     core.mustBe.arr(a);
     core.mustBe.func(fn);
     var i = -1,
         l = a.length;
     while (++i < l) {
         if (fn(a[i], i)){
-            return a[i];
+            return i;
         }
     }
-    return null;
+    return -1;
 }

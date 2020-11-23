@@ -29,8 +29,8 @@
     },
     "devDependencies": {
         "coveralls": "~3.0.1",
-        "malta": "^4.1.19",
-        "malta-header-comment": "^1.0.10",
+        "malta": "^4.1.27",
+        "malta-header-comment": "^1.0.12",
         "malta-js-uglify": "^1.0.13",
         "malta-mocha": "^1.0.17",
         "mocha": "^8.1.1",

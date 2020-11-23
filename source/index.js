@@ -2,9 +2,11 @@ var objwun = (function (){
     maltaF('core/index.js');
 
     maltaF('methods/assign.js');
+    maltaF('methods/clone.js');
     maltaF('methods/debounce.js');
     maltaF('methods/filter.js');
     maltaF('methods/find.js');
+    maltaF('methods/findIndex.js');
     maltaF('methods/forEach.js');
     maltaF('methods/get.js');
     maltaF('methods/id.js');
@@ -12,6 +14,7 @@ var objwun = (function (){
     maltaF('methods/isEmpty.js');
     maltaF('methods/keyBy.js');
     maltaF('methods/map.js');
+    maltaF('methods/merge.js');
     maltaF('methods/omit.js');
     maltaF('methods/pick.js');
     maltaF('methods/reduce.js');
@@ -24,9 +27,11 @@ var objwun = (function (){
     
     return {
         assign: assign,
+        clone: clone,
         debounce: debounce,
         filter: filter,
         find: find,
+        findIndex: findIndex,
         forEach: forEach,
         get: get,
         id: id,
@@ -34,6 +39,7 @@ var objwun = (function (){
         isEmpty: isEmpty,
         keyBy: keyBy,
         map: map,
+        merge: merge,
         omit: omit,
         pick: pick,
         reduce: reduce,
@@ -45,6 +51,7 @@ var objwun = (function (){
         uniq: uniq,
 
         isArray: core.in.isArr,
+        isBigint: core.in.isBigint,
         isFunction: core.in.isFunc,
         isObject: core.in.isObj,
         isString: core.in.isStr,
@@ -52,7 +59,8 @@ var objwun = (function (){
         isNumber: core.in.isNum,
         isUndefined: core.in.isUndef,
         isDefined: core.in.isDef,
-        isPrimitive: core.in.isPrim
+        isSymbol: core.in.isSymbol,
+        isPrimitive: core.in.isPrimitive
     }
 })();
 (typeof exports === 'object') && (module.exports = objwun);

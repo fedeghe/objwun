@@ -115,6 +115,32 @@ describe('types', () => {
                 let t
                 assert.strictEqual(ow.isDefined(t), false);
             });
-        })
-    })
+        });
+    });
+    describe('symbol', () => {
+        it('should be a Symbol', () => assert.strictEqual(ow.isSymbol(Symbol('x')), true));
+        it('should be a Symbol too', () => assert.strictEqual(ow.isSymbol(Symbol()), true));
+    });
+    describe('bigint', () => {
+        it('should be a BigInt', () => assert.strictEqual(ow.isBigint(22n), true));
+        it('should be a BigInt too', () => assert.strictEqual(ow.isBigint(22n ** 78n), true));
+    });
+    describe('primitive', () => {
+        it('should be a primitive, bigint', () => assert.strictEqual(ow.isPrimitive(22n), true));
+        it('should be a primitive, int', () => assert.strictEqual(ow.isPrimitive(22), true));
+        it('should be a primitive, boolean', () => assert.strictEqual(ow.isPrimitive(true), true));
+        it('should be a primitive, symbol', () => assert.strictEqual(ow.isPrimitive(Symbol()), true));
+        it('should be a primitive, undefined', () => assert.strictEqual(ow.isPrimitive(), true));
+        describe('counter cases', () => {
+            it('function should not be a primitive', function () {
+                assert.strictEqual(ow.isPrimitive(function (){}), false);
+            });
+            it('object should not be a primitive', function () {
+                assert.strictEqual(ow.isPrimitive({}), false);
+            });
+            it('array should not be a primitive', function () {
+                assert.strictEqual(ow.isPrimitive([]), false);
+            });
+        });
+    });
 });
