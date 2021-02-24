@@ -128,6 +128,31 @@ describe('set', () => {
         );
     });
 
+    it('should prevent prototype pollution, first level', () => {
+        var o = { num: 10 },
+            res = ow.set(o, 'prototype', String.prototype);
+        res = ow.set(res, '__proto__', {polluted: true});
+        res = ow.set(res, 'constructor', {again: 'polluted'});
+        assert.strictEqual(
+            JSON.stringify(res),
+            JSON.stringify({
+                num:10
+            })
+        );
+    });
+    
+    it('should prevent prototype pollution, deeper', () => {
+        var o = { num: 10 },
+            res = ow.set(o, 'prototype.foo', 'what');
+        res = ow.set(res, '__proto__.polluted', {polluted: true});
+        res = ow.set(res, 'constructor.foo', {again: 'polluted'});
+        assert.strictEqual(
+            JSON.stringify(res),
+            JSON.stringify({
+                num:10
+            })
+        );
+    });
 
     it('should throw an error for the bad argument', () => {
         try {
