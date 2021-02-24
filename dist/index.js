@@ -1,6 +1,6 @@
 'use strict';
 /*
-objwun v. 1.1.6
+objwun v. 1.1.7
 fedeghe <fedeghe@gmail.com>
 
 Isomorphic ES3 library to common stuff on object literals and arrays
