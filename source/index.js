@@ -1,4 +1,4 @@
-var objwun = (function (){
+var objwun = (function() {
     maltaF('core/index.js');
 
     maltaF('methods/assign.js');
@@ -11,6 +11,7 @@ var objwun = (function (){
     maltaF('methods/get.js');
     maltaF('methods/id.js');
     maltaF('methods/includes.js');
+    maltaF('methods/intersection.js');
     maltaF('methods/isEmpty.js');
     maltaF('methods/keyBy.js');
     maltaF('methods/map.js');
@@ -24,7 +25,7 @@ var objwun = (function (){
     maltaF('methods/sortBy.js');
     maltaF('methods/times.js');
     maltaF('methods/uniq.js');
-    
+
     return {
         assign: assign,
         clone: clone,
@@ -36,6 +37,7 @@ var objwun = (function (){
         get: get,
         id: id,
         includes: includes,
+        intersection: intersection,
         isEmpty: isEmpty,
         keyBy: keyBy,
         map: map,

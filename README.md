@@ -9,7 +9,7 @@
 
 Docs might come one day  
 
-**assign** ~ **clone** ~ **debounce** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **get** ~ **id** ~ **includes** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **merge** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq**
+**assign** ~ **clone** ~ **debounce** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **get** ~ **id** ~ **includes** ~ **intersection** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **merge** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq**
 
  and  
 
