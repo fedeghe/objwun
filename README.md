@@ -15,4 +15,4 @@ Docs might come one day
 
 **isArray** ~ **isBigint** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive** ~ **isString** ~ **isSymbol** ~ **isUndefined**  
 
-༺ ᚗᚌ ༻
+༺ ᚗᚌ ༻ 
