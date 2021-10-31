@@ -25,6 +25,7 @@ var objwun = (function() {
     maltaF('methods/sortBy.js');
     maltaF('methods/times.js');
     maltaF('methods/uniq.js');
+    maltaF('methods/uniqBy.js');
 
     return {
         assign: assign,
@@ -51,6 +52,7 @@ var objwun = (function() {
         sortBy: sortBy,
         times: times,
         uniq: uniq,
+        uniqBy: uniqBy,
 
         isArray: core.in.isArr,
         isBigint: core.in.isBigint,
