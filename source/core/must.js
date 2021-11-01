@@ -16,11 +16,11 @@
         return true;
     }
 
-    // function bool(a) {
-    //     if (!core.in.isBool(a))
-    //         throw new Error(core.errors.INVALID_ARGUMENT_BOOLEAN_EXPECTED);
-    //     return true;
-    // }
+    function bool(a) {
+        if (!core.in.isBool(a))
+            throw new Error(core.errors.INVALID_ARGUMENT_BOOLEAN_EXPECTED);
+        return true;
+    }
 
     function num(a) {
         if (!core.in.isNum(a))
@@ -79,7 +79,7 @@
         func: func,
         funcOrStr: funcOrStr,
         funcOrArr: funcOrArr,
-        // bool: bool,
+        bool: bool,
         num: num,
         obj: obj,
         objOrArr: objOrArr,
