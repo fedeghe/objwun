@@ -64,7 +64,8 @@ var objwun = (function() {
         isUndefined: core.in.isUndef,
         isDefined: core.in.isDef,
         isSymbol: core.in.isSymbol,
-        isPrimitive: core.in.isPrimitive
+        isPrimitive: core.in.isPrimitive, 
+        core: core,
     }
 })();
 (typeof exports === 'object') && (module.exports = objwun);

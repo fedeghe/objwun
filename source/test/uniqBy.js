@@ -15,7 +15,7 @@ describe('uniqBy', () => {
             JSON.stringify([{a:1,b:1},{b:3}])
         )
     );
-    it('should return the expected when a string is passed',
+    it('should return the expected when a fucntion is passed',
         () => assert.strictEqual(
             JSON.stringify(ow.uniqBy([
                 2.34,
