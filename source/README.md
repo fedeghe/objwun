@@ -328,7 +328,7 @@ const a = [1, 2, 3, 4];
 console.log(ow.map(o, e => e/2));
 // { name: 21, num: 5 }
 
-console.log(ow.keyBy(a, e => e ** 2))
+console.log(ow.map(a, e => e ** 2))
 // [ 1, 4, 9, 16 ]
 ```
 
