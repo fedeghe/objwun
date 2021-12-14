@@ -38,11 +38,18 @@
 
     function clone(o) {return JSON.parse(JSON.stringify(o));}
 
+    function splitPath (path) {
+        return path.replace(/\\\./g, '\uffff').split('.').map(function(p) {
+            return p.replace(/\uffff/g, '.');
+        });
+    }
+
     core.ut = {
         args2arr: args2arr,
         arrLoop: arrLoop,
         clone: clone,
         objLoop: objLoop,
-        pick_omit: pick_omit
+        pick_omit: pick_omit,
+        splitPath: splitPath
     };
 }()

@@ -1,25 +1,22 @@
 
-function uniqBy(a, what) {
-    if (core.in.isUndef(what)) return uniq(a)
+function uniqBy(a, w) {
+    core.mustBe.arr(a);
+    if (core.in.isUndef(w)) return uniq(a);
+    var what = core.mustBe.funcOrStr(w);
     var tmp = {},
         i = 0,
         l = a.length,
-        res = [],
         t;
-    if (core.in.isStr(what)) {
+    if (what.isStr) {
         for (null; i < l; i++) {
-            if (!(a[i][what] in tmp)) tmp[a[i][what]] = a[i];
+            core.mustBe.obj(a[i]);
+            if (!(a[i][w] in tmp)) tmp[a[i][w]] = a[i];
         }
-    }
-    if (core.in.isFunc(what)) {
+    } else {
         for (null; i < l; i++) {
-            t = what(a[i])
+            t = w(a[i]);
             if (!(t in tmp)) tmp[t] = a[i];
         }
     }
-    for (var j in tmp) {
-        res.push(tmp[j]);
-    }
-    return res;
-    
+    return Object.values(tmp);
 }

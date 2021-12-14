@@ -1,12 +1,11 @@
-function findIndex(a, fn) {
-    core.mustBe.arr(a);
+function findIndex(x, fn) {
+    var what = core.mustBe.objOrArr(x);
     core.mustBe.func(fn);
-    var i = -1,
-        l = a.length;
-    while (++i < l) {
-        if (fn(a[i], i)){
-            return i;
-        }
+
+    if (what.isArr) {
+        return x.findIndex(fn);
     }
-    return -1;
+    var keys = Object.keys(x),
+        fi = keys.findIndex(function (k) { return fn(x[k])});
+    return fi >= 0 ? keys[fi] : -1; 
 }

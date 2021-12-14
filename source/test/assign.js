@@ -74,4 +74,12 @@ describe('assign', () => {
             JSON.stringify([{a: {a: {a: {a: {a:1}}}}}, {b: 2}, {}, {b:5}, {a:6}, {a:7}, {b:3, s:{s: {s: 5}}}])
         )
     });
+    it('should throw an exception', () => {
+        try {
+            ow.assign({}, [1,2,3]);
+        } catch(e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_OBJECT_EXPECTED);
+        }
+    });
 });

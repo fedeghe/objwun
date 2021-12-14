@@ -1,17 +1,9 @@
 function reduce(o, fn, initial) {
-    core.mustBe.objOrArr(o);
+    var what = core.mustBe.objOrArr(o);
     core.mustBe.func(fn);
-    var isObj = core.in.isObj(o),
-        isArr = core.in.isArr(o),
-        res = initial || (isObj ? {} : []);
+    var res = initial || (what.isObj ? {} : []);
 
-    if (isObj)
-        for (var k in o)
-            res = fn(res, o[k], k, o);
-
-    if (isArr)
-        for (var i = 0, l = o.length; i < l; i++) 
-            res = fn(res, o[i], i, o);
-
-    return res;
+    return what.isObj
+        ? Object.keys(o).reduce( function(acc, k, i, ob) { return fn(acc, o[k], k, o);}  , res)
+        : o.reduce(fn, res);
 }

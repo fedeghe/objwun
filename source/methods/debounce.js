@@ -1,4 +1,6 @@
 function debounce(func, delay) {
+    core.mustBe.func(func);
+    core.mustBe.num(delay);
     var to,
         ret = function () {
             var args = [].slice.call(arguments),

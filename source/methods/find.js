@@ -1,12 +1,11 @@
-function find(a, fn) {
-    core.mustBe.arr(a);
+function find(x, fn) {
+    var what = core.mustBe.objOrArr(x);
     core.mustBe.func(fn);
-    var i = -1,
-        l = a.length;
-    while (++i < l) {
-        if (fn(a[i], i)){
-            return a[i];
-        }
-    }
-    return null;
+
+    if(what.isArr)  return x.find(fn);
+    var kz = Object.keys(x);
+    
+    return Object.values(x).find(function(v, k, x){
+        return fn(v, kz[k], x);
+    });
 }

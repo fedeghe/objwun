@@ -1,11 +1,9 @@
-function includes(o, el) {
-    core.mustBe.arr(o);
+function includes(x, el) {
+    var what = core.mustBe.objOrArr(x);
     core.mustBe.defined(el);
-    var i = -1,
-        l = o.length;
-    while (++i < l)
-        if (o[i] === el) {
+    if (what.isArr) return x.includes(el);
+    for (var k in x) 
+        if (x.hasOwnProperty(k) && x[k] === el)
             return true;
-        }
     return false;
 }

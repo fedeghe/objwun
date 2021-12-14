@@ -19,7 +19,6 @@ var objwun = (function() {
     maltaF('methods/omit.js');
     maltaF('methods/pick.js');
     maltaF('methods/reduce.js');
-    maltaF('methods/remove.js');
     maltaF('methods/some.js');
     maltaF('methods/set.js');
     maltaF('methods/sortBy.js');
@@ -46,7 +45,6 @@ var objwun = (function() {
         omit: omit,
         pick: pick,
         reduce: reduce,
-        remove: remove,
         set: set,
         some: some,
         sortBy: sortBy,

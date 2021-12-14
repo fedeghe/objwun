@@ -1,11 +1,12 @@
-function filter(a, fn) {
-    core.mustBe.arr(a);
+function filter(x, fn) {
+    var what = core.mustBe.objOrArr(x);
     core.mustBe.func(fn);
-    var res = [],
-        i = -1,
-        l = a.length;
-    while (++i < l) {
-        fn(a[i], i) && res.push(a[i]);
-    }
-    return res;
+    if (what.isArr) return x.filter(fn);
+    var ks = Object.keys(x);
+    return ks.reduce(function (acc, el, i) {
+        if (fn(x[el], ks[i], x)) {
+            acc[ks[i]] = x[el];
+        }
+        return acc;
+    }, {});
 }

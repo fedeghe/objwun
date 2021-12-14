@@ -1,8 +1,15 @@
-function some(a, fn) {
-    core.mustBe.arr(a);
+function some(x, fn) {
+    var what = core.mustBe.objOrArr(x);
     core.mustBe.func(fn);
-    for (var i = 0, l = a.length; i < l; i++) {
-        if (fn(a[i], i)) {
+    if (what.isArr) {
+        for (var i = 0, l = x.length; i < l; i++) {
+            if (fn(x[i], i)) {
+                return true;
+            }
+        }
+    } 
+    for(var i in x) {
+        if (x.hasOwnProperty(i) && fn(x[i], i)) {
             return true;
         }
     }

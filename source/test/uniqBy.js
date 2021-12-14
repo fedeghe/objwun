@@ -2,7 +2,7 @@ var assert = require('assert'),
     ow = require('../dist');
 
 describe('uniqBy', () => {
-    it('should behave like uniq when a second paramter is not passed', () => assert.strictEqual(JSON.stringify(ow.uniqBy([1,1,2,3,2,3,1])), '[1,2,3]'));
+    it('should behave like uniq when a second parameter is not passed', () => assert.strictEqual(JSON.stringify(ow.uniqBy([1,1,2,3,2,3,1])), '[1,2,3]'));
     it('should return the expected when a string is passed',
         () => assert.strictEqual(
             JSON.stringify(ow.uniqBy([
@@ -15,7 +15,7 @@ describe('uniqBy', () => {
             JSON.stringify([{a:1,b:1},{b:3}])
         )
     );
-    it('should return the expected when a fucntion is passed',
+    it('should return the expected when a function is passed',
         () => assert.strictEqual(
             JSON.stringify(ow.uniqBy([
                 2.34,

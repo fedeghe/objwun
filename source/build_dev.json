@@ -6,5 +6,6 @@
         "mkdir test"
     ],
     "source/index.js": "dist -plugins=malta-header-comment[name:\"source/header.txt\"]...malta-mocha -options=placeholderMode:\"func\"",
-    "source/test/*.js": "test -plugins=malta-mocha"
+    "source/test/*.js": "test -plugins=malta-mocha",
+    "source/README.md": "."
 }
