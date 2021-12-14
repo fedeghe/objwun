@@ -315,7 +315,7 @@ console.log(ow.keyBy(a, f => f.name+'_'))
 - **parameters**:
     - an array or a literal object
     - a mapping function
-- **output**: an object literal
+- **output**: an array or object literal depending on the input
 - **throws**: if receives something that is not an array or object literal as first parameter, or not a string nor function as the second one
 
 example
@@ -329,7 +329,7 @@ console.log(ow.map(o, e => e/2));
 // { name: 21, num: 5 }
 
 console.log(ow.keyBy(a, e => e ** 2))
-// { '1': 1, '4': 2, '9': 3, '16': 4 }
+// [ 1, 4, 9, 16 ]
 ```
 
 ---
