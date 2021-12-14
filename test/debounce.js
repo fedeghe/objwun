@@ -59,4 +59,22 @@ describe('debounce', () => {
         ow.debounce(t, 50);
         assert.strictEqual(t(3), 6);
     });
+    it('should throw an exception - 1', () => {
+        const o = 1;
+        try {
+            ow.debounce(o);
+        } catch(e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_FUNCTION_EXPECTED);
+        }
+    });
+    it('should throw an exception - 2', () => {
+        const o = 1;
+        try {
+            ow.debounce(() => true, true);
+        } catch(e) {
+            assert.strictEqual(e instanceof Error, true);
+            assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_INTEGER_EXPECTED);
+        }
+    });
 });

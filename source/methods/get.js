@@ -4,6 +4,7 @@ function get(obj, path, defaultValue) {
     if (
         isEmpty(obj) || isEmpty(path)
     ) return defaultValue || null;
+    defaultValue = defaultValue || null;
 
     path = path.replace(
         /\[(\d+)\]/g,
@@ -19,6 +20,7 @@ function get(obj, path, defaultValue) {
         there;
         
     while (++i < l) {
+        if (core.in.isPrimitive(res)) return defaultValue;
         there = els[i] in res;
         if (!there) return defaultValue || null;
         res = res[els[i]]; // still pure

@@ -12,7 +12,7 @@ function set(obj, path, value) {
     var isPolluting = function(el) {
             return el.match(/(__proto__|constructor|prototype)/);
         },
-        els = path.split('.'),
+        els = core.ut.splitPath(path),
         res = core.ut.clone(obj),
         i = 0,
         l = els.length,

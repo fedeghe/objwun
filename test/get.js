@@ -47,6 +47,16 @@ describe('get', () => {
             res = ow.get(o, 'c.e', {s:1})
         assert.strictEqual(JSON.stringify(res), JSON.stringify({s:1}));
     });
+    it('should also return default value', () => {
+        var o = {
+            a: 1, b: 2, c: {
+                a:11, b:22, c:33, d: {
+                    a:111,b:222
+                }
+            }},
+            res = ow.get(o, 'a.e', {s:1})
+        assert.strictEqual(JSON.stringify(res), JSON.stringify({s:1}));
+    });
     it('should return elements from array of objects', () => {
         var o = [{
                 a: 1, b: 2, c: 3,

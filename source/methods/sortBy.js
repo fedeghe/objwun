@@ -1,10 +1,12 @@
 function sortBy(o, kf, vrs) {
     core.mustBe.arr(o);
-    core.mustBe.funcOrStr(kf);
-    // for purity
-    var res = [].concat(o);
+    var what = core.mustBe.funcOrStr(kf),
+        // for purity
+        res = [].concat(o);
     vrs = vrs || 1;
-    return (typeof kf === 'function') 
+    core.mustBe.num(vrs);
+
+    return what.isFunc
         ? res.sort(function (a, b) {
             return kf(a) < kf(b) ? -vrs : vrs;
         })
