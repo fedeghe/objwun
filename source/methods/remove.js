@@ -1,7 +1,7 @@
 function remove(x, func) {    
     var what = core.mustBe.objOrArr(x);
     func = func || function (e) {
-        return true;
+        return false;
     };
     core.mustBe.func(func);
     var res;
