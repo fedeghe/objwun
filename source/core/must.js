@@ -71,6 +71,17 @@
             isArr: isArr,
         };
     }
+    function sized(x, n) {
+        var isArr = core.in.isArr(x),
+            isObj = core.in.isObj(x);
+        if (!isObj && !isArr)
+            throw new Error(core.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);
+        return (
+            (isArr && x.length === n)
+            ||
+            (isObj && Object.values(x).length === n)
+        );
+    }
 
 
     core.mustBe = {
@@ -83,6 +94,7 @@
         num: num,
         obj: obj,
         objOrArr: objOrArr,
+        sized: sized,
         str: str,
     };
 }()
