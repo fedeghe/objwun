@@ -4,6 +4,7 @@ var objwun = (function() {
     maltaF('methods/assign.js');
     maltaF('methods/clone.js');
     maltaF('methods/debounce.js');
+    maltaF('methods/every.js');
     maltaF('methods/filter.js');
     maltaF('methods/find.js');
     maltaF('methods/findIndex.js');
@@ -32,6 +33,7 @@ var objwun = (function() {
         assign: assign,
         clone: clone,
         debounce: debounce,
+        every: every,
         filter: filter,
         find: find,
         findIndex: findIndex,
