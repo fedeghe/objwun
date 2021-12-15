@@ -57,6 +57,13 @@ describe('merge', () => {
             null
         );
     });
+    it('should not merge __proto__', () => {
+        const bad = '{"__proto__":{"you":"are screwed !"}}';
+        let a = {};
+        assert.strictEqual(a.oops, undefined)
+        ow.merge({}, JSON.parse(bad));
+        assert.strictEqual(a.oops, undefined)
+    });
     it('should throw an error in case of mixed arguments', () => {
         try {
             ow.merge([], {})
