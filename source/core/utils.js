@@ -1,4 +1,4 @@
-+function (){
++function () {
     function args2arr(a) {
         return [].slice.call(a, 0);
     }
@@ -8,7 +8,7 @@
             core.mustBe.obj(o)
             core.mustBe.arr(x);
             var res = {};
-            for (var i in o) { 
+            for (var i in o) {
                 if (o.hasOwnProperty(i) && func(x.indexOf(i)))
                     res[i] = o[i];
             }
@@ -19,7 +19,7 @@
     function objLoop(o, fn) {
         var res = {};
         for (var i in o) {
-            if (o.hasOwnProperty(i)){
+            if (o.hasOwnProperty(i)) {
                 res[i] = fn(o[i], i)
             }
         }
@@ -36,10 +36,10 @@
         return res;
     }
 
-    function clone(o) {return JSON.parse(JSON.stringify(o));}
+    function clone(o) { return JSON.parse(JSON.stringify(o)); }
 
-    function splitPath (path) {
-        return path.replace(/\\\./g, '\uffff').split('.').map(function(p) {
+    function splitPath(path) {
+        return path.replace(/\\\./g, '\uffff').split('.').map(function (p) {
             return p.replace(/\uffff/g, '.');
         });
     }

@@ -419,11 +419,13 @@ console.log(ow.pick({a:1, b:2, c:3}, ['a']));
 
 ---
 
-## `reduce(array|literalObject, reducer function, initial value )`  
+## `reduce(array|literalObject, reducer function, initial value, escapeFn )`  
+this function is way faster that the native reducer  
 - **parameters**:
     - the array or literal to reduce over
     - the reducing function
     - initial value, optional, default {} if objLiteral given , [] if array
+    - escapeFn (optional): if passed will be called on each cycle receiving same args as the reducer function; breaks the execution when returning false and last _acc_ value will be returned.
 - **output**: resulting object 
 - **throws**: if the first argument is not an array or a object literal; if the second argument is not a function
 
@@ -653,6 +655,6 @@ console.log(ow.uniqBy([
 
 
 
-last modified : 15/12/2021
+last modified : 23/2/2022
 
 ༺ ᚗᚌ ༻ 

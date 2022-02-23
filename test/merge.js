@@ -57,7 +57,7 @@ describe('merge', () => {
             null
         );
     });
-    it('should not merge __proto__', () => {
+    it('should prevent prototype pollution', () => {
         const bad = '{"__proto__":{"you":"are screwed !"}}';
         let a = {};
         assert.strictEqual(a.oops, undefined)
