@@ -420,7 +420,7 @@ console.log(ow.pick({a:1, b:2, c:3}, ['a']));
 ---
 
 ## `reduce(array|literalObject, reducer function, initial value, escapeFn )`  
-this function is way faster that the native reducer  
+this function is way faster than the native `Array.reduce`  
 - **parameters**:
     - the array or literal to reduce over
     - the reducing function
