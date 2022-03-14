@@ -9,7 +9,7 @@
 
 Utility functions:   
 
-**assign** ~ **clone** ~ **debounce** ~ **every** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **get** ~ **id** ~ **includes** ~ **intersection** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **merge** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq** ~ **uniqBy**
+**assign** ~ **clone** ~ **debounce** ~ **every** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **get** ~ **id** ~ **includes** ~ **intersection** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **memoize** ~ **merge** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq** ~ **uniqBy**
 
  and  
 
@@ -358,6 +358,35 @@ console.log(ow.map(a, e => e ** 2))
 // [ 1, 4, 9, 16 ]
 ```
 
+
+---
+
+## `memoize(fn function)`  
+- **parameters**:
+    - the function that needs a to be memoized
+- **output**: the memoized function
+- **throws**: if receives something that is not an a function
+
+**warning**: for the moment this function works properly only when all parameters passed to the memoized function produce a unique value when given to `toString`. Thus `[par1, par2, ...].toString()` output should be uniquely obtainable passign exactly `[par1, par2, ...]`.
+
+example
+``` js
+const ow = require("objwun");
+
+const o = {calls: 0, num: 10},
+    fn = v => {
+        o.calls++
+        return this.num * v;
+    },
+    mfn = ow.memoize(fn, o); // ctx is optional
+
+console.log(mfn(3)); // 30
+console.log(o.calls); // 1
+console.log(mfn(3)); // 30
+console.log(o.calls); // 1
+
+```
+
 ---
 
 ## `merge(array|literalObject, ... )`  
@@ -655,6 +684,6 @@ console.log(ow.uniqBy([
 
 
 
-last modified : 23/2/2022
+last modified : 14/3/2022
 
 ༺ ᚗᚌ ༻ 

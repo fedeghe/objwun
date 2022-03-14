@@ -17,6 +17,7 @@ var objwun = (function() {
     maltaF('methods/isEmpty.js');
     maltaF('methods/keyBy.js');
     maltaF('methods/map.js');
+    maltaF('methods/memoize.js');
     maltaF('methods/merge.js');
     maltaF('methods/omit.js');
     maltaF('methods/pick.js');
@@ -46,6 +47,7 @@ var objwun = (function() {
         isEmpty: isEmpty,
         keyBy: keyBy,
         map: map,
+        memoize: memoize,
         merge: merge,
         omit: omit,
         pick: pick,
