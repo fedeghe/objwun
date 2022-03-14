@@ -4,5 +4,5 @@
         "mkdir dist"
     ],
     "#source/index.js": "dist -plugins=malta-js-uglify...malta-header-comment[name:\"source/header.txt\"] -options=placeholderMode:\"func\",verbose:2",
-    "#source/README.md": "."
+    "#source/*.md": "."
 }
