@@ -374,7 +374,7 @@ example
 const ow = require("objwun");
 let calls = 0
 const o = { num: 10 },
-    fn = v => {
+    fn = function(v) {
         calls++;
         return this.num * v;
     },
