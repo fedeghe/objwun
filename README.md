@@ -9,7 +9,7 @@
 
 Utility functions:   
 
-**assign** ~ **clone** ~ **debounce** ~ **every** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **get** ~ **id** ~ **includes** ~ **intersection** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **memoize** ~ **merge** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq** ~ **uniqBy**
+**assign** ~ **clone** ~ **debounce** ~ **every** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **fromEntries** ~ **get** ~ **id** ~ **includes** ~ **intersection** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **memoize** ~ **merge** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq** ~ **uniqBy**
 
  and  
 
@@ -77,8 +77,8 @@ const debounced = ow.debounce(function (a,b,c) {
 }, 2e3);
 
 debounced(1,2,3); // after 1 sec 1,2,3
-
 ```
+
 
 ---
 
@@ -180,6 +180,7 @@ const o = {ao: 1, bo: 2, co: 3, do: 4, eo: 5},
 console.log(o1); // bo
 console.log(a1); // 3
 ```
+
 ---
 
 ## `forEach(array|literalObject, matcher function)`  
@@ -206,6 +207,28 @@ ow.forEach(o, fo);
 console.log(ro); // 21
 console.log(ra); // 15
 ```
+
+---
+
+## `fromEntries(array)`  
+- **parameters**:
+    - an array or pairs [key, value] to be used
+- **output**: the resulting object using the key value found in the input array
+- **throws**: if receives something that is not an array or any element in the array has size that is not 2  
+
+example  
+``` js 
+const ow = require("objwun");
+
+const o = [
+    ['just': 'a'],
+    ['idiot': 'example']
+]
+const res = ow.fromEntries(o)
+console.log(res); // {just: "an", idiot: "example"}
+```
+
+
 
 ---
 
@@ -271,20 +294,23 @@ console.log(ow.includes(a, 22)) // false
 
 ---
 
-## `intersection(array, array, ...)`  
+## `includes(array|literalObject, any)`  
 - **parameters**:
-    - or or more arrays
-- **output**: an array that contains the intersection (only including primitives)
-- **throws**: if one of the parameters is not an array
+    - an array or a object literal
+    - searched element
+- **output**: a boolean 
+- **throws**: if receives something that is not an array or object literal as first parameter
 
 example
 ``` js
 const ow = require("objwun");
 
-const a = [1, 2, 3, 'yyy', () => {}],
-    b = [1, 'x', 3, 'yyy', () => {}];
+const o = {a: 1, b: 2, c: 'xxx'},
+    a = [1, 2, 3, 'yyy'];
 
-console.log(ow.intersection(a, b)) /// [ 1, 3, 'yyy' ]
+console.log(ow.includes(o, 'xxx')) // true
+console.log(ow.includes(a, 2)) // true
+console.log(ow.includes(a, 22)) // false
 ```
 
 ---
@@ -358,7 +384,6 @@ console.log(ow.map(a, e => e ** 2))
 // [ 1, 4, 9, 16 ]
 ```
 
-
 ---
 
 ## `memoize(fn function)`  
@@ -387,11 +412,10 @@ console.log(calls); // 1
 mfn.reset()
 console.log(mfn(3)); // 30
 console.log(calls); // 2
-
-
 ```
 
 ---
+
 
 ## `merge(array|literalObject, ... )`  
 - **parameters**:
@@ -523,8 +547,6 @@ console.log(a)
 
 ---
 
-
-
 ## `set(array|literalObject, string path, any value )`  
 - **parameters**:
     - the source array or literal object
@@ -606,32 +628,27 @@ console.log(ow.sortBy(a, e => Math.cos(e.n)));
 
 ---
 
-## `times(integer, function, context)`  
+## `sortBy(array, sort key or function, sort direction )`  
 - **parameters**:
-    - the number of times the generator function should be called
-    - the generating function (will receive the index starting from 0)
-    - a context for the function invocation (default null)
-- **output**: resulting array
-- **throws**: if the first argument is not an number; if the second argument is not a function
+    - the source array
+    - sort key or function
+    - sorting versus, default 1 (a negative number goes the other way)
+- **output**: resulting ordered array
+- **throws**: if the first argument is not an array; if the second argument is not a function or a string; if the third is not a number
 
 example
 ``` js
 const ow = require("objwun");
-const o = {
-    mult: a => a * 2,
-    n: 4
-}
+const a = [{n: 4.1}, {n: 0.05}, {n: 1.5}, {n: 3.3}];
 
-console.log(ow.times(3, Math.random))
-// [ 0.7279908812804159, 0.37899069671124463, 0.10983893613978579 ]
+console.log(ow.sortBy(a, 'n'));
+// [ { n: 1.5 }, { n: 1.3 }, { n: 0.1 }, { n: 0.05 } ]
 
-console.log(ow.times(3, i => i*i))
-// [ 0, 1, 4 ]
+console.log(ow.sortBy(a, 'n', -1),);
+// [ { n: 4.1 }, { n: 3.3 }, { n: 1.5 }, { n: 0.05 } ]
 
-console.log(ow.times(3, function(i) {
-    return this.n * this.mult(i)
-}, o))
-// [ 0, 8, 16 ]
+console.log(ow.sortBy(a, e => Math.cos(e.n)));
+// [ { n: 3.3 }, { n: 4.1 }, { n: 1.5 }, { n: 0.05 } ]
 
 ```
 
@@ -686,8 +703,6 @@ console.log(ow.uniqBy([
 
 ---
 
-
-
-last modified : 14/3/2022
+last modified : 22/1/2023
 
 ༺ ᚗᚌ ༻ 
