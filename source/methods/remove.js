@@ -8,6 +8,7 @@ function remove(x, func) {
     if (what.isObj) {
         res = {};
         for (var k in x) {
+            /* istanbul ignore else */
             if (x.hasOwnProperty(k)) {
                 if (func(x[k])) {
                     res[k] = x[k];
