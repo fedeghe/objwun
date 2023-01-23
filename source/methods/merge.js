@@ -15,6 +15,6 @@ function merge() {
             return acc;
         }, {});
     } else {
-        return null
+        return null;
     }
 }

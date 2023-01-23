@@ -12,6 +12,6 @@ function debounce(func, delay) {
         };
     ret.cancel = function () {
         clearTimeout(to);
-    }
-    return ret
+    };
+    return ret;
 }
