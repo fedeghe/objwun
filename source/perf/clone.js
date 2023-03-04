@@ -1,7 +1,7 @@
-var assert = require('assert'),
-    ow = require('../../dist'),
+var ow = require('../../dist'),
     _ = require('lodash'),
-    testone = require('@fedeghe/testone');
+    testone = require('@fedeghe/testone'),
+    complex = require('testone-complexity-plugin');
 
 const o = {
     a: {
@@ -26,8 +26,20 @@ testone([{
 },{
     in: [o],
     out: o
-}], [cloneObjwun, clone_]).then(res => {
-    console.log(res.times)
-    assert(true)
+}], [cloneObjwun, clone_], {
+    plugins: [{
+        fn: complex,
+        options: {},
+        skipReport: true
+    }],
+    metrics: {
+        c: ({pluginsResults}) => ({
+            cyclomatic: pluginsResults.complex.complexity.methodAggregate.cyclomatic
+        }),
+        sp: ({mem: {single: mem}, time: {single: time}}) => time * mem
+    },
+    iterations:1e5
+}).then(res => {
+    console.log(JSON.stringify(res.metrics, null, 2))
 })
         
