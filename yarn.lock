@@ -201,10 +201,10 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@fedeghe/testone@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@fedeghe/testone/-/testone-0.2.2.tgz#8dcac5a1efc065c4626c9a47b57eb90c3c929458"
-  integrity sha512-x0Zzr8sRLUglzcLf/pNzG7B/YPLFSBLCLN0qxXezh39aXsHXpShjQuz0Xb8zam7VpKL4v+O3vkNiq+0BsiWDNQ==
+"@fedeghe/testone@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@fedeghe/testone/-/testone-0.2.3.tgz#40d818a397500a363c8d254fbbe2fdb6a2fdc81b"
+  integrity sha512-1n8JWoyPiP0ZgwSb6Le74DxCaHN19DCYh56Qy+w01s8NfDWQ7qxOcYruPpeQSfezgF/qvGjtlVlBxwKoh+Si9g==
   dependencies:
     expose-gc "^1.0.0"
 

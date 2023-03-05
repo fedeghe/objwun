@@ -167,14 +167,13 @@ const o = [{
 
 const cloneObjwun = a => ow.clone(a),
     clone_ = a => _.clone(a),
-    clonez = a => structuredClone(a),
-    clonex = a => {
+    cloneStructured = a => {
         const proto = Object.getPrototypeOf(a)
         const newObject = structuredClone(a)
         Object.setPrototypeOf(newObject, proto)
         return newObject
     },
-    clonej = a => {
+    cloneJsonBased = a => {
         return JSON.parse(JSON.stringify(a))
     };
 const r = JSON.parse(JSON.stringify(o))
@@ -183,7 +182,7 @@ const r = JSON.parse(JSON.stringify(o))
 testone([{
     in: [o],
     out: r
-}], [/*cloneObjwun, ow.clone, clonex, */cloneObjwun, clone_, clonez, clonex, clonej], {
+}], [/*cloneObjwun, ow.clone, clonex, */cloneObjwun, clone_, cloneStructured, cloneJsonBased], {
     // plugins: [{
     //     fn: complex,
     //     options: {},
@@ -196,13 +195,22 @@ testone([{
         //     time: pluginsResults.complex.complexity.methodAggregate.halstead.time,
         //     volume: pluginsResults.complex.complexity.methodAggregate.halstead.volume,   
         // }),
-        fx: ({mem: {single: mem}, time: {single: time}}) => ({
-            op: 1000/time,
+        fx: ({mem: {single: mem}, time: {single: time}, ops}) => ({
+            ops,
             time,
         })
     },
     iterations:1e5
 }).then(
-    ({metrics}) => console.log(JSON.stringify(metrics, null, 2))
+    ({metrics: {fx}}) => {
+        var pos = Object.entries(fx).map(([strategy, e]) => ({
+            strategy,
+            ops: e.ops
+        })).sort((a, b) => b.ops - a.ops).reduce((acc, e) => {
+            acc[e.strategy] = e.ops;
+            return acc;
+        }, {})
+        console.log(pos)
+    }
 )
         

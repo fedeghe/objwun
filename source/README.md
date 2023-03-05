@@ -20,14 +20,14 @@ Utility functions:
 
 **isArray** ~ **isBigint** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive** ~ **isString** ~ **isSymbol** ~ **isUndefined**  
 
-> ## Performance ?   
+> ## 🚨 Performance     
 >
-> There are many tools out there that offer same and much more functionality, moreover they are even much more performant.  
+> There are many tools out there that offer same and much more functionality, but wau more importantly they are much more performant.  
 > One for all [_](https://npmjs.com/lodash) , which is most of the times really really incredibly fast.  
-> I would never dare to compete here and this indeed is not the purpose.  
-Just to give you an idea:  
+> I would never dare to compete here and this indeed is not the purpose (so what is the porpose?).  
+Just to give you an idea target few functions:  
 >
-> oops per second
+> ops per second
 > | ƒn | objwun | lodash | native |
 > |-|------|--------|-------|  
 > | clone | <span class="r">18K</span> | <span class="g">10M</span> | <span class="y">31K</span> _(structuredClone)_|
