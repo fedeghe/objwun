@@ -15,6 +15,12 @@ Utility functions:
 
 **isArray** ~ **isBigint** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive** ~ **isString** ~ **isSymbol** ~ **isUndefined**  
 
+## Important note about performance   
+
+There are many tools out there that offer same and much more, and they are even much more performant. One for all [_](https://npmjs.com/lodash), which is most of the times really really incredibly fast.  
+I would never dare to compete here and this indeed is not the purpose.  
+So **do NOT use** this library!
+
 ---
 ---
 ---
@@ -703,6 +709,6 @@ console.log(ow.uniqBy([
 
 ---
 
-last modified : 4/3/2023
+last modified : 5/3/2023
 
 ༺ ᚗᚌ ༻ 

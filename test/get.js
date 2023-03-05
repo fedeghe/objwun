@@ -7,16 +7,19 @@ describe('get', () => {
             res = ow.get(o, 't')
         assert.strictEqual(res, null);
     });
+
     it('should again return null', () => {
         var o = { a: 1, b: 2, c: 3 },
             res = ow.get(o, 't')
         assert.strictEqual(res, null);
     });
+
     it('should return a number', () => {
         var o = { a: 1, b: 2, c: 3 },
             res = ow.get(o, 'b')
         assert.strictEqual(res, 2);
     });
+
     it('should return a deeper number', () => {
         var o = {
             a: 1, b: 2, c: {
@@ -27,6 +30,7 @@ describe('get', () => {
             res = ow.get(o, 'c.d.a')
         assert.strictEqual(res, 111);
     });
+
     it('should return an object', () => {
         var o = {
             a: 1, b: 2, c: {
@@ -37,6 +41,7 @@ describe('get', () => {
             res = ow.get(o, 'c.d')
         assert.strictEqual(JSON.stringify(res), JSON.stringify({a:111,b:222}));
     });
+
     it('should return default value', () => {
         var o = {
             a: 1, b: 2, c: {
@@ -47,6 +52,7 @@ describe('get', () => {
             res = ow.get(o, 'c.e', {s:1})
         assert.strictEqual(JSON.stringify(res), JSON.stringify({s:1}));
     });
+
     it('should also return default value', () => {
         var o = {
             a: 1, b: 2, c: {
@@ -57,6 +63,7 @@ describe('get', () => {
             res = ow.get(o, 'a.e', {s:1})
         assert.strictEqual(JSON.stringify(res), JSON.stringify({s:1}));
     });
+
     it('should return elements from array of objects', () => {
         var o = [{
                 a: 1, b: 2, c: 3,
@@ -69,6 +76,7 @@ describe('get', () => {
             res = ow.get(o, '0.d.2')
         assert.strictEqual(res, 3);
     });
+
     it('should return elements from object of arrays (mixed index notation)', () => {
         var o = {
                 a: 1, b: 2, c: 3,
@@ -81,6 +89,7 @@ describe('get', () => {
             res = ow.get(o, 'd.4.d.bb[3]')
         assert.strictEqual(res, 44);
     });
+    
     it('should return elements from bigger array of objects', () => {
         var o = [
                 {a: 1}, {a: 1},    

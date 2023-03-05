@@ -99,6 +99,7 @@ describe('keyBy', () => {
             })
         );
     });
+
     it('should throw an error for the non array argument', () => {
         try {
             ow.keyBy({}, 1)
@@ -107,6 +108,7 @@ describe('keyBy', () => {
             assert.strictEqual(e.message, "Invalid argument, array expected");
         }
     });
+
     it('should throw an error for the non key or function argument', () => {
         try {
             ow.keyBy([], true)
@@ -115,6 +117,7 @@ describe('keyBy', () => {
             assert.strictEqual(e.message, "Invalid argument, string or function expected");
         }
     });
+    
     it('∂ should be a pure function',
         () => assert.strictEqual(JSON.stringify(original), JSON.stringify([{
             name: 'a',

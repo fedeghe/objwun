@@ -3,70 +3,49 @@ var assert = require('assert'),
 
 describe('memoize', () => {
 
-    it('should return the expected',
-        () => {
-            var check = 0;
-            var m = ow.memoize(function (t, o) {
+    it('should return the expected', () => {
+        var check = 0,
+            m = ow.memoize(function (t, o) {
                 check++;
                 o = o ||1 ;
                 return t*t*o;
-            })
-            assert.strictEqual(
-                m(6,3),
-                m(6,3)
-            )
-            assert.strictEqual(
-                m(6,3,2),
-                m(6,3,2)
-            )
-            assert.strictEqual(check, 2)
-        }
-    );
-    it('should return the expected - using context',
-        () => {
-            var ctx = {
+            });
+        assert.strictEqual(m(6,3), m(6,3));
+        assert.strictEqual(m(6,3,2), m(6,3,2));
+        assert.strictEqual(check, 2);
+    });
+
+    it('should return the expected - using context', () => {
+        var ctx = {
                 u : 20
-            }
-            var check = 0;
-            var m = ow.memoize(function (t) {
+            },
+            check = 0,
+            m = ow.memoize(function (t) {
+                check++;
+                return t * t * this.u;
+            }, ctx);
+        assert.strictEqual( m(6), 720);
+        assert.strictEqual( m(3), m(3));
+        assert.strictEqual(check, 2);
+    });
+
+    it('should allow to reset a memoized function', () => {
+        var ctx = {
+                u : 20
+            },
+            check = 0,
+            m = ow.memoize(function (t) {
                 check++;
                 return t*t*this.u;
-            }, ctx)
-            assert.strictEqual(
-                m(6),
-                720
-            )
-            assert.strictEqual(
-                m(3),
-                m(3)
-            )
-            assert.strictEqual(check, 2)
-        }
-    );
-    it('should allow to reset a memoized function',
-    () => {
-        var ctx = {
-            u : 20
-        }
-        var check = 0;
-        var m = ow.memoize(function (t) {
-            check++;
-            return t*t*this.u;
-        }, ctx)
-        assert.strictEqual(
-            m(6),
-            720
-        )
-        assert.strictEqual(
-            m(3),
-            m(3)
-        )
-        assert.strictEqual(check, 2)
-        m.reset()
+            }, ctx);
+        assert.strictEqual( m(6), 720);
+        assert.strictEqual( m(3),  m(3));
+        assert.strictEqual(check, 2);
+        m.reset();
         m(3);
-        assert.strictEqual(check, 3)
-    }
-);
+        assert.strictEqual(check, 3);
+    });
+
     it('should throw an error in case of unexpected arguments', () => {
         try {
             ow.memoize([])

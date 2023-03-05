@@ -6,6 +6,7 @@ describe('findIndex', () => {
         it('should find the index, based on 1st level value', () => {
             assert.strictEqual(ow.findIndex([1,2,3,5,6], (e, i) => e % 2 === 0), 1);
         });
+
         it('should find the index, based on 2nd level value', () => {
             assert.strictEqual(ow.findIndex([{
                 name: 'Federico'
@@ -17,6 +18,7 @@ describe('findIndex', () => {
                 name: 'Coff'
             }],  (e, i) => e.name.match(/ff$/i) ), 2);
         });
+
         it('should find the index, based on 3rd level value', () => {
             assert.strictEqual(ow.findIndex([{
                 name: 'Federico'
@@ -34,25 +36,29 @@ describe('findIndex', () => {
                 }
             }], (e, i) => e.data && e.data.age > 30 ), 3);
         });
+
         it('should not find the index', () => {
             assert.strictEqual(ow.findIndex([1,2,3,5,6], (e, i) => e >10), -1);
         });
+
         it('should throw an error for the bad first argument', () => {
             try {
-                ow.findIndex(false)
+                ow.findIndex(false);
             } catch (e) {
                 assert.strictEqual(e instanceof Error, true);
                 assert.strictEqual(e.message, "Invalid argument, object or array expected");
             }
         });
+
         it('should throw an error for the bad second argument', () => {
             try {
-                ow.findIndex([], false)
+                ow.findIndex([], false);
             } catch (e) {
                 assert.strictEqual(e instanceof Error, true);
                 assert.strictEqual(e.message, "Invalid argument, function expected");
             }
         });
+
         it('∂ should be a pure function', () => {
             const mult = a => a * a > 4,
                 inp = [2, 4, 6],
@@ -67,8 +73,9 @@ describe('findIndex', () => {
 
     describe('object', () => {
         it('should find the index, based on 1st level value', () => {
-            assert.strictEqual(ow.findIndex({a:1,b:2,c:3,d:4,e:6}, (e, i) => e >= 3), 'c');
+            assert.strictEqual(ow.findIndex({a: 1,b: 2,c: 3,d: 4,e: 6}, (e, i) => e >= 3), 'c');
         });
+
         it('should find the index, based on 2nd level value', () => {
             assert.strictEqual(ow.findIndex({
                 p1: {name: 'Federico'},
@@ -80,26 +87,27 @@ describe('findIndex', () => {
 
         it('should not find the index', () => {
             assert.strictEqual(ow.findIndex({
-                a:1, b:2, c:3, d: 4, c: 5
+                a: 1, b: 2, c: 3, d: 4, c: 5
             }, (e, i) => e > 10), -1);
         });
 
         it('should throw an error for the bad second argument', () => {
             try {
-                ow.findIndex({}, false)
+                ow.findIndex({}, false);
             } catch (e) {
                 assert.strictEqual(e instanceof Error, true);
                 assert.strictEqual(e.message, "Invalid argument, function expected");
             }
         });
+
         it('∂ should be a pure function', () => {
             const mult = a => a * a > 4,
-                inp = {a:2, b:4, c:6},
+                inp = {a: 2, b: 4, c: 6},
                 res = ow.findIndex(inp, mult);
             assert.strictEqual(res, 'b');
             assert.strictEqual(
                 JSON.stringify(inp),
-                JSON.stringify({a:2, b:4, c:6})
+                JSON.stringify({a: 2, b: 4, c: 6})
             );
         });
     });

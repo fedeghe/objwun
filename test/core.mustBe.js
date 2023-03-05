@@ -1,7 +1,6 @@
 var assert = require('assert'),
     ow = require('../dist');
 
-
 describe('core.mustBe', () => {
 
     const benchsBase = {
@@ -14,21 +13,22 @@ describe('core.mustBe', () => {
         "null": null,
         "boolean": true,
         "symbol": Symbol()
-    }
+    };
 
     describe ('arr', () =>  {
+
         it('positive cases', () => {
             assert.strictEqual(ow.core.mustBe.arr([]), true);
             assert.strictEqual(ow.core.mustBe.arr([{}, 1, false]), true);
             assert.strictEqual(ow.core.mustBe.arr(new Array()), true);
             assert.strictEqual(ow.core.mustBe.arr(Array.from({length: 0})), true);
         });
-        const benchs = { ... benchsBase}
-        delete benchs.arr
+        const benchs = { ... benchsBase};
+        delete benchs.arr;
         Object.keys(benchs).forEach(bench => {
             it(`countercase ${bench}`, () => {
                 try {
-                    ow.core.mustBe.arr(benchs[bench])
+                    ow.core.mustBe.arr(benchs[bench]);
                 } catch (e) {
                     assert.strictEqual(e instanceof Error, true);
                     assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_ARRAY_EXPECTED);
@@ -41,7 +41,7 @@ describe('core.mustBe', () => {
     describe ('defined', () =>  {
         it('negative case', () => {
             try {
-                ow.core.mustBe.defined()
+                ow.core.mustBe.defined();
             } catch (e) {
                 assert.strictEqual(e instanceof Error, true);
                 assert.strictEqual(e.message, ow.core.errors.MISSING_EXPECTED_ARGUMENT);
@@ -49,7 +49,7 @@ describe('core.mustBe', () => {
         });
            
         const benchs = { ... benchsBase}
-        delete benchs.undefined
+        delete benchs.undefined;
         Object.keys(benchs).forEach(bench => {
             it(`positive ${bench}`, () => {
                 assert.strictEqual(ow.core.mustBe.defined(benchs[bench]), true);
@@ -62,12 +62,12 @@ describe('core.mustBe', () => {
         it('positive cases', () => {
             assert.strictEqual(ow.core.mustBe.func(() => {}), true);
         });
-        const benchs = { ... benchsBase}
-        delete benchs.func
+        const benchs = { ... benchsBase};
+        delete benchs.func;
         Object.keys(benchs).forEach(bench => {
             it(`countercase ${bench}`, () => {
                 try {
-                    ow.core.mustBe.func(benchs[bench])
+                    ow.core.mustBe.func(benchs[bench]);
                 } catch (e) {
                     assert.strictEqual(e instanceof Error, true);
                     assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_FUNCTION_EXPECTED);
@@ -82,13 +82,13 @@ describe('core.mustBe', () => {
             assert.deepStrictEqual(ow.core.mustBe.funcOrStr(() => {}), {isFunc: true, isStr: false});
             assert.deepStrictEqual(ow.core.mustBe.funcOrStr(""), {isFunc: false, isStr: true});
         });
-        const benchs = { ... benchsBase}
-        delete benchs.function
-        delete benchs.string
+        const benchs = { ... benchsBase};
+        delete benchs.function;
+        delete benchs.string;
         Object.keys(benchs).forEach(bench => {
             it(`countercase ${bench}`, () => {
                 try {
-                    ow.core.mustBe.funcOrStr(benchs[bench])
+                    ow.core.mustBe.funcOrStr(benchs[bench]);
                 } catch (e) {
                     assert.strictEqual(e instanceof Error, true);
                     assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_STRING_OR_FUNCTION_EXPECTED);
@@ -102,13 +102,13 @@ describe('core.mustBe', () => {
             assert.deepStrictEqual(ow.core.mustBe.funcOrArr(() => {}), {isFunc: true, isArr: false});
             assert.deepStrictEqual(ow.core.mustBe.funcOrArr([]), {isFunc: false, isArr: true});
         });
-        const benchs = { ... benchsBase}
-        delete benchs.function
-        delete benchs.arr
+        const benchs = { ... benchsBase};
+        delete benchs.function;
+        delete benchs.arr;
         Object.keys(benchs).forEach(bench => {
             it(`countercase ${bench}`, () => {
                 try {
-                    ow.core.mustBe.funcOrArr(benchs[bench])
+                    ow.core.mustBe.funcOrArr(benchs[bench]);
                 } catch (e) {
                     assert.strictEqual(e instanceof Error, true);
                     assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_ARRAY_OR_FUNCTION_EXPECTED);
@@ -123,13 +123,13 @@ describe('core.mustBe', () => {
             assert.strictEqual(ow.core.mustBe.bool(false), true);
         });
 
-        const benchs = { ... benchsBase}
-        delete benchs.bool
+        const benchs = { ... benchsBase};
+        delete benchs.bool;
  
         Object.keys(benchs).forEach(bench => {
             it(`countercase ${bench}`, () => {
                 try {
-                    ow.core.mustBe.bool(benchs[bench])
+                    ow.core.mustBe.bool(benchs[bench]);
                 } catch (e) {
                     assert.strictEqual(e instanceof Error, true);
                     assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_BOOLEAN_EXPECTED);
@@ -142,12 +142,12 @@ describe('core.mustBe', () => {
         it('positive cases', () => {
             assert.strictEqual(ow.core.mustBe.num(122), true);
         });
-        const benchs = { ... benchsBase}
-        delete benchs.num
+        const benchs = { ... benchsBase};
+        delete benchs.num;
         Object.keys(benchs).forEach(bench => {
             it(`countercase ${bench}`, () => {
                 try {
-                    ow.core.mustBe.num(benchs[bench])
+                    ow.core.mustBe.num(benchs[bench]);
                 } catch (e) {
                     assert.strictEqual(e instanceof Error, true);
                     assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_INTEGER_EXPECTED);
@@ -161,12 +161,12 @@ describe('core.mustBe', () => {
         it('positive cases', () => {
             assert.strictEqual(ow.core.mustBe.obj({}), true);
         });
-        const benchs = { ... benchsBase}
-        delete benchs.obj
+        const benchs = { ... benchsBase};
+        delete benchs.obj;
         Object.keys(benchs).forEach(bench => {
             it(`countercase ${bench}`, () => {
                 try {
-                    ow.core.mustBe.obj(benchs[bench])
+                    ow.core.mustBe.obj(benchs[bench]);
                 } catch (e) {
                     assert.strictEqual(e instanceof Error, true);
                     assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_OBJECT_EXPECTED);
@@ -181,13 +181,13 @@ describe('core.mustBe', () => {
             assert.deepStrictEqual(ow.core.mustBe.objOrArr({}), {isObj: true, isArr: false});
             assert.deepStrictEqual(ow.core.mustBe.objOrArr([]), {isObj: false, isArr: true});
         });
-        const benchs = { ... benchsBase}
-        delete benchs.obj
-        delete benchs.arr
+        const benchs = { ... benchsBase};
+        delete benchs.obj;
+        delete benchs.arr;
         Object.keys(benchs).forEach(bench => {
             it(`countercase ${bench}`, () => {
                 try {
-                    ow.core.mustBe.objOrArr(benchs[bench])
+                    ow.core.mustBe.objOrArr(benchs[bench]);
                 } catch (e) {
                     assert.strictEqual(e instanceof Error, true);
                     assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);
@@ -202,12 +202,12 @@ describe('core.mustBe', () => {
             assert.strictEqual(ow.core.mustBe.str(""), true);
             assert.strictEqual(ow.core.mustBe.str({}.toString()), true);
         });
-        const benchs = { ... benchsBase}
-        delete benchs.string
+        const benchs = { ... benchsBase};
+        delete benchs.string;
         Object.keys(benchs).forEach(bench => {
             it(`countercase ${bench}`, () => {
                 try {
-                    ow.core.mustBe.str(benchs[bench])
+                    ow.core.mustBe.str(benchs[bench]);
                 } catch (e) {
                     assert.strictEqual(e instanceof Error, true);
                     assert.strictEqual(e.message, ow.core.errors.INVALID_ARGUMENT_STRING_EXPECTED);

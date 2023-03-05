@@ -3,8 +3,13 @@ var assert = require('assert'),
 
 describe('map', () => {
 
-    it('should still return an empty array', () => assert.strictEqual(JSON.stringify(ow.map([])), '[]'));
-    it('should still return the input array', () => assert.strictEqual(JSON.stringify(ow.map([1,2,3])), '[1,2,3]'));
+    it('should still return an empty array', () =>
+        assert.strictEqual(JSON.stringify(ow.map([])), '[]')
+    );
+
+    it('should still return the input array', () => 
+        assert.strictEqual(JSON.stringify(ow.map([1,2,3])), '[1,2,3]')
+    );
 
     it('should return the content array',
         () => assert.strictEqual(
@@ -21,6 +26,7 @@ describe('map', () => {
             '[1,2,4]'
         )
     );
+
     it('should throw an error for the bad argument', () => {
         try {
             ow.map(false, 1)
@@ -29,6 +35,7 @@ describe('map', () => {
             assert.strictEqual(e.message, "Invalid argument, object or array expected");
         }
     });
+    
     it('∂ should be a pure function', () => {
         const inp = {
             a:1, b:2, d:3

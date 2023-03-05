@@ -5,7 +5,7 @@
 
     function pick_omit(func) {
         return function (o, x) {
-            core.mustBe.obj(o)
+            core.mustBe.obj(o);
             core.mustBe.arr(x);
             var res = {};
             for (var i in o) {
@@ -31,7 +31,7 @@
             i = 0,
             l = o.length;
         for (null; i < l; i++) {
-            res[i] = fn(o[i], i)
+            res[i] = fn(o[i], i);
         }
         return res;
     }
@@ -39,9 +39,12 @@
     function clone(o) { return JSON.parse(JSON.stringify(o)); }
 
     function splitPath(path) {
-        return path.replace(/\\\./g, '\uffff').split('.').map(function (p) {
-            return p.replace(/\uffff/g, '.');
-        });
+        return path
+            .replace(/\\\./g, '\uffff')
+            .split('.')
+            .map(function (p) {
+                return p.replace(/\uffff/g, '.');
+            });
     }
 
     core.ut = {
