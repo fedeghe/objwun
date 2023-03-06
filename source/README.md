@@ -36,7 +36,10 @@ Just to give you an idea target few functions:
 > | sortBy | <span class="r">1K<span> | <span class="y">1.2K</span> | <span class="g">5.2K</span>|
 >
 > So absolutely **do NOT use** this library! I know I do not have to convince you  🤪   
-But seriously consider to spend some time using what javascript provides you before using a library cause 99% of the cases you are not going to really neeed that.
+But seriously consider to spend some time using what javascript provides you before using a library cause 99% of the cases you are not going to really neeed that. 
+> 
+> ### ⚜️ Anyway all is not gold that glitters ⚜️  
+> it takes jsut a minute to realize memoization plays a central role in theis specific measurement (about _), indeed if using testone we do not specify _iteration_ dynamic ios then the input will always be the same and a trivial memoization would false the all measurement and act as if 1k runs take alsmolt like 1 (indeed basically growing the _iterations_ the result does not change a lot for _).  
 
 ---
 ---
