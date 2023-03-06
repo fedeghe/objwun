@@ -178,9 +178,11 @@ const cloneObjwun = a => ow.clone(a),
     };
 const r = JSON.parse(JSON.stringify(o))
 
-
 testone([{
-    in: [o],
+    in: ({iteration}) => {
+        // console.log(iteration)
+        o[0].a.b.c.d = iteration; return [o]
+    },
     out: r
 }], [/*cloneObjwun, ow.clone, clonex, */cloneObjwun, clone_, cloneStructured, cloneJsonBased], {
     // plugins: [{
@@ -200,17 +202,16 @@ testone([{
             time,
         })
     },
-    iterations:1e5
+    matcher: ({expected, received}) => {
+        console.log({expected: expected[0].a.b.c.d, received: received[0].a.b.c.d});
+        return expected[0].a.b.c.d == received[0].a.b.c.d
+    }
+    // iterations:1
 }).then(
-    ({metrics: {fx}}) => {
-        var pos = Object.entries(fx).map(([strategy, e]) => ({
-            strategy,
-            ops: e.ops
-        })).sort((a, b) => b.ops - a.ops).reduce((acc, e) => {
-            acc[e.strategy] = e.ops;
-            return acc;
-        }, {})
-        console.log(pos)
+    r => {
+        const {metrics: {fx}} = r;
+        console.log(r)
+        console.log(JSON.stringify(fx, null, 2))
     }
 )
         
