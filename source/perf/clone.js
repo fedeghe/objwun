@@ -183,7 +183,10 @@ testone([{
         // console.log(iteration)
         o[0].a.b.c.d = iteration; return [o]
     },
-    out: r
+    out:  ({iteration}) => {
+        // console.log(iteration)
+        r[0].a.b.c.d = iteration; return r
+    }
 }], [/*cloneObjwun, ow.clone, clonex, */cloneObjwun, clone_, cloneStructured, cloneJsonBased], {
     // plugins: [{
     //     fn: complex,

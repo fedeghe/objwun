@@ -28,7 +28,7 @@
         "url": "https://fedeghe@github.com/fedeghe/objwun.git"
     },
     "devDependencies": {
-        "@fedeghe/testone": "^0.2.4",
+        "@fedeghe/testone": "^0.2.5",
         "coveralls": "~3.0.1",
         "lodash": "^4.17.21",
         "malta": "^4.1.34",
