@@ -13,7 +13,7 @@ function reduce(o, fn, initial, esc) {
     var what = core.mustBe.objOrArr(o);
     core.mustBe.func(fn);
     esc && core.mustBe.func(esc);
-    var res = initial || (what.isObj ? {} : []);
+    var res = core.in.isDef(initial) ? initial : (what.isObj ? {} : []);
 
     function _reduce(arr, fn, init, exitFn) {
         var acc = init,

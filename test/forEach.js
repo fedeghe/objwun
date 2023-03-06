@@ -2,9 +2,18 @@ var assert = require('assert'),
     ow = require('../dist');
 
 describe('forEach', () => {
-    it('should return an simple passed array', () => assert.strictEqual(JSON.stringify(ow.forEach([1,2])), JSON.stringify([1,2])));
+    it('should return an simple passed array', () => 
+        assert.strictEqual(
+            JSON.stringify(ow.forEach([1, 2])),
+            JSON.stringify([1, 2])
+        )
+    );
 
-    it('should return an simple passed object literal content', () => assert.strictEqual(JSON.stringify(ow.forEach({a:1,b:2})), JSON.stringify({a:1,b:2})));
+    it('should return an simple passed object literal content', () => 
+        assert.strictEqual(
+            JSON.stringify(ow.forEach({a: 1, b: 2})),
+            JSON.stringify({a: 1, b: 2}))
+        );
 
     it('should use the passed function on array', () => {
         const mult = a => a * a
@@ -33,17 +42,18 @@ describe('forEach', () => {
             assert.strictEqual(e.message, "Invalid argument, object or array expected");
         }
     });
+
     it('∂ should be a pure function', () => {
         const mult = a => a * a,
-            inp = {a:2,b:4},
+            inp = {a: 2, b: 4},
             res = ow.forEach(inp, mult);
         assert.strictEqual(
             JSON.stringify(res),
-            JSON.stringify({a:4,b:16})
+            JSON.stringify({a: 4, b: 16})
         );
         assert.strictEqual(
             JSON.stringify(inp),
-            JSON.stringify({a:2,b:4})
+            JSON.stringify({a: 2, b: 4})
         );
     });
 });

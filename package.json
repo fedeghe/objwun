@@ -39,7 +39,7 @@
     },
     "scripts": {
         "build": "malta source/build.json",
-        "buildev": "malta source/build_dev.json",
+        "dev": "malta source/build_dev.json",
         "test": "mocha",
         "lint": "eslint source",
         "cover": "nyc npm test && nyc report --reporter=html",

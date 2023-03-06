@@ -3,16 +3,18 @@ var assert = require('assert'),
 
 describe('every', () => {
     describe('array' , () => {
+
         it('should return the expected, simple array', () => {
             assert.strictEqual(
                 ow.every([1,2,3,5], e => e % 2 === 0),
                 false
-            )
+            );
             assert.strictEqual(
                 ow.every([2,4,6,8], e => e % 2 === 0),
                 true
-            )
-            });
+            );
+        });
+
         it('should return true, array of object literals', () => 
             assert.strictEqual(ow.every([{
                 name: 'Federico'
@@ -21,9 +23,10 @@ describe('every', () => {
             }, {
                 name: 'Pock'
             }], function (e) {
-                return e.name.match(/o/)
+                return e.name.match(/o/);
             }), true)
         );
+
         it('should return false', () => 
             assert.strictEqual(ow.every([{
                 name: 'Federico'
@@ -32,9 +35,10 @@ describe('every', () => {
             }, {
                 name: 'Fluffy'
             }], function (e) {
-                return e.name.match(/^Fff*/)
+                return e.name.match(/^Fff*/);
             }), false)
         );
+
         it('∂ should be a pure function', () => {
             var o = [1, 2, 3],
                 res = ow.every(o, el => el > 0);
@@ -50,6 +54,7 @@ describe('every', () => {
                 true
             )
         );
+
         it('should return true, object of object literals', () => 
             assert.strictEqual(ow.every({
                     a: {
@@ -63,20 +68,22 @@ describe('every', () => {
                     }
                 },
                 function (e, k) {
-                    return k.length === 1 && e.name.match(/^F*/)
+                    return k.length === 1 && e.name.match(/^F*/);
                 }),
                 true
             )
         );
+
         it('should return false', () => 
             assert.strictEqual(ow.every({
                 name: 'Federico',
                 name1:'John',
                 name2: 'Fluffy'
             }, function (e, k) {
-                return k.match(/^na/) && e.match(/^Fff*/)
+                return k.match(/^na/) && e.match(/^Fff*/);
             }), false)
         );
+
         it('∂ should be a pure function', () => {
             var o = {a: 1, b: 2, c: 3},
                 res = ow.every(o, el => Math.round(el) === el);
