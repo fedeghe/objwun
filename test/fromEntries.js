@@ -18,6 +18,7 @@ describe('fromEntries', () => {
             assert.strictEqual(e.message, "Invalid argument, wrong size");
         }
     });
+    
     it('∂ should be a pure function', () => {
         const a = ["a", 1],
             b = ["b", 2],
