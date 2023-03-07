@@ -21,25 +21,7 @@ Utility functions:
 **isArray** ~ **isBigint** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive** ~ **isString** ~ **isSymbol** ~ **isUndefined**  
 
 > ## 🚨 Performance     
->
-> There are many tools out there that offer same and much more functionality, but wau more importantly they are much more performant.  
-> One for all [_](https://npmjs.com/lodash) , which is most of the times really really incredibly fast.  
-> I would never dare to compete here and this indeed is not the purpose (so what is the porpose?).  
-Just to give you an idea target few functions:  
->
-> ops per second
-> | ƒn | objwun | lodash | native |
-> |-|------|--------|-------|  
-> | clone | <span class="r">18K</span> | <span class="g">10M</span> | <span class="y">31K</span> _(structuredClone)_|
-> | assign | <span class="r">300K</span> | <span class="y">2.5M<span> | <span class="g">14.2M</span> |
-> | forEach | <span class="r">700</span> | <span class="y">13K</span> | <span class="g">20K</span>|
-> | sortBy | <span class="r">1K<span> | <span class="y">1.2K</span> | <span class="g">5.2K</span>|
->
-> So absolutely **do NOT use** this library! I know I do not have to convince you  🤪   
-But seriously consider to spend some time using what javascript provides you before using a library cause 99% of the cases you are not going to really neeed that. 
-> 
-> ### ⚜️ Anyway all is not gold that glitters ⚜️  
-> it takes jsut a minute to realize memoization plays a central role in theis specific measurement (about _), indeed if using testone we do not specify _iteration_ dynamic ios then the input will always be the same and a trivial memoization would false the all measurement and act as if 1k runs take alsmolt like 1 (indeed basically growing the _iterations_ the result does not change a lot for _).  
+ 
 
 ---
 ---

@@ -19,8 +19,8 @@ testone([{
 }], [/*cloneObjwun, ow.clone, clonex, */_sortby, owsortby, raw], {
 
     metrics: {
-        fx: ({mem: {single: mem}, time: {single: time}}) => ({
-            op: 1000/time,
+        fx: ({mem: {single: mem}, time: {single: time}, ops}) => ({
+            ops,
             time,
         })
     },

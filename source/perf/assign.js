@@ -29,8 +29,8 @@ testone([{
         //     time: pluginsResults.complex.complexity.methodAggregate.halstead.time,
         //     volume: pluginsResults.complex.complexity.methodAggregate.halstead.volume,   
         // }),
-        fx: ({mem: {single: mem}, time: {single: time}}) => ({
-            op: 1000/time,
+        fx: ({mem: {single: mem}, time: {single: time}, ops}) => ({
+            ops,
             time,
         })
     },
