@@ -7,6 +7,15 @@ describe('reduce', () => {
             c: 3, d: 4
         },
         a = [1, 2, 3, 4];
+    
+    it('should behave like a basic summer', () => {
+        var sum = ow.reduce(o,
+            (acc, el) => {
+                return acc + el
+            }, 0
+        );
+        assert.strictEqual(sum, 1 + 2 + 3 + 4);
+    });
 
     it('should behave like a filter on object', () => {
         var even = ow.reduce(o,
