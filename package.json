@@ -43,12 +43,13 @@
         "test": "jest",
         "lint": "eslint source",
         "cover": "jest --coverage",
-        "coveralls": "jest --coverage | coveralls"
+        "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
     },
     "jest": {
         "collectCoverage": true,
         "coverageReporters": [
             "json",
+            "lcov",
             "html"
         ]
     }
