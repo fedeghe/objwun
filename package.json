@@ -1,6 +1,6 @@
 {
     "name": "objwun",
-    "version": "1.1.22",
+    "version": "1.1.23",
     "main": "dist/index.js",
     "author": "fedeghe <fedeghe@gmail.com>",
     "license": "MIT",
@@ -49,6 +49,9 @@
     },
     "jest": {
         "collectCoverage": true,
-        "coverageReporters": ["json", "html"]
+        "coverageReporters": [
+            "json",
+            "html"
+        ]
     }
 }
