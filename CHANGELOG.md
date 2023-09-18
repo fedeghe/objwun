@@ -1,3 +1,6 @@
+- 1.1.23  
+move to jest from mocha  
+
 - 1.1.20  
 `memoize` function have a `reset` function attribute that allows to reset the memoized values.
 
