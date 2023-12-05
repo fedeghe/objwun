@@ -1,6 +1,6 @@
 {
     "name": "objwun",
-    "version": "1.1.23",
+    "version": "1.1.24",
     "main": "dist/index.js",
     "author": "fedeghe <fedeghe@gmail.com>",
     "license": "MIT",
@@ -41,6 +41,7 @@
         "build": "malta source/build.json",
         "dev": "malta source/build_dev.json",
         "test": "jest",
+        "watch": "jest --watch",
         "lint": "eslint source",
         "cover": "jest --coverage",
         "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
