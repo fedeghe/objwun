@@ -1,0 +1,18 @@
+## `getMapper(fromStart, fromTo, toFrom, toTo)`  
+- **parameters**:
+    - domain start
+    - domain end
+    - codomain start
+    - codomain end
+- **output**: a mapping function that will accept one numeric value
+- **throws**: if receives something that is not numeric or if `fromTo-fromStart` is zero.
+
+example
+``` js
+const ow = require("objwun");
+
+const myMap = ow.getMapper(-10, 10, 50, 100);
+
+console.log(myMap(0)) // 75
+console.log(myMap(-20)) // 0
+```

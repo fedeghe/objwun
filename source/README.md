@@ -14,6 +14,10 @@ Utility functions:
 
 **isArray** ~ **isBigint** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive** ~ **isString** ~ **isSymbol** ~ **isUndefined**  
 
+additionally  
+
+**getMapper**
+
 ---
 ---
 ---
@@ -57,6 +61,10 @@ $$methods/fromEntries.md$$
 ---
 
 $$methods/get.md$$
+
+---
+
+$$methods/getMapper.md$$
 
 ---
 

@@ -39,6 +39,11 @@
             throw new Error(core.errors.INVALID_ARGUMENT_STRING_EXPECTED);
         return true;
     }
+    function nonZero(a) {
+        if (a == 0)
+            throw new Error(core.errors.INVALID_ARGUMENT_NON_ZERO_EXPECTED);
+        return true;
+    }
 
     // mixed
     function funcOrStr(a) {
@@ -92,6 +97,7 @@
         funcOrArr: funcOrArr,
         bool: bool,
         num: num,
+        nonZero: nonZero,
         obj: obj,
         objOrArr: objOrArr,
         sized: sized,

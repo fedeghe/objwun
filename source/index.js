@@ -11,6 +11,7 @@ var objwun = (function() {
     maltaF('methods/forEach.js');
     maltaF('methods/fromEntries.js');
     maltaF('methods/get.js');
+    maltaF('methods/getMapper.js');
     maltaF('methods/id.js');
     maltaF('methods/includes.js');
     maltaF('methods/intersection.js');
@@ -41,6 +42,7 @@ var objwun = (function() {
         forEach: forEach,
         fromEntries: fromEntries,
         get: get,
+        getMapper: getMapper,
         id: id,
         includes: includes,
         intersection: intersection,

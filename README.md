@@ -14,6 +14,10 @@ Utility functions:
 
 **isArray** ~ **isBigint** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive** ~ **isString** ~ **isSymbol** ~ **isUndefined**  
 
+additionally  
+
+**getMapper**
+
 ---
 ---
 ---
@@ -254,6 +258,27 @@ const o = {
 
 console.log(res1) // 111
 console.log(res2) // nope
+```
+
+---
+
+## `getMapper(fromStart, fromTo, toFrom, toTo)`  
+- **parameters**:
+    - domain start
+    - domain end
+    - codomain start
+    - codomain end
+- **output**: a mapping function that will accept one numeric value
+- **throws**: if receives something that is not numeric or if `fromTo-fromStart` is zero.
+
+example
+``` js
+const ow = require("objwun");
+
+const myMap = ow.getMapper(-10, 10, 50, 100);
+
+console.log(myMap(0)) // 75
+console.log(myMap(-20)) // 0
 ```
 
 ---
@@ -702,6 +727,6 @@ console.log(ow.uniqBy([
 
 ---
 
-last modified : 18/9/2023
+last modified : 5/12/2023
 
 ༺ ᚗᚌ ༻ 
