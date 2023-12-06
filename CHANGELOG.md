@@ -1,3 +1,6 @@
+- 1.1.25  
+getMapper utility added  
+
 - 1.1.23  
 move to jest from mocha  
 

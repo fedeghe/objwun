@@ -1,11 +1,11 @@
-## `getMapper(fromStart, fromTo, toFrom, toTo)`  
+## `getMapper(fromStart, fromEnd, toStart, toEnd)`  
 - **parameters**:
     - domain start
     - domain end
     - codomain start
     - codomain end
 - **output**: a mapping function that will accept one numeric value
-- **throws**: if receives something that is not numeric or if `fromTo-fromStart` is zero.
+- **throws**: if receives something that is not numeric or if `fromEnd-fromStart` is zero.
 
 example
 ``` js
