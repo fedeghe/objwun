@@ -143,7 +143,7 @@ describe('core.mustBe', () => {
                         ow.core.mustBe.num(el)
                     } catch (e) {
                         expect(e instanceof Error).toEqual( true);
-                        expect(e.message).toEqual( ow.core.errors.INVALID_ARGUMENT_INTEGER_EXPECTED);
+                        expect(e.message).toEqual( ow.core.errors.INVALID_ARGUMENT_NUMBER_EXPECTED);
                     }
                 }
             );
@@ -293,7 +293,7 @@ describe('core.mustBe', () => {
                         ow.core.mustBe.sized({}, el)
                     } catch (e) {
                         expect(e instanceof Error).toEqual( true);
-                        expect(e.message).toEqual( ow.core.errors.INVALID_ARGUMENT_INTEGER_EXPECTED);
+                        expect(e.message).toEqual( ow.core.errors.INVALID_ARGUMENT_NUMBER_EXPECTED);
                     }
                 }
             );

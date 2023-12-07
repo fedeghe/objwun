@@ -3,6 +3,7 @@ var objwun = (function() {
 
     maltaF('methods/assign.js');
     maltaF('methods/clone.js');
+    maltaF('methods/costrain.js');
     maltaF('methods/debounce.js');
     maltaF('methods/every.js');
     maltaF('methods/filter.js');
@@ -34,6 +35,7 @@ var objwun = (function() {
     return {
         assign: assign,
         clone: clone,
+        costrain: costrain,
         debounce: debounce,
         every: every,
         filter: filter,

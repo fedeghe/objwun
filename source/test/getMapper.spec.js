@@ -33,7 +33,7 @@ describe('getMapper', () => {
             ow.getMapper(0,'aaaa',0,100);
         } catch(e) {
             expect(e instanceof Error).toEqual( true);
-            expect(e.message).toEqual('Invalid argument, integer expected');
+            expect(e.message).toEqual('Invalid argument, number expected');
         }
     });
     test('should throw an error in getter invalid range', () => {

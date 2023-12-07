@@ -79,7 +79,7 @@ describe('debounce', () => {
             ow.debounce(() => true, true);
         } catch(e) {
             expect(e instanceof Error).toEqual( true);
-            expect(e.message).toEqual( ow.core.errors.INVALID_ARGUMENT_INTEGER_EXPECTED);
+            expect(e.message).toEqual( ow.core.errors.INVALID_ARGUMENT_NUMBER_EXPECTED);
         }
     });
 });

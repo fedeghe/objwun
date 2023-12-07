@@ -2,7 +2,7 @@
 core.errors = {
     INVALID_ARGUMENT_ARRAY_EXPECTED: 'Invalid argument, array expected',
     INVALID_ARGUMENT_OBJECT_EXPECTED: 'Invalid argument, object expected',
-    INVALID_ARGUMENT_INTEGER_EXPECTED: 'Invalid argument, integer expected',
+    INVALID_ARGUMENT_NUMBER_EXPECTED: 'Invalid argument, number expected',
     INVALID_ARGUMENT_BOOLEAN_EXPECTED: 'Invalid argument, boolean expected',
     INVALID_ARGUMENT_FUNCTION_EXPECTED: 'Invalid argument, function expected',
     INVALID_ARGUMENT_STRING_EXPECTED: 'Invalid argument, string expected',

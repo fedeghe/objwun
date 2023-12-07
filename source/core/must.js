@@ -24,7 +24,7 @@
 
     function num(a) {
         if (!core.in.isNum(a))
-            throw new Error(core.errors.INVALID_ARGUMENT_INTEGER_EXPECTED);
+            throw new Error(core.errors.INVALID_ARGUMENT_NUMBER_EXPECTED);
         return true;
     }
 

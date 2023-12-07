@@ -46,4 +46,11 @@ describe('clone', () => {
             expect(e.message).toEqual(ow.core.errors.INVALID_ARGUMENT_OBJECT_OR_ARRAY_EXPECTED);
         }
     });
+    test('∂ should be a pure function', () => {
+        var o = [{a:{a:1}}, 2, 3],
+            res = ow.clone(o);
+        expect(JSON.stringify(res)).toEqual(JSON.stringify(o));
+        o[0].a.a = 3
+        expect(res[0].a.a).toBe(1);
+    });
 });

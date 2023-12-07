@@ -31,7 +31,7 @@ describe('times', () => {
             ow.times([])
         } catch (e) {
             expect(e instanceof Error).toEqual( true);
-            expect(e.message).toEqual( "Invalid argument, integer expected");
+            expect(e.message).toEqual( "Invalid argument, number expected");
         }
     });
 

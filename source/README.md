@@ -14,9 +14,9 @@ Utility functions:
 
 **isArray** ~ **isBigint** ~ **isBoolean** ~ **isDefined** ~ **isFunction** ~ **isNumber** ~ **isObject** ~ **isPrimitive** ~ **isString** ~ **isSymbol** ~ **isUndefined**  
 
-additionally  
+additional utilities    
 
-**getMapper**
+**constrain** ~ **getMapper**  
 
 ---
 ---
@@ -29,6 +29,10 @@ $$methods/assign.md$$
 ---
 
 $$methods/clone.md$$
+
+---
+
+$$methods/costrain.md$$
 
 ---
 
