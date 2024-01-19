@@ -80,7 +80,7 @@ $$methods/includes.md$$
 
 ---
 
-$$methods/includes.md$$
+$$methods/intersection.md$$
 
 ---
 

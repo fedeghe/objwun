@@ -337,23 +337,20 @@ console.log(ow.includes(a, 22)) // false
 
 ---
 
-## `includes(array|literalObject, any)`  
+## `intersection(array, array, ...)`  
 - **parameters**:
-    - an array or a object literal
-    - searched element
-- **output**: a boolean 
-- **throws**: if receives something that is not an array or object literal as first parameter
+    - or or more arrays
+- **output**: an array that contains the intersection (only including primitives)
+- **throws**: if one of the parameters is not an array
 
 example
 ``` js
 const ow = require("objwun");
 
-const o = {a: 1, b: 2, c: 'xxx'},
-    a = [1, 2, 3, 'yyy'];
+const a = [1, 2, 3, 'yyy', () => {}],
+    b = [1, 'x', 3, 'yyy', () => {}];
 
-console.log(ow.includes(o, 'xxx')) // true
-console.log(ow.includes(a, 2)) // true
-console.log(ow.includes(a, 22)) // false
+console.log(ow.intersection(a, b)) /// [ 1, 3, 'yyy' ]
 ```
 
 ---
@@ -746,6 +743,6 @@ console.log(ow.uniqBy([
 
 ---
 
-last modified : 7/12/2023
+last modified : 19/1/2024
 
 ༺ ᚗᚌ ༻ 
