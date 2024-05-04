@@ -1,3 +1,6 @@
+- 1.1.27  
+minor readme fix (intersection was missing)  
+
 - 1.1.26  
 costrain utility added
 
