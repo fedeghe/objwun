@@ -6,9 +6,8 @@
 - **throws**: if receives something that is not an array or object literal as first parameter, or is not a function as second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o = {ao: 1, bo: 2, co: 3, do: 4, eo: 5},
     a = [{k: 1}, {k: 2}, {k: 3}, {k: 4}, {k: 5}],
 

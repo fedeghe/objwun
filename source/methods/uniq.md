@@ -5,8 +5,8 @@
 - **throws**: if the first argument is not an array
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const a1 = [2, 1, 1, 2, 3, 1, {a:1}, {a:1}]
 const a2 = [function a() {}, function b() {}, function a() {}, ]
 console.log(ow.uniq(a1))

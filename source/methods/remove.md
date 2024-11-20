@@ -7,8 +7,8 @@
 - **throws**: if the first argument is not an array or a object literal; if the second argument is not a function
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const o = {
         a: 1, b: 2,
         c: 3, d: 4

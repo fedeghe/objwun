@@ -8,9 +8,8 @@
 - **throws**: if receives something that is not numeric or if `fromEnd-fromStart` is zero.
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const myMap = ow.getMapper(-10, 10, 50, 100);
 
 console.log(myMap(0)) // 75

@@ -5,9 +5,8 @@
 
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o1 = {a: 1, b: 2},
     o2 = {b: 3, c: 4},
     r = ow.assign(o1, o2); // {a:1, b:3, c: 4}

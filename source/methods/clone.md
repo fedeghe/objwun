@@ -4,9 +4,8 @@
 - **throws**: if receives something that is not an object literal or an array
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o1 = {a: 1, b: 2, c: {b: 3, c: 4}},
     o2 = ow.clone(o1);
 

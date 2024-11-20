@@ -6,9 +6,8 @@
 - **throws**: if receives something that is not an array or object literal as first parameter
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o = {a: 1, b: 2, c: 'xxx'},
     a = [1, 2, 3, 'yyy'];
 

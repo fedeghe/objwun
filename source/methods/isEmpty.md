@@ -5,9 +5,8 @@
 - **throws**: if undefined is passed
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.isEmpty(undefined)) // exception
 console.log(ow.isEmpty(1)) // false
 console.log(ow.isEmpty([])) // true

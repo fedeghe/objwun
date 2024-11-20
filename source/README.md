@@ -96,6 +96,10 @@ $$methods/map.md$$
 
 ---
 
+$$methods/match.md$$
+
+---
+
 $$methods/memoize.md$$
 
 ---

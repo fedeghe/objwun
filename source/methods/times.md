@@ -7,8 +7,8 @@
 - **throws**: if the first argument is not an number; if the second argument is not a function
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const o = {
     mult: a => a * 2,
     n: 4

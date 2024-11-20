@@ -6,9 +6,8 @@
 - **throws**: if the first argument is not an array; if the second is a key (then all array elements must be objects) otherwise it must be a function returning a value
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.uniqBy([
     {a: 1, b: 1},
     {a: 1},

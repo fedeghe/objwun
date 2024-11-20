@@ -31,9 +31,8 @@ additional utilities
 
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o1 = {a: 1, b: 2},
     o2 = {b: 3, c: 4},
     r = ow.assign(o1, o2); // {a:1, b:3, c: 4}
@@ -51,9 +50,8 @@ console.log(o2.c); // 44
 - **throws**: if receives something that is not an object literal or an array
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o1 = {a: 1, b: 2, c: {b: 3, c: 4}},
     o2 = ow.clone(o1);
 
@@ -73,9 +71,8 @@ console.log(o1.c); // 44
 - **throws**: if one of the parameter is not a number
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const c1 = ow.constrain(0, 1, 2}, // 1
     c2 = ow.constrain(3.3, 1, 2}, // 2
     c3 = ow.constrain(1.3, 1, 2}; // 1.3
@@ -91,9 +88,8 @@ const c1 = ow.constrain(0, 1, 2}, // 1
 - **throws**: if receives something that is not an function as first parameter, or a number as second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const debounced = ow.debounce(function (a,b,c) {
     console.log(a,b,c)
 }, 2e3);
@@ -112,8 +108,8 @@ debounced(1,2,3); // after 1 sec 1,2,3
 - **throws**: if the first argument is not an array or a object literal; if the second argument is not a function
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const o = {
     a: 1, b: 2,
     c: 3, d: 4
@@ -138,9 +134,8 @@ console.log(ow.every(a, (el, k) => el < 3))
 - **throws**: if receives something that is not an array or object literal as first parameter, or is not a function as second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o = {a: 1, b: 2, c: 3, d: 4, e: 5},
     a = [{a: 1}, {a: 2}, {a: 3}, {a: 4}, {a: 5}],
 
@@ -163,9 +158,8 @@ console.log(a1); // [{a: 1}, {a: 3}, {a: 5}]
 - **throws**: if receives something that is not an array or object literal as first parameter, or is not a function as second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o = {ao: 1, bo: 2, co: 3, do: 4, eo: 5},
     a = [{a: 1}, {a: 2}, {a: 3}, {a: 4}, {a: 5}],
 
@@ -188,9 +182,8 @@ console.log(a1); // { a: 3 }
 - **throws**: if receives something that is not an array or object literal as first parameter, or is not a function as second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o = {ao: 1, bo: 2, co: 3, do: 4, eo: 5},
     a = [{k: 1}, {k: 2}, {k: 3}, {k: 4}, {k: 5}],
 
@@ -213,9 +206,8 @@ console.log(a1); // 3
 - **throws**: if receives something that is not an array or object literal as first parameter, or is not a function as second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 let ra = 0, ro = 0;
 const o = {ao: 1, bo: 2, co: 3, do: 4, eo: 5, fo: 6},
     a = [{k: 1}, {k: 2}, {k: 3}, {k: 4}, {k: 5}],
@@ -239,9 +231,8 @@ console.log(ra); // 15
 - **throws**: if receives something that is not an array or any element in the array has size that is not 2  
 
 example  
-``` js 
-const ow = require("objwun");
 
+``` js 
 const o = [
     ['just': 'a'],
     ['idiot': 'example']
@@ -263,9 +254,8 @@ console.log(res); // {just: "an", idiot: "example"}
 - **throws**: if receives something that is not an array or object literal as first parameter, or is not a string the second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o = {
     a: 1, b: 2, c: {
         a:11, b:22, c:33, d: {
@@ -291,9 +281,8 @@ console.log(res2) // nope
 - **throws**: if receives something that is not numeric or if `fromEnd-fromStart` is zero.
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const myMap = ow.getMapper(-10, 10, 50, 100);
 
 console.log(myMap(0)) // 75
@@ -306,9 +295,8 @@ console.log(myMap(-20)) // 0
 This is **not a function** but an object with a particular `toString` method associated, thus need to be casted to a string.
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.id + "") // id_1
 console.log(ow.id + "") // id_2
 console.log(ow.id + ow.id) // id_3id_4
@@ -324,9 +312,8 @@ console.log(ow.id + ow.id) // id_3id_4
 - **throws**: if receives something that is not an array or object literal as first parameter
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o = {a: 1, b: 2, c: 'xxx'},
     a = [1, 2, 3, 'yyy'];
 
@@ -344,9 +331,8 @@ console.log(ow.includes(a, 22)) // false
 - **throws**: if one of the parameters is not an array
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const a = [1, 2, 3, 'yyy', () => {}],
     b = [1, 'x', 3, 'yyy', () => {}];
 
@@ -362,9 +348,8 @@ console.log(ow.intersection(a, b)) /// [ 1, 3, 'yyy' ]
 - **throws**: if undefined is passed
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.isEmpty(undefined)) // exception
 console.log(ow.isEmpty(1)) // false
 console.log(ow.isEmpty([])) // true
@@ -383,9 +368,8 @@ console.log(ow.isEmpty('')) // true
 - **throws**: if receives something that is not an array or object literal as first parameter, or not a string nor function as the second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const a = [{
     name: 'a',
     num: 10
@@ -411,9 +395,8 @@ console.log(ow.keyBy(a, f => f.name+'_'))
 - **throws**: if receives something that is not an array or object literal as first parameter, or not a string nor function as the second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o = {name: 42, num: 10};
 const a = [1, 2, 3, 4];
 
@@ -426,6 +409,31 @@ console.log(ow.map(a, e => e ** 2))
 
 ---
 
+## `match(p1, p2, sorting = false)`
+- **parameters**:
+    - the first comparison element
+    - the second comparison element
+    - optional boolean to ignore object elements position
+- **output**: boolean
+
+example  
+
+``` js  
+var o1 = {
+        name: 'Jess',
+        surname: 'Befof'
+    },
+    o2 = {
+        surname: 'Befof',
+        name: 'Jess'
+    };
+ow.match(o1, o2) // false
+ow.match(o1, o2, true)  //true
+```
+
+
+---
+
 ## `memoize(fn function)`  
 - **parameters**:
     - the function that needs a to be memoized
@@ -435,8 +443,8 @@ console.log(ow.map(a, e => e ** 2))
 **warning**: for the moment this function works properly only when all parameters passed to the memoized function produce a unique value when given to `toString`. Thus `[par1, par2, ...].toString()` output should be uniquely obtainable passign exactly `[par1, par2, ...]`.
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 let calls = 0
 const o = { num: 10 },
     fn = function(v) {
@@ -464,9 +472,8 @@ console.log(calls); // 2
 - **throws**: if receives mixed array and object literal
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.merge({a: 1}, {b: 2}, {b: 3}));
 // { a: 1, b: 3 }
 
@@ -484,9 +491,8 @@ console.log(ow.merge(["a", 1], ["b", 2], ["c", 3]));
 - **throws**: if receives mixed array and object literal
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.omit({a:1, b:2, c:3}, ['a', 'c']));
 // { b: 2 }
 
@@ -504,9 +510,8 @@ console.log(ow.omit({a:1, b:2, c:3}, ['a']));
 - **throws**: if receives mixed array and object literal
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.pick({a:1, b:2, c:3}, ['a', 'c']));
 // { a: 1, c: 3 }
 
@@ -526,9 +531,9 @@ this function is way faster than the native `Array.reduce`
 - **output**: resulting object 
 - **throws**: if the first argument is not an array or a object literal; if the second argument is not a function
 
-example
-``` js
-const ow = require("objwun");
+example  
+
+``` js  
 const o = {
         a: 1, b: 2,
         c: 3, d: 4
@@ -565,8 +570,8 @@ console.log(ow.reduce(a, (acc, el) =>{
 - **throws**: if the first argument is not an array or a object literal; if the second argument is not a function
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const o = {
         a: 1, b: 2,
         c: 3, d: 4
@@ -596,8 +601,8 @@ console.log(a)
 - **throws**: if the first argument is not an array or a object literal; if the second argument is not a string; if the value id undefined
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const o = {
         a: 1, b: 2,
         c: 3, d: 4
@@ -624,8 +629,8 @@ console.log(ow.set(o, 'a.d.r', 1));
 - **throws**: if the first argument is not an array or a object literal; if the second argument is not a function
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const o = {
     a: 1, b: 2,
     c: 3, d: 4
@@ -651,8 +656,8 @@ console.log(ow.some(o, (e, k) => k === 'c' && e < 3));
 - **throws**: if the first argument is not an array; if the second argument is not a function or a string; if the third is not a number
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const a = [{n: 4.1}, {n: 0.05}, {n: 1.5}, {n: 3.3}];
 
 console.log(ow.sortBy(a, 'n'));
@@ -677,8 +682,8 @@ console.log(ow.sortBy(a, e => Math.cos(e.n)));
 - **throws**: if the first argument is not an array; if the second argument is not a function or a string; if the third is not a number
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const a = [{n: 4.1}, {n: 0.05}, {n: 1.5}, {n: 3.3}];
 
 console.log(ow.sortBy(a, 'n'));
@@ -701,8 +706,8 @@ console.log(ow.sortBy(a, e => Math.cos(e.n)));
 - **throws**: if the first argument is not an array
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const a1 = [2, 1, 1, 2, 3, 1, {a:1}, {a:1}]
 const a2 = [function a() {}, function b() {}, function a() {}, ]
 console.log(ow.uniq(a1))
@@ -722,9 +727,8 @@ console.log(ow.uniq(a2))
 - **throws**: if the first argument is not an array; if the second is a key (then all array elements must be objects) otherwise it must be a function returning a value
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.uniqBy([
     {a: 1, b: 1},
     {a: 1},
@@ -743,6 +747,6 @@ console.log(ow.uniqBy([
 
 ---
 
-last modified : 19/1/2024
+last modified : 20/11/2024
 
 ༺ ᚗᚌ ༻ 
