@@ -3,7 +3,7 @@ function match(o1, o2, sorted) {
     var sort = function(o) {
         return Object.keys(o).sort().reduce(
             function(acc, key){ 
-                acc[key] = isObj(o[key]) ? sort(o[key]) : o[key];
+                acc[key] = core.isObject(o[key]) ? sort(o[key]) : o[key];
                 return acc;
             }, {}
         )};
