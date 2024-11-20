@@ -6,9 +6,8 @@
 - **throws**: if receives mixed array and object literal
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.merge({a: 1}, {b: 2}, {b: 3}));
 // { a: 1, b: 3 }
 

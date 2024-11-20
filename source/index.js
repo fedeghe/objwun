@@ -1,6 +1,6 @@
 var objwun = (function() {
     maltaF('core/index.js');
-
+    
     maltaF('methods/assign.js');
     maltaF('methods/clone.js');
     maltaF('methods/costrain.js');
@@ -19,6 +19,7 @@ var objwun = (function() {
     maltaF('methods/isEmpty.js');
     maltaF('methods/keyBy.js');
     maltaF('methods/map.js');
+    maltaF('methods/match.js');
     maltaF('methods/memoize.js');
     maltaF('methods/merge.js');
     maltaF('methods/omit.js');
@@ -51,6 +52,7 @@ var objwun = (function() {
         isEmpty: isEmpty,
         keyBy: keyBy,
         map: map,
+        match: match,
         memoize: memoize,
         merge: merge,
         omit: omit,

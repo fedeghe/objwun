@@ -5,9 +5,8 @@
 - **throws**: if one of the parameters is not an array
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const a = [1, 2, 3, 'yyy', () => {}],
     b = [1, 'x', 3, 'yyy', () => {}];
 

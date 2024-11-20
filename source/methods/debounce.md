@@ -5,10 +5,9 @@
 - **output**: the debounced function
 - **throws**: if receives something that is not an function as first parameter, or a number as second one
 
-example
-``` js
-const ow = require("objwun");
+example  
 
+``` js  
 const debounced = ow.debounce(function (a,b,c) {
     console.log(a,b,c)
 }, 2e3);

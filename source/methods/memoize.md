@@ -6,9 +6,9 @@
 
 **warning**: for the moment this function works properly only when all parameters passed to the memoized function produce a unique value when given to `toString`. Thus `[par1, par2, ...].toString()` output should be uniquely obtainable passign exactly `[par1, par2, ...]`.
 
-example
-``` js
-const ow = require("objwun");
+example  
+
+``` js  
 let calls = 0
 const o = { num: 10 },
     fn = function(v) {
