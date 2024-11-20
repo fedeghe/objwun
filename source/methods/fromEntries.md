@@ -5,9 +5,8 @@
 - **throws**: if receives something that is not an array or any element in the array has size that is not 2  
 
 example  
-``` js 
-const ow = require("objwun");
 
+``` js 
 const o = [
     ['just': 'a'],
     ['idiot': 'example']

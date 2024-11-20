@@ -6,9 +6,8 @@
 - **throws**: if receives mixed array and object literal
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 console.log(ow.pick({a:1, b:2, c:3}, ['a', 'c']));
 // { a: 1, c: 3 }
 

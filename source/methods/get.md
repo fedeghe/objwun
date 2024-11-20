@@ -7,9 +7,8 @@
 - **throws**: if receives something that is not an array or object literal as first parameter, or is not a string the second one
 
 example
-``` js
-const ow = require("objwun");
 
+``` js  
 const o = {
     a: 1, b: 2, c: {
         a:11, b:22, c:33, d: {

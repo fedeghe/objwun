@@ -7,8 +7,8 @@
 - **throws**: if the first argument is not an array; if the second argument is not a function or a string; if the third is not a number
 
 example
-``` js
-const ow = require("objwun");
+
+``` js  
 const a = [{n: 4.1}, {n: 0.05}, {n: 1.5}, {n: 3.3}];
 
 console.log(ow.sortBy(a, 'n'));
