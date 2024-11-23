@@ -1,4 +1,4 @@
-- 1.1.27  
+- 1.1.29  
 minor readme fix (intersection was missing)  
 
 - 1.1.26  

@@ -2,6 +2,10 @@ source
 test
 node_modules
 coverage
+README.md
+SECURITY.md
+CHANGELOG.md
+.travis.yml
 .printVersion
 .coveralls.yml
 .nyc_output
