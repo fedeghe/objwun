@@ -1,4 +1,4 @@
-var core = {}
+var core = {};
 
 maltaF('core/errors.js');
 maltaF('core/utils.js');

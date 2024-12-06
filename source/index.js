@@ -3,6 +3,7 @@ var objwun = (function() {
 
     maltaF('methods/assign.js');
     maltaF('methods/clone.js');
+    maltaF('methods/compose.js');
     maltaF('methods/costrain.js');
     maltaF('methods/debounce.js');
     maltaF('methods/every.js');
@@ -23,6 +24,7 @@ var objwun = (function() {
     maltaF('methods/memoize.js');
     maltaF('methods/merge.js');
     maltaF('methods/omit.js');
+    maltaF('methods/pipe.js');
     maltaF('methods/pick.js');
     maltaF('methods/reduce.js');
     maltaF('methods/remove.js');
@@ -36,6 +38,7 @@ var objwun = (function() {
     return {
         assign: assign,
         clone: clone,
+        compose: compose,
         costrain: costrain,
         debounce: debounce,
         every: every,
@@ -57,6 +60,7 @@ var objwun = (function() {
         merge: merge,
         omit: omit,
         pick: pick,
+        pipe: pipe,
         reduce: reduce,
         remove: remove,
         set: set,

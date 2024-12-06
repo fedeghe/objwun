@@ -1,3 +1,6 @@
+- 1.1.30  
+added `compose` and `pipe` functional methods  
+
 - 1.1.29  
 minor readme fix (intersection was missing)  
 

@@ -1,5 +1,5 @@
 function match(o1, o2, sorted) {
-    sorted = Boolean(sorted)
+    sorted = Boolean(sorted);
     var sort = function(o) {
         return Object.keys(o).sort().reduce(
             function(acc, key){ 

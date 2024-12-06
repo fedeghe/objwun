@@ -10,6 +10,6 @@ function memoize(fn, ctx) {
         !(m.has(k)) && m.set(k, fn.apply(ctx, a));
         return m.get(k);
     }
-    mfn.reset = function () {m.clear();}
+    mfn.reset = function () {m.clear();};
     return mfn;
 }

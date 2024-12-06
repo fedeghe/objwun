@@ -8,7 +8,7 @@
 
 Utility functions:   
 
-**assign** ~ **clone** ~ **debounce** ~ **every** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **fromEntries** ~ **get** ~ **id** ~ **includes** ~ **intersection** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **memoize** ~ **merge** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq** ~ **uniqBy**
+**assign** ~ **clone** ~**compose** ~ **debounce** ~ **every** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **fromEntries** ~ **get** ~ **id** ~ **includes** ~ **intersection** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **memoize** ~ **merge** ~ **omit** ~ **pick** ~ **pipe** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq** ~ **uniqBy**
 
  and  
 
@@ -29,6 +29,10 @@ $$methods/assign.md$$
 ---
 
 $$methods/clone.md$$
+
+---
+
+$$methods/compose.md$$
 
 ---
 
@@ -113,6 +117,10 @@ $$methods/omit.md$$
 ---
 
 $$methods/pick.md$$
+
+---
+
+$$methods/pipe.md$$
 
 ---
 
