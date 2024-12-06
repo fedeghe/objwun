@@ -19,9 +19,15 @@ function reduce(o, fn, initial, esc) {
         var acc = init,
             i = 0,
             l = arr.length;
-        for (null; i < l; i++) {
-            if (exitFn && exitFn(acc, arr[i], i, arr)) break;
-            acc = fn(acc, arr[i], i, arr);
+        if (exitFn) {
+            for (null; i < l; i++) {
+                if (exitFn(acc, arr[i], i, arr)) break;
+                acc = fn(acc, arr[i], i, arr);
+            }
+        } else {
+            for (null; i < l; i++) {
+                acc = fn(acc, arr[i], i, arr);
+            }
         }
         return acc;
     };

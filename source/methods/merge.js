@@ -3,7 +3,7 @@ function merge() {
     if (core.in.isArr(objs[0])) {
         forEach(objs, core.mustBe.arr);
         return reduce(objs, function (acc, obj) {
-            acc = acc.concat(clone(obj))
+            acc = acc.concat(clone(obj));
             return acc;
         }, []);
     } else if (core.in.isObj(objs[0])) {

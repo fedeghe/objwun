@@ -8,7 +8,7 @@
 
 Utility functions:   
 
-**assign** ~ **clone** ~ **debounce** ~ **every** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **fromEntries** ~ **get** ~ **id** ~ **includes** ~ **intersection** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **memoize** ~ **merge** ~ **omit** ~ **pick** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq** ~ **uniqBy**
+**assign** ~ **clone** ~**compose** ~ **debounce** ~ **every** ~ **filter** ~ **find** ~ **findIndex** ~ **forEach** ~ **fromEntries** ~ **get** ~ **id** ~ **includes** ~ **intersection** ~ **isEmpty** ~ **keyBy** ~ **map** ~ **memoize** ~ **merge** ~ **omit** ~ **pick** ~ **pipe** ~ **reduce** ~ **remove** ~ **set** ~ **some** ~ **sortBy** ~ **times** ~ **uniq** ~ **uniqBy**
 
  and  
 
@@ -58,6 +58,24 @@ const o1 = {a: 1, b: 2, c: {b: 3, c: 4}},
 o1.c = 44;
 console.log(o2.c.c); // 4
 console.log(o1.c); // 44
+```
+
+---
+
+## `compose(fn1, fn2, ... )`  
+- **parameters**:
+    - two or more functions 
+- **output**: one single composed function 
+- **throws**: if one of the argument is not a function
+
+example
+
+``` js  
+console.log(ow.pipe(
+    s => s.substring(0, 3),
+    s => s.split('').reverse().join('')
+)('hello'));
+// oll
 ```
 
 ---
@@ -521,6 +539,24 @@ console.log(ow.pick({a:1, b:2, c:3}, ['a']));
 
 ---
 
+## `pipe(fn1, fn2, ... )`  
+- **parameters**:
+    - two or more functions 
+- **output**: one single piped function 
+- **throws**: if one of the argument is not a function
+
+example
+
+``` js  
+console.log(ow.pipe(
+    s => s.substring(0, 3),
+    s => s.split('').reverse().join('')
+)('hello'));
+// leh
+```
+
+---
+
 ## `reduce(array|literalObject, reducer function, initial value, escapeFn )`  
 this function is way faster than the native `Array.reduce`  
 - **parameters**:
@@ -747,6 +783,6 @@ console.log(ow.uniqBy([
 
 ---
 
-last modified : 23/11/2024
+last modified : 6/12/2024
 
 ༺ ᚗᚌ ༻ 

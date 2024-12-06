@@ -1,11 +1,11 @@
 +function () {
     function args2arr(a) {
-        return [].slice.call(a, 0);
+        return Array.from(a);
     }
 
     function pick_omit(func) {
         return function (o, x) {
-            core.mustBe.obj(o)
+            core.mustBe.obj(o);
             core.mustBe.arr(x);
             var res = {};
             for (var i in o) {
