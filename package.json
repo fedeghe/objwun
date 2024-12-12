@@ -42,8 +42,8 @@
         "test": "jest",
         "watch": "jest --watch",
         "lint": "eslint source",
-        "cover": "jest --coverage",
-        "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+        "cover": "jest --coverage --coverageReporters=text",
+        "coveralls": "jest --coverage --coverageReporters=text && cat ./coverage/lcov.info | coveralls"
     },
     "jest": {
         "collectCoverage": true,
