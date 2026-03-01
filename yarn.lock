@@ -2421,6 +2421,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"malta-jest@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "malta-jest@npm:0.0.2"
+  dependencies:
+    jest-cli: "npm:^29.7.0"
+  checksum: 10c0/c646cfa23cd5ab1c5b7035c794e5676c22b4e6c628850690f3ee43ad95bbe8714672479cc0b3a347e1d344273a6d64c4649afef6d7f46ea73f1e9a82c2e20201
+  languageName: node
+  linkType: hard
+
 "malta-js-uglify@npm:^1.0.13":
   version: 1.0.13
   resolution: "malta-js-uglify@npm:1.0.13"
@@ -2646,6 +2655,7 @@ __metadata:
     jest: "npm:^29.7.0"
     malta: "npm:^4.1.34"
     malta-header-comment: "npm:^1.0.12"
+    malta-jest: "npm:^0.0.2"
     malta-js-uglify: "npm:^1.0.13"
   languageName: unknown
   linkType: soft

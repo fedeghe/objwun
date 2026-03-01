@@ -69,7 +69,7 @@ describe('some', () => {
                 name2: 'Fluffy'
             }, function (e, k) {
                 return k.match(/^na/) && e.match(/^Fff*/)
-            })).toEqual( false)
+            })).toEqual(false)
         );
         test('∂ should be a pure function', () => {
             var o = {a: 1, b: 2, c: 3},

@@ -3,7 +3,7 @@
         "rm -rf dist tests",
         "mkdir dist tests"
     ],
-    "source/index.js": "dist -plugins=malta-header-comment[name:\"source/header.txt\"] -options=placeholderMode:\"func\"",
-    "source/tests/*.js": "tests",
+    "source/index.js": "dist -plugins=malta-header-comment[name:\"source/header.txt\"]...malta-jest[argz:'--rootDir=.'] -options=placeholderMode:\"func\"",
+    "source/tests/*.js": "tests -plugins=malta-jest[argz:'--rootDir=.']",
     "source/*.md": "."
 }
