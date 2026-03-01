@@ -1,13 +1,8 @@
 source
-test
+tests
 node_modules
 coverage
 README.md
 SECURITY.md
 CHANGELOG.md
-.travis.yml
 .printVersion
-.coveralls.yml
-.nyc_output
-.nyc_output/processinfo
-.nyc_output/processinfo/*

@@ -1,6 +1,6 @@
-### OBJWUN
+### OBJWUN (v 1.1.31)
 
-[![Coverage Status](https://coveralls.io/repos/github/fedeghe/objwun/badge.svg?branch=master)](https://coveralls.io/github/fedeghe/objwun?branch=master)
+[![codecov](https://codecov.io/gh/fedeghe/objwun/graph/badge.svg?token=B8BDJ1J1RO)](https://codecov.io/gh/fedeghe/objwun) ![Static Badge](https://img.shields.io/badge/Human%20coded-100%25-blue?style=plastic)
 
 
 
@@ -783,6 +783,6 @@ console.log(ow.uniqBy([
 
 ---
 
-last modified : 6/12/2024
+last modified : 1/3/2026
 
 ༺ ᚗᚌ ༻ 
